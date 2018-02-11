@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-17
  * Time: 20:54
  * Declaration: All Rights Reserved !!!
@@ -11,11 +11,11 @@ public class Solution {
      * Find the median of the two sorted arrays. The overall run time complexity
      * should be O(log (m+n)).
      *
-     * ÌâÄ¿´óÒâ£º
-     * Á½¸öÅÅĞòÊı×é£¬ÕÒÕâÁ½¸öÅÅĞòÊı×éµÄÖĞÎ»Êı£¬Ê±¼ä¸´ÔÓ¶ÈÎªO(log(m+n))
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ä¸¤ä¸ªæ’åºæ•°ç»„ï¼Œæ‰¾è¿™ä¸¤ä¸ªæ’åºæ•°ç»„çš„ä¸­ä½æ•°ï¼Œæ—¶é—´å¤æ‚åº¦ä¸ºO(log(m+n))
      *
-     * Ìâ½âË¼Â·£º
-     * µİ¹é·ÖÖÎÇó½â
+     * é¢˜è§£æ€è·¯ï¼š
+     * é€’å½’åˆ†æ²»æ±‚è§£
      * </pre>
      *
      * @param nums1
@@ -36,11 +36,11 @@ public class Solution {
         int len2 = nums2.length;
 
         if (len1 < len2) {
-            // È·±£µÚÒ»¸öÊı×é±ÈµÚ¶ş¸öÊı×é³¤¶È´ó
+            // ç¡®ä¿ç¬¬ä¸€ä¸ªæ•°ç»„æ¯”ç¬¬äºŒä¸ªæ•°ç»„é•¿åº¦å¤§
             return findMedianSortedArrays(nums2, nums1);
         }
 
-        // Èç¹û³¤¶ÈĞ¡µÄÊı×é³¤¶ÈÎª0£¬¾Í·µ»ØÇ°Ò»¸öÊı×éµÄÖĞÎ»Êı
+        // å¦‚æœé•¿åº¦å°çš„æ•°ç»„é•¿åº¦ä¸º0ï¼Œå°±è¿”å›å‰ä¸€ä¸ªæ•°ç»„çš„ä¸­ä½æ•°
         if (len2 == 0) {
             return (nums1[(len1 - 1) / 2] + nums1[len1 / 2]) / 2.0;
         }

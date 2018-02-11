@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 13:16
  * Declaration: All Rights Reserved !!!
@@ -27,14 +27,14 @@ public class Solution {
      *   - For now, the judge is able to judge based on one instance of gray code sequence.
      *          Sorry about that.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨n£¬Êä³ö³¤¶ÈÎªnµÄ¸ñÀ×Âë±í
-     * ½âÌâË¼Â·£º
-     * µÝ¹éÉú³ÉÂë±í
-     *  ÕâÖÖ·½·¨»ùÓÚ¸ñÀ×ÂëÊÇ·´ÉäÂëµÄÊÂÊµ£¬ÀûÓÃµÝ¹éµÄÈçÏÂ¹æÔòÀ´¹¹Ôì£º
-     *  1Î»¸ñÀ×ÂëÓÐÁ½¸öÂë×Ö
-     *  (n+1)Î»¸ñÀ×ÂëÖÐµÄÇ°2n¸öÂë×ÖµÈÓÚnÎ»¸ñÀ×ÂëµÄÂë×Ö£¬°´Ë³ÐòÊéÐ´£¬¼ÓÇ°×º0
-     *  (n+1)Î»¸ñÀ×ÂëÖÐµÄºó2n¸öÂë×ÖµÈÓÚnÎ»¸ñÀ×ÂëµÄÂë×Ö£¬°´ÄæÐòÊéÐ´£¬¼ÓÇ°×º1
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šnï¼Œè¾“å‡ºé•¿åº¦ä¸ºnçš„æ ¼é›·ç è¡¨
+     * è§£é¢˜æ€è·¯ï¼š
+     * é€’å½’ç”Ÿæˆç è¡¨
+     *  è¿™ç§æ–¹æ³•åŸºäºŽæ ¼é›·ç æ˜¯åå°„ç çš„äº‹å®žï¼Œåˆ©ç”¨é€’å½’çš„å¦‚ä¸‹è§„åˆ™æ¥æž„é€ ï¼š
+     *  1ä½æ ¼é›·ç æœ‰ä¸¤ä¸ªç å­—
+     *  (n+1)ä½æ ¼é›·ç ä¸­çš„å‰2nä¸ªç å­—ç­‰äºŽnä½æ ¼é›·ç çš„ç å­—ï¼ŒæŒ‰é¡ºåºä¹¦å†™ï¼ŒåŠ å‰ç¼€0
+     *  (n+1)ä½æ ¼é›·ç ä¸­çš„åŽ2nä¸ªç å­—ç­‰äºŽnä½æ ¼é›·ç çš„ç å­—ï¼ŒæŒ‰é€†åºä¹¦å†™ï¼ŒåŠ å‰ç¼€1
      * </pre>
      *
      * @param n
@@ -43,17 +43,17 @@ public class Solution {
     public List<Integer> grayCode(int n) {
         List<Integer> result = new LinkedList<>();
         if (n >= 0) {
-            // ¸ñÀ×ÂëµÄÇ°°ë²¿·Ö
+            // æ ¼é›·ç çš„å‰åŠéƒ¨åˆ†
             result.add(0);
-            // ¸ñÀ×Âë×î¸ßÎ»µÄÖµ£¨·Ç0Ê±£©
+            // æ ¼é›·ç æœ€é«˜ä½çš„å€¼ï¼ˆéž0æ—¶ï¼‰
             int t = 1;
-            // Ã¿Ò»´ÎÍâÑ­»·Çó³öµÄÊÇÎ»Êýi+1Î»µÄ¸ñÀ×Âë±í£¬ÆäÏàµ±ÓÚ³¤¶ÈÎªi+1Î»µÄ¸ñÀ×Âë±íµÄÇ°°ë²¿·Ö
+            // æ¯ä¸€æ¬¡å¤–å¾ªçŽ¯æ±‚å‡ºçš„æ˜¯ä½æ•°i+1ä½çš„æ ¼é›·ç è¡¨ï¼Œå…¶ç›¸å½“äºŽé•¿åº¦ä¸ºi+1ä½çš„æ ¼é›·ç è¡¨çš„å‰åŠéƒ¨åˆ†
             for (int i = 0; i < n; i++) {
-                // Çó³öµÄ³¤¶ÈÎªi+1Î»¸ñÀ×Âë±íµÄºó°ë²¿·Ö£¬Ç°°ë²¿·ÖÓÉ³¤¶ÈÎªiÎ»µÄ¸ñÀ×Âë±í¸ø³ö
+                // æ±‚å‡ºçš„é•¿åº¦ä¸ºi+1ä½æ ¼é›·ç è¡¨çš„åŽåŠéƒ¨åˆ†ï¼Œå‰åŠéƒ¨åˆ†ç”±é•¿åº¦ä¸ºiä½çš„æ ¼é›·ç è¡¨ç»™å‡º
                 for (int j = result.size() - 1; j >= 0; j--) {
                     result.add(result.get(j) ^ t);
                 }
-                // ×î¸ßÎ»ÓÒÒÆ
+                // æœ€é«˜ä½å³ç§»
                 t <<= 1;
             }
         }

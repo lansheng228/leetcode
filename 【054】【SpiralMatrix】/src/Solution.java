@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 17:11
  * Declaration: All Rights Reserved !!!
@@ -10,7 +10,7 @@ import java.util.List;
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a matrix of m x n elements (m rows, n columns), return all elements
      * of the matrix in spiral order.
      * For example,
@@ -23,12 +23,12 @@ public class Solution {
      * ]
      *
      * You should return [1,2,3,6,9,8,7,4,5].
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öm*nµÄ¾ØÕó£¬ÊäÈëËùÓĞÔªËØµÄÂİĞıË³Ğò¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªm*nçš„çŸ©é˜µï¼Œè¾“å…¥æ‰€æœ‰å…ƒç´ çš„èºæ—‹é¡ºåºã€‚
      *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃ¼ÆËãÊä³öµÄ·½·¨£¬ÏÈ´¦ÀíÉÏÃæÒ»ĞĞ£¬ÔÙ´¦ÀíÓÒ±ßÒ»ÁĞ£¬ÔÙ´¦ÀíÏÂÃæÒ»ĞĞ£¬ÔÙ´¦Àí×ó±ßÒ»ÁĞ£¬
-     * Ò»Ö±ÕâÑù²Ù×÷£¬Ö±µ½ËùÓĞµÄÔªËØ¶¼´¦ÀíÍê¡£
+     * è§£é¢˜æ€è·¯
+     * ä½¿ç”¨è®¡ç®—è¾“å‡ºçš„æ–¹æ³•ï¼Œå…ˆå¤„ç†ä¸Šé¢ä¸€è¡Œï¼Œå†å¤„ç†å³è¾¹ä¸€åˆ—ï¼Œå†å¤„ç†ä¸‹é¢ä¸€è¡Œï¼Œå†å¤„ç†å·¦è¾¹ä¸€åˆ—ï¼Œ
+     * ä¸€ç›´è¿™æ ·æ“ä½œï¼Œç›´åˆ°æ‰€æœ‰çš„å…ƒç´ éƒ½å¤„ç†å®Œã€‚
      * </pre>
      *
      * @param matrix
@@ -41,7 +41,7 @@ public class Solution {
             return result;
         }
 
-        // Ö»ÓĞÒ»ĞĞµÄÇé¿ö
+        // åªæœ‰ä¸€è¡Œçš„æƒ…å†µ
         if (matrix.length == 1) {
             for (int i : matrix[0]) {
                 result.add(i);
@@ -50,7 +50,7 @@ public class Solution {
             return result;
         }
 
-        // Ö»ÓĞÒ»ÁĞµÄÇé¿ö
+        // åªæœ‰ä¸€åˆ—çš„æƒ…å†µ
         if (matrix[0].length == 1) {
             for (int i = 0; i < matrix.length; i++) {
                 result.add(matrix[i][0]);
@@ -59,13 +59,13 @@ public class Solution {
             return result;
         }
 
-        // ¼ÆËãÓĞ¶àÉÙÈ¦
+        // è®¡ç®—æœ‰å¤šå°‘åœˆ
         int row = matrix.length;
         int col = matrix[0].length;
         int cycle = row < col ? row : col;
         cycle = (cycle + 1) / 2;
 
-        int round = 0; // ¼ÇÂ¼µ±Ç°ÊÇµÚ¼¸È¦
+        int round = 0; // è®°å½•å½“å‰æ˜¯ç¬¬å‡ åœˆ
         int left = 0;
         int right = matrix[0].length - 1;
         int top = 0;
@@ -74,21 +74,21 @@ public class Solution {
         int count = 0;
         while (round < cycle) {
 
-            // ÉÏÃæÒ»ĞĞ
+            // ä¸Šé¢ä¸€è¡Œ
             for (int i = left; i <= right && count < total; i++) {
                 count++;
                 result.add(matrix[round][i]);
             }
             top++; //
 
-            // ÓÒ±ßÒ»ÁĞ
+            // å³è¾¹ä¸€åˆ—
             for (int i = top; i <= down && count < total; i++) {
                 count++;
                 result.add(matrix[i][col - round - 1]);
             }
             right--;
 
-            // µ×ÏÂÒ»ĞĞ
+            // åº•ä¸‹ä¸€è¡Œ
             for (int i = right; i >= left && count < total; i--) {
                 count++;
                 result.add(matrix[row - round - 1][i]);
@@ -96,7 +96,7 @@ public class Solution {
             }
             down--;
 
-            // ×ó±ßÒ»ÁĞ
+            // å·¦è¾¹ä¸€åˆ—
             for (int i = down; i >= top && count < total; i--) {
                 count++;
                 result.add(matrix[i][round]);

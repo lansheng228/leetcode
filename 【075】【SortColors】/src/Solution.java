@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:37
  * Declaration: All Rights Reserved !!!
@@ -7,22 +7,22 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given an array with n objects colored red, white or blue, sort them so that objects
      * of the same color are adjacent, with the colors in the order red, white and blue.
      * Here, we will use the integers 0, 1, and 2 to represent the color red, white,
      * and blue respectively.
      * Note:
-     * You are not suppose to use the library¡¯s sort function for this problem.
+     * You are not suppose to use the libraryâ€™s sort function for this problem.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸ö¶ÔÏóÊı×é£¬¶ÔÏóÊÇºìÉ«£¬°×É«ºÍÀ¶É«£¬¶ÔÑÕÉ«½øĞĞÅÅĞò£¬ºì£¬°×£¬À¶¡£
-     * Ê¹ÓÃ0£¬1£¬2·Ö±ğ´ú±íºì£¬°×£¬À¶¡£
-     * ×¢Òâ£º²»ÄÜÊ¹ÓÃ¿âº¯Êı½øĞĞÅÅĞò¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªå¯¹è±¡æ•°ç»„ï¼Œå¯¹è±¡æ˜¯çº¢è‰²ï¼Œç™½è‰²å’Œè“è‰²ï¼Œå¯¹é¢œè‰²è¿›è¡Œæ’åºï¼Œçº¢ï¼Œç™½ï¼Œè“ã€‚
+     * ä½¿ç”¨0ï¼Œ1ï¼Œ2åˆ†åˆ«ä»£è¡¨çº¢ï¼Œç™½ï¼Œè“ã€‚
+     * æ³¨æ„ï¼šä¸èƒ½ä½¿ç”¨åº“å‡½æ•°è¿›è¡Œæ’åºã€‚
      *
-     * ½âÌâË¼Â·
-     * ¶ÔÊı×é½øĞĞÉ¨Ãè£¬¼ÆÂ¼1µÄ¸öÊıºÍÕû¸öÊı×éµÄºÍ¡£É¨ÃèÍêºó¿ÉÒÔµÃ³ö1µÄÊıÄ¿t£¬2µÄÊıÄ¿(sum-t)/2£¬
-     * ×îºó¿ÉÒÔµÃ³ö0µÄÊıÄ¿£¬ÕâÑù×Ó¸ù¾İ0£¬1£¬2µÄÊıÄ¿ÔÙ¶ÔÊı×é½øĞĞÉèÖÃÖµ¡£
+     * è§£é¢˜æ€è·¯
+     * å¯¹æ•°ç»„è¿›è¡Œæ‰«æï¼Œè®¡å½•1çš„ä¸ªæ•°å’Œæ•´ä¸ªæ•°ç»„çš„å’Œã€‚æ‰«æå®Œåå¯ä»¥å¾—å‡º1çš„æ•°ç›®tï¼Œ2çš„æ•°ç›®(sum-t)/2ï¼Œ
+     * æœ€åå¯ä»¥å¾—å‡º0çš„æ•°ç›®ï¼Œè¿™æ ·å­æ ¹æ®0ï¼Œ1ï¼Œ2çš„æ•°ç›®å†å¯¹æ•°ç»„è¿›è¡Œè®¾ç½®å€¼ã€‚
      * </pre>
      *
      * @param A
@@ -33,8 +33,8 @@ public class Solution {
             return;
         }
 
-        int count = 0; // Í³¼Æ1µÄ¸öÊı
-        int sum = 0; // Í³¼ÆÊı×éµÄºÍ
+        int count = 0; // ç»Ÿè®¡1çš„ä¸ªæ•°
+        int sum = 0; // ç»Ÿè®¡æ•°ç»„çš„å’Œ
 
         for (int i : A) {
             if (i == 1) {
@@ -44,11 +44,11 @@ public class Solution {
             sum += i;
         }
 
-        sum = (sum - count) / 2; // ¼ÆËã2µÄÊıÄ¿
+        sum = (sum - count) / 2; // è®¡ç®—2çš„æ•°ç›®
 
-        count = A.length - count - sum; // 1¿ªÊ¼³öÏÖµÄÎ»ÖÃ
+        count = A.length - count - sum; // 1å¼€å§‹å‡ºç°çš„ä½ç½®
 
-        sum = A.length - sum; // 2¿ªÊ¼³öÏÖµÄÎ»ÖÃ
+        sum = A.length - sum; // 2å¼€å§‹å‡ºç°çš„ä½ç½®
 
         for (int i = 0; i < count; i++) {
             A[i] = 0;

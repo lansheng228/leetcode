@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-07-21
  * Time: 18:46
  * Declaration: All Rights Reserved !!!
@@ -21,16 +21,16 @@ public class Solution {
             p = p.next;
             count++;
             if (p == null) {
-                count--; // Á´±íÖĞ³ıÍ·½áµãºóÊı¾İ¸öÊı
-                n = n % count; // Êµ¼ÊÒªÎ»ÖÃµÄÎ»Êı
-                // ÎªÖØĞÂ¿ªÊ¼Î»ÒÆ×ö×¼±¸
+                count--; // é“¾è¡¨ä¸­é™¤å¤´ç»“ç‚¹åæ•°æ®ä¸ªæ•°
+                n = n % count; // å®é™…è¦ä½ç½®çš„ä½æ•°
+                // ä¸ºé‡æ–°å¼€å§‹ä½ç§»åšå‡†å¤‡
                 i = 0;
                 p = head;
             }
         }
 
-        // ÕÒµ½µÚÒ»¸öÒª½»»»µÄ½áµãµÄÇ°Çı
-        // qÎªµÚÒ»¸öÒª½»»»µÄ½áµãµÄÇ°Çı
+        // æ‰¾åˆ°ç¬¬ä¸€ä¸ªè¦äº¤æ¢çš„ç»“ç‚¹çš„å‰é©±
+        // qä¸ºç¬¬ä¸€ä¸ªè¦äº¤æ¢çš„ç»“ç‚¹çš„å‰é©±
         while (p != null) {
             p = p.next;
             q = q.next;
@@ -39,16 +39,16 @@ public class Solution {
 
         p = q;
         q = root;
-        if (p != null && p.next != null) { // ÓĞÒªÎ»ÒÆµÄ½áµã
+        if (p != null && p.next != null) { // æœ‰è¦ä½ç§»çš„ç»“ç‚¹
             ListNode node;
             while (p.next != null) {
-                // Õª³ı½áµã
+                // æ‘˜é™¤ç»“ç‚¹
                 node = p.next;
                 p.next = node.next;
-                // ½ÓÉÏ½áµã
+                // æ¥ä¸Šç»“ç‚¹
                 node.next = q.next;
                 q.next = node;
-                q = node; // ×îºóÒ»¸öÒÆ¶¯µÄ½Úµã
+                q = node; // æœ€åä¸€ä¸ªç§»åŠ¨çš„èŠ‚ç‚¹
             }
         }
 

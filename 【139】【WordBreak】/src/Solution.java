@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-21
  * Time: 08:13
  * Declaration: All Rights Reserved !!!
@@ -21,15 +21,15 @@ public class Solution {
      * dict = ["leet", "code"].
      * Return true because "leetcode" can be segmented as "leet code".
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸ö×Ö·û´®sºÍµ¥´Ê×Öµädict£¬È·¶¨sÊÇ·ñ¿ÉÒÔ·Ö¸î³ÉÒ»¸ö»ò¶à¸öµ¥´Ê¿Õ¸ñ·Ö¸ôµÄĞòÁĞ¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²så’Œå•è¯å­—å…¸dictï¼Œç¡®å®šsæ˜¯å¦å¯ä»¥åˆ†å‰²æˆä¸€ä¸ªæˆ–å¤šä¸ªå•è¯ç©ºæ ¼åˆ†éš”çš„åºåˆ—ã€‚
      *
-     * ½âÌâË¼Â·£º
-     * Ò»¸ö×Ö·û´®S£¬ËüµÄ³¤¶ÈÎªN£¬Èç¹ûSÄÜ¹»±»¡°×Öµä¼¯ºÏ¡±£¨dict£©ÖĞµÄµ¥´ÊÆ´½Ó¶ø³É£¬ÄÇÃ´ËùÒªÂú×ãµÄÌõ¼şÎª£º
+     * è§£é¢˜æ€è·¯ï¼š
+     * ä¸€ä¸ªå­—ç¬¦ä¸²Sï¼Œå®ƒçš„é•¿åº¦ä¸ºNï¼Œå¦‚æœSèƒ½å¤Ÿè¢«â€œå­—å…¸é›†åˆâ€ï¼ˆdictï¼‰ä¸­çš„å•è¯æ‹¼æ¥è€Œæˆï¼Œé‚£ä¹ˆæ‰€è¦æ»¡è¶³çš„æ¡ä»¶ä¸ºï¼š
      * F(0, N) = F(0, i) && F(i, j) && F(j, N);
-     * ÕâÑù×Ó£¬Èç¹ûÎÒÃÇÏëÖªµÀÄ³¸ö×Ó´®ÊÇ·ñ¿ÉÓÉDictÖĞµÄ¼¸¸öµ¥´ÊÆ´½Ó¶ø³É¾Í¿ÉÒÔÓÃÕâÑùµÄ·½Ê½µÃµ½½á¹û
-     * £¨Âú×ãÌõ¼şÎªTrue, ²»Âú×ãÌõ¼şÎªFalse£©´æÈëµ½Ò»¸öbooleanÊı×éµÄ¶ÔÓ¦Î»ÖÃÉÏ£¬ÕâÑù×Ó£¬×îºóboolean
-     * Êı×éµÄ×îºóÒ»Î»¾ÍÊÇF(0, N)µÄÖµ£¬ÎªTrue±íÊ¾Õâ¸ö×Ö·û´®S¿ÉÓÉDictÖĞµÄµ¥´ÊÆ´½Ó£¬·ñÔò²»ĞĞ£¡
+     * è¿™æ ·å­ï¼Œå¦‚æœæˆ‘ä»¬æƒ³çŸ¥é“æŸä¸ªå­ä¸²æ˜¯å¦å¯ç”±Dictä¸­çš„å‡ ä¸ªå•è¯æ‹¼æ¥è€Œæˆå°±å¯ä»¥ç”¨è¿™æ ·çš„æ–¹å¼å¾—åˆ°ç»“æœ
+     * ï¼ˆæ»¡è¶³æ¡ä»¶ä¸ºTrue, ä¸æ»¡è¶³æ¡ä»¶ä¸ºFalseï¼‰å­˜å…¥åˆ°ä¸€ä¸ªbooleanæ•°ç»„çš„å¯¹åº”ä½ç½®ä¸Šï¼Œè¿™æ ·å­ï¼Œæœ€åboolean
+     * æ•°ç»„çš„æœ€åä¸€ä½å°±æ˜¯F(0, N)çš„å€¼ï¼Œä¸ºTrueè¡¨ç¤ºè¿™ä¸ªå­—ç¬¦ä¸²Så¯ç”±Dictä¸­çš„å•è¯æ‹¼æ¥ï¼Œå¦åˆ™ä¸è¡Œï¼
      * </pre>
      *
      * @param s
@@ -37,12 +37,12 @@ public class Solution {
      * @return
      */
     public boolean wordBreak(String s, Set<String> wordDict) {
-        // ²ÎÊıĞ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1) {
             return false;
         }
 
-        // ±ê¼ÇÊÇ·ñÆ¥Åä£¬match[i]±í±í[0, i-1]¶¼Æ¥Åä
+        // æ ‡è®°æ˜¯å¦åŒ¹é…ï¼Œmatch[i]è¡¨è¡¨[0, i-1]éƒ½åŒ¹é…
         int length = s.length();
         boolean[] match = new boolean[length + 1];
         match[0] = true;
@@ -62,24 +62,24 @@ public class Solution {
     }
 
 
-    // ÏÂÃæÊÇÁíÒ»ÖÖ½â·¨£¬µ«ÊÇ»á³¬Ê±
+    // ä¸‹é¢æ˜¯å¦ä¸€ç§è§£æ³•ï¼Œä½†æ˜¯ä¼šè¶…æ—¶
     public boolean wordBreak2(String s, Set<String> wordDict) {
 
-        // ²ÎÊıĞ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (s == null || s.length() < 1 || wordDict == null || wordDict.size() < 1) {
             return false;
         }
 
         Map<Character, Set<String>> wordMap = new HashMap<>(wordDict.size());
-        // ½«ËùÓĞ¿ªÊ¼×Ö·ûÏàÍ¬µÄµ¥´Ê·ÅÈëÒ»¸öSetÖĞ
+        // å°†æ‰€æœ‰å¼€å§‹å­—ç¬¦ç›¸åŒçš„å•è¯æ”¾å…¥ä¸€ä¸ªSetä¸­
         for (String word : wordDict) {
             Set<String> set = wordMap.get(word.charAt(0));
             if (set == null) {
-                // ĞÂ´´½¨Ò»¸öset·ÅÈëMapÖĞ
+                // æ–°åˆ›å»ºä¸€ä¸ªsetæ”¾å…¥Mapä¸­
                 set = new HashSet<>();
                 wordMap.put(word.charAt(0), set);
             }
-            // µ¥´Ê´æÈësetÖĞ
+            // å•è¯å­˜å…¥setä¸­
             set.add(word);
         }
 
@@ -87,12 +87,12 @@ public class Solution {
     }
 
     /**
-     * ËÑË÷×Ö·û´®ÊÇ·ñ¿ÉÒÔ±»·Ö¸î³Éµ¥´Ê´®
+     * æœç´¢å­—ç¬¦ä¸²æ˜¯å¦å¯ä»¥è¢«åˆ†å‰²æˆå•è¯ä¸²
      *
-     * @param s       ×Ö·û´®
-     * @param idx     ´¦ÀíµÄ¿ªÊ¼Î»ÖÃ
-     * @param wordMap µ¥´Ê×Öµä£¬¿ªÊ¼×Ö·ûÏàÍ¬µÄÔÚÍ¬Ò»¸öset¼¯ºÏÖĞ
-     * @return ËÑË÷½á¹û
+     * @param s       å­—ç¬¦ä¸²
+     * @param idx     å¤„ç†çš„å¼€å§‹ä½ç½®
+     * @param wordMap å•è¯å­—å…¸ï¼Œå¼€å§‹å­—ç¬¦ç›¸åŒçš„åœ¨åŒä¸€ä¸ªseté›†åˆä¸­
+     * @return æœç´¢ç»“æœ
      */
     public boolean wordBreak(String s, int idx, Map<Character, Set<String>> wordMap) {
 
@@ -104,11 +104,11 @@ public class Solution {
 
         if (words != null) {
             for (String word : words) {
-                // idxÖ®Ç°µÄ×Ö·ûÒÑ¾­Æ¥Åä£¬Èç¹û´ÓideÖ®ºóÆğÆ¥Åäwordµ¥´Ê
+                // idxä¹‹å‰çš„å­—ç¬¦å·²ç»åŒ¹é…ï¼Œå¦‚æœä»ideä¹‹åèµ·åŒ¹é…wordå•è¯
                 if (s.startsWith(word, idx)) {
-                    // µİ¹é´¦Àí
+                    // é€’å½’å¤„ç†
                     boolean result = wordBreak(s, idx + word.length(), wordMap);
-                    // Èç¹ûÂú×ãÌõ¼ş£¬·µ»Øtrue
+                    // å¦‚æœæ»¡è¶³æ¡ä»¶ï¼Œè¿”å›true
                     if (result) {
                         return true;
                     }

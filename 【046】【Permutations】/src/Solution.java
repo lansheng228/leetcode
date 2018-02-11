@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:50
  * Declaration: All Rights Reserved !!!
@@ -13,17 +13,17 @@ public class Solution {
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a collection of numbers, return all possible permutations.
      * For example,
      * [1,2,3] have the following permutations:
      * [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÊı×é£¬·µ»ØËûµÄËùÓĞÅÅÁĞ¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªæ•°ç»„ï¼Œè¿”å›ä»–çš„æ‰€æœ‰æ’åˆ—ã€‚
      *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃ·ÖÖÎ·¨Çó½â¡£
+     * è§£é¢˜æ€è·¯
+     * ä½¿ç”¨åˆ†æ²»æ³•æ±‚è§£ã€‚
      * </pre>
      *
      * @param num

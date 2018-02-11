@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:25
  * Declaration: All Rights Reserved !!!
@@ -7,83 +7,14 @@
 public class MinStack {
     private final static int DEFAULT_SIZE = 1000;
     private int[] stack;
-    private int[] minIndex; // ÓÃÓÚ±£´æÇ°n¸öÊı¾İµÄÕ»ÖĞ×îĞ¡ÔªËØµÄÏÂ±ê
-    private int min = Integer.MAX_VALUE; // ÓÃÓÚ¼ÇÂ¼²åÈë¹ı³ÌÖĞµÄ×îĞ¡Êı¾İ
-    private int index = -1; // ¼ÇÂ¼×îĞ¡ÔªËØÔÚstackÖĞµÄÎ»ÖÃ
+    private int[] minIndex; // ç”¨äºä¿å­˜å‰nä¸ªæ•°æ®çš„æ ˆä¸­æœ€å°å…ƒç´ çš„ä¸‹æ ‡
+    private int min = Integer.MAX_VALUE; // ç”¨äºè®°å½•æ’å…¥è¿‡ç¨‹ä¸­çš„æœ€å°æ•°æ®
+    private int index = -1; // è®°å½•æœ€å°å…ƒç´ åœ¨stackä¸­çš„ä½ç½®
     private int current = -1;
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Design a stack that supports push, pop, top, and retrieving
      * the minimum element in constant time.
-     * push(x) ¨C Push element x onto stack.
-     * pop() ¨C Removes the element on top of the stack.
-     * top() ¨C Get the top element.
-     * getMin() ¨C Retrieve the minimum element in the stack.
-     *
-     * ÌâÄ¿´óÒâ
-     * Éè¼ÆÒ»¸öÕ»£¬Ö§³Öpush£¬pop£¬top£¬ºÍ²éÕÒ×îĞ¡µÄÔªËØ²Ù×÷£¨³£Á¿Ê±¼ä£©
-     *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃÒ»¸ö¸¨ÖúÕ»À´±£´æÕ»ÖĞµÄ×îĞ¡ÔªËØ¡£
-     * </pre>
-     */
-    public MinStack() {
-        stack = new int[DEFAULT_SIZE];
-        minIndex = new int[DEFAULT_SIZE];
-    }
-
-    public MinStack(int size) {
-        stack = new int[size];
-        minIndex = new int[size];
-    }
-
-    public void push(int x) {
-        current++; // ÒÆ¶¯µ½Òª²åÈëµÄÎ»ÖÃ
-
-        if (current >= stack.length) { // À©Èİ
-            int[] tmp = new int[current * 2];
-            System.arraycopy(stack, 0, tmp, 0, stack.length);
-            stack = tmp;
-
-            tmp = new int[current * 2];
-            System.arraycopy(minIndex, 0, tmp, 0, minIndex.length);
-            minIndex = tmp;
-        }
-
-        stack[current] = x; // ²åÈëÊı¾İ
-
-        if (x < min) { // ±£´æ²åÈëµÄ×îĞ¡Öµ
-            min = x;
-            index = current; // ¼ÇÂ¼[0, current]ÖĞ×îĞ¡µÄÔªËØÏÂ±êÊÇindex
-        }
-
-        minIndex[current] = index;
-    }
-
-    public void pop() {
-        current--;
-        if (current >= 0) {
-            min = stack[minIndex[current]]; // ÖØĞÂÉèÖÃÕ»ÖĞµÄ×îĞ¡Öµ
-            index = minIndex[current]; // ÖØÖÃ×îĞ¡ÖµµÄË÷Òı
-        }
-    }
-
-    public int top() {
-
-        if (current < 0) {
-            throw new RuntimeException("No more data");
-        }
-
-        return stack[current];
-    }
-
-    public int getMin() {
-        if (current < 0) {
-            throw new RuntimeException("No more data");
-        }
-
-        return stack[minIndex[current]];
-    }
-}
+     * push(x) 

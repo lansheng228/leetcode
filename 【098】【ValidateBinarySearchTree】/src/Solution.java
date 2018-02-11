@@ -1,7 +1,7 @@
 import java.util.Stack;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 18:37
  * Declaration: All Rights Reserved !!!
@@ -11,19 +11,19 @@ public class Solution {
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a binary tree, determine if it is a valid binary search tree (BST).
      * Assume a BST is defined as follows:
-     * The left subtree of a node contains only nodes with keys less than the node¡¯s key.
-     * The right subtree of a node contains only nodes with keys greater than the node¡¯s key.
+     * The left subtree of a node contains only nodes with keys less than the nodeâ€™s key.
+     * The right subtree of a node contains only nodes with keys greater than the nodeâ€™s key.
      * Both the left and right subtrees must also be binary search trees.
      *
-     * ÌâÄ¿´óÒâ
-     * ÑéÖ¤¶ş²æËÑË÷Ê÷
+     * é¢˜ç›®å¤§æ„
+     * éªŒè¯äºŒå‰æœç´¢æ ‘
      *
-     * ½âÌâË¼Â·
-     * ¶Ô¶ş²æËÑË÷Ê÷½øĞĞÖĞĞò±éÀú£¬½á¹û°´Ë³Ğò±£´æÆğÀ´£¬¶ÔÓÚ¶ş²æËÑË÷Ê÷ÖĞĞò±éÀúÆä½á¹ûÓĞ
-     * Ò»¸ö´ÓĞ¡µ½´óµÄÅÅÁĞµÄĞòÁĞ£¬²¢ÇÒÃ»ÓĞÖØÖØÔªËØ£¬ÓÉ´Ë¿ÉÒÔÅĞ¶ÏÒ»¿ÃÊ÷ÊÇ·ñÊÇ¶ş²æËÑË÷Ê÷¡£
+     * è§£é¢˜æ€è·¯
+     * å¯¹äºŒå‰æœç´¢æ ‘è¿›è¡Œä¸­åºéå†ï¼Œç»“æœæŒ‰é¡ºåºä¿å­˜èµ·æ¥ï¼Œå¯¹äºäºŒå‰æœç´¢æ ‘ä¸­åºéå†å…¶ç»“æœæœ‰
+     * ä¸€ä¸ªä»å°åˆ°å¤§çš„æ’åˆ—çš„åºåˆ—ï¼Œå¹¶ä¸”æ²¡æœ‰é‡é‡å…ƒç´ ï¼Œç”±æ­¤å¯ä»¥åˆ¤æ–­ä¸€æ£µæ ‘æ˜¯å¦æ˜¯äºŒå‰æœç´¢æ ‘ã€‚
      * </pre>
      *
      * @param root
@@ -53,7 +53,7 @@ public class Solution {
     }
 
     /**
-     * Èç¹ûÊÇÒ»¿Ã¶ş²æ²éÕÒÊ÷±Ø±ØÊÇÓĞĞòµÄ
+     * å¦‚æœæ˜¯ä¸€æ£µäºŒå‰æŸ¥æ‰¾æ ‘å¿…å¿…æ˜¯æœ‰åºçš„
      *
      * @param root
      */

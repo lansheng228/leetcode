@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:05
  * Declaration: All Rights Reserved !!!
@@ -10,8 +10,8 @@ import java.util.List;
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
-     * Given numRows, generate the first numRows of Pascal¡¯s triangle.
+     * åŽŸé¢˜
+     * Given numRows, generate the first numRows of Pascalâ€™s triangle.
      * For example, given numRows = 5,
      * Return
      *
@@ -23,14 +23,14 @@ public class Solution {
      * [1,4,6,4,1]
      * ]
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÕýÕûÊýn£¬Çón²ãÅÁË¹¿¨Èý½ÇÐÎ¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªæ­£æ•´æ•°nï¼Œæ±‚nå±‚å¸•æ–¯å¡ä¸‰è§’å½¢ã€‚
      *
-     * ½âÌâË¼Â·
-     * ¶ÔÈÎÒâµÄn>0ÓÐ
-     * f(1, n)=1£¬(n>0)
-     * f(1, 2)=1£¬(n=2)
-     * f(i,j) = f(i-1, j-1)+f(i, j-1)£¬i>2,j>2
+     * è§£é¢˜æ€è·¯
+     * å¯¹ä»»æ„çš„n>0æœ‰
+     * f(1, n)=1ï¼Œ(n>0)
+     * f(1, 2)=1ï¼Œ(n=2)
+     * f(i,j) = f(i-1, j-1)+f(i, j-1)ï¼Œi>2,j>2
      * </pre>
      *
      * @param numRows

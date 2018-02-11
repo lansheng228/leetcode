@@ -1,7 +1,7 @@
 import java.util.Set;
 
 /**
- * Author: ������
+ * Author: 王俊超
  * Date: 2015-06-20
  * Time: 08:11
  * Declaration: All Rights Reserved !!!
@@ -29,17 +29,17 @@ public class Solution {
      *   - All words have the same length.
      *   - All words contain only lowercase alphabetic characters.
      *
-     * ��Ŀ���⣺
-     * ���������ʣ�beginWord��endWord������һ���ֵ䣬���Ҵ�beginWordת�͵�endWord����̳��ȣ�
-     *   - һ��ֻ��һ����ĸ���Ա��ı�
-     *   - ÿ���м��ֱ�������ڴʵ���
+     * 题目大意：
+     * 给定两个词（beginWord和endWord），和一个字典，查找从beginWord转型到endWord的最短长度：
+     *   - 一次只有一个字母可以被改变
+     *   - 每个中间字必须存在于词典中
      *
-     * ע�⣺
-     *   - ��������������ı任���У�����0��
-     *   - ���е��ʾ�����ͬ�ĳ��ȡ�
-     *   - ���е���ֻ����Сд��ĸ�ַ���
+     * 注意：
+     *   - 如果不存在这样的变换序列，返回0。
+     *   - 所有单词具有相同的长度。
+     *   - 所有单词只包含小写字母字符。
      *
-     * ����˼·��
+     * 解题思路：
      * </pre>
      *
      * @param beginWord

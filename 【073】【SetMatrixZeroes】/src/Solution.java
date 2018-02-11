@@ -1,37 +1,37 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-07-25
  * Time: 09:27
  * Declaration: All Rights Reserved !!!
  */
 public class Solution {
     public void setZeroes(int[][] matrix) {
-        // µÚÒ»ÐÐ±»ÉèÖÃµÄ±êÖ¾
+        // ç¬¬ä¸€è¡Œè¢«è®¾ç½®çš„æ ‡å¿—
         boolean rowFlag = false;
-        // µÚÒ»ÁÐ±»ÉèÖÃµÄ±êÖ¾
+        // ç¬¬ä¸€åˆ—è¢«è®¾ç½®çš„æ ‡å¿—
         boolean colFlag = false;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 0) {
-                    // ±ê¼ÇµÚÒ»ÐÐÒª±»ÉèÖÃ
+                    // æ ‡è®°ç¬¬ä¸€è¡Œè¦è¢«è®¾ç½®
                     if (i == 0) {
                         rowFlag = true;
                     }
 
-                    // ±ê¼ÇµÚÒ»ÁÐÒª±»ÉèÖÃ
+                    // æ ‡è®°ç¬¬ä¸€åˆ—è¦è¢«è®¾ç½®
                     if (j == 0){
                         colFlag = true;
                     }
 
-                    // ÔÚÐÐÁÐÔÚ±ê¼ÇÒªÉèÖÃÎª0µÄÐÐºÍÁÐ
+                    // åœ¨è¡Œåˆ—åœ¨æ ‡è®°è¦è®¾ç½®ä¸º0çš„è¡Œå’Œåˆ—
                     matrix[0][j] = 0;
                     matrix[i][0] = 0;
                 }
             }
         }
 
-        // ¶ÔµÚ¶þÐÐµÚ¶þÁÐ¿ªÊ¼µÄÔªËØÉèÖÃ0
+        // å¯¹ç¬¬äºŒè¡Œç¬¬äºŒåˆ—å¼€å§‹çš„å…ƒç´ è®¾ç½®0
         for (int i = 1; i < matrix.length; i++) {
             for (int j = 1; j < matrix[0].length; j++) {
                 if (matrix[i][0] == 0 || matrix[0][j] == 0) {
@@ -40,14 +40,14 @@ public class Solution {
             }
         }
 
-        // ÉèÖÃµÚÒ»ÐÐÎª0
+        // è®¾ç½®ç¬¬ä¸€è¡Œä¸º0
         if (rowFlag) {
             for (int j = 0; j < matrix[0].length; j++) {
                 matrix[0][j] = 0;
             }
         }
 
-        // ÉèÖÃµÚÒ»ÁÐÎª0
+        // è®¾ç½®ç¬¬ä¸€åˆ—ä¸º0
         if (colFlag) {
             for (int i = 0; i < matrix.length; i++) {
                 matrix[i][0] = 0;

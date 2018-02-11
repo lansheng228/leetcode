@@ -1,5 +1,5 @@
 /**
- * Author: ������
+ * Author: 王俊超
  * Date: 2015-06-19
  * Time: 20:12
  * Declaration: All Rights Reserved !!!
@@ -12,23 +12,23 @@ public class Solution {
      * Find the minimum element.
      * You may assume no duplicate exists in the array.
      *
-     * ��Ŀ���⣺
-     * ����һ�����������������δ֪��ĳ�������������ת��
-     * ������0 1 2 4 5 6 7���ܳ�Ϊ4 5 6 7 0 1 2����
+     * 题目大意：
+     * 假设一个排序的数组以事先未知的某个中枢进行了旋转。
+     * （即，0 1 2 4 5 6 7可能成为4 5 6 7 0 1 2）。
      *
-     * �ҵ���С��Ԫ�ء�
-     * ����Լ��費�����ظ��������С�
+     * 找到最小的元素。
+     * 你可以假设不存在重复的数组中。
      *
-     * Կ��˼·��
-     * �����������������Ϊ��������Ĳ��֣�ǰһ�����ֺͺ�һ�����ֲ���ǰһ�����򲿷�Ԫ�ض��Ⱥ�һ��Ԫ�ش�
-     * ֻҪ�ҵ���һ��Ԫ�ر�ǰһ�������Ҫ�ҵ�Ԫ��
+     * 钥匙思路：
+     * 二分搜索法，数组分为两个有序的部分，前一个部分和后一个部分并且前一个排序部分元素都比后一个元素大
+     * 只要找到后一个元素比前一个大就是要找的元素
      * </pre>
      *
      * @param nums
      * @return
      */
     public int findMin(int[] nums) {
-        // ��������
+        // 参数检验
         if (nums == null || nums.length < 0) {
             throw new IllegalArgumentException();
         }
@@ -43,23 +43,23 @@ public class Solution {
         while (start < end) {
             mid = start + ((end - start) >> 1);
 //            System.out.println(mid + " " + nums[mid]);
-            // ��һ������ǰ����С���ҵ���
+            // 后一个数比前个数小就找到了
             if (nums[mid] > nums[mid + 1]) {
                 return nums[mid + 1];
             }
-            // ˵���м�ֵ�ڵ�һ�������������
+            // 说明中间值在第一个有序的数组中
             else if (nums[mid] > nums[start]) {
-                // ��ȡmid+1���п���num[mid]�ǵ�һ�����������е����һ��Ԫ��
+                // 不取mid+1是有可能num[mid]是第一个有序数组中的最后一个元素
                 start = mid;
             }
-            // ˵���м�ֵ�ڵڶ��������������
+            // 说明中间值在第二个有序的数组中
             else {
-                // ��ȡmid-1���п���num[mid]�ǵڶ������������еĵ�һ��Ԫ��
+                // 不取mid-1是有可能num[mid]是第二个有序数组中的第一个元素
                 end = mid;
             }
         }
 
-        // ˵�����������������
+        // 说明整个数组是有序的
         return nums[0];
     }
 }

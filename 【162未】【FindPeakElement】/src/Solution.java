@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-19
  * Time: 17:30
  * Declaration: All Rights Reserved !!!
@@ -9,11 +9,11 @@ public class Solution {
      * <pre>
      * A peak element is an element that is greater than its neighbors.
      *
-     * Given an input array where num[i] ¡Ù num[i+1], find a peak element and return its index.
+     * Given an input array where num[i] â‰  num[i+1], find a peak element and return its index.
      *
      * The array may contain multiple peaks, in that case return the index to any one of the peaks is fine.
      *
-     * You may imagine that num[-1] = num[n] = -¡Ş.
+     * You may imagine that num[-1] = num[n] = -âˆ.
      *
      * For example, in array [1, 2, 3, 1], 3 is a peak element and your function should return
      * the index number 2.
@@ -21,19 +21,19 @@ public class Solution {
      * Note:
      * Your solution should be in logarithmic complexity.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¡°·åÖµÔªËØ¡±ÊÇÖ¸Öµ´óÓÚÁÚ¾ÓµÄÔªËØ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * â€œå³°å€¼å…ƒç´ â€æ˜¯æŒ‡å€¼å¤§äºé‚»å±…çš„å…ƒç´ 
      *
-     * ÊäÈëÒ»¸öÊı×énum[i] ¡Ù num[i+1]£¬ÕÒµ½Ò»¸ö·åÖµÔªËØ²¢·µ»ØÆäÏÂ±ê¡£
+     * è¾“å…¥ä¸€ä¸ªæ•°ç»„num[i] â‰  num[i+1]ï¼Œæ‰¾åˆ°ä¸€ä¸ªå³°å€¼å…ƒç´ å¹¶è¿”å›å…¶ä¸‹æ ‡ã€‚
      *
-     * Êı×é¿ÉÄÜ°üº¬¶à¸ö·åÖµ£¬ÕâÖÖÇé¿öÏÂ·µ»ØÆäÖĞÈÎÒâÒ»¸ö¼´¿É¡£
+     * æ•°ç»„å¯èƒ½åŒ…å«å¤šä¸ªå³°å€¼ï¼Œè¿™ç§æƒ…å†µä¸‹è¿”å›å…¶ä¸­ä»»æ„ä¸€ä¸ªå³å¯ã€‚
      *
-     * ¿ÉÒÔ¼ÙÉènum[-1] = num[n] = -¡Ş£¨¿ªÊ¼ÔªËØµÄ×ó²àºÍÄ©Î²ÔªËØµÄÓÒ²à¾ùÎª¸ºÎŞÇî´ó£©
+     * å¯ä»¥å‡è®¾num[-1] = num[n] = -âˆï¼ˆå¼€å§‹å…ƒç´ çš„å·¦ä¾§å’Œæœ«å°¾å…ƒç´ çš„å³ä¾§å‡ä¸ºè´Ÿæ— ç©·å¤§ï¼‰
      *
-     * ÀıÈç£¬Êı×é[1, 2, 3, 1]ÖĞ£¬3ÊÇ·åÖµÔªËØ£¬ÄãµÄº¯ÊıÓ¦¸Ã·µ»ØÏÂ±ê2¡£
+     * ä¾‹å¦‚ï¼Œæ•°ç»„[1, 2, 3, 1]ä¸­ï¼Œ3æ˜¯å³°å€¼å…ƒç´ ï¼Œä½ çš„å‡½æ•°åº”è¯¥è¿”å›ä¸‹æ ‡2ã€‚
      *
-     * ×¢Òâ£º
-     * ½â¾ö·½°¸×îºÃÎª¶ÔÊı¸´ÔÓ¶È¡£
+     * æ³¨æ„ï¼š
+     * è§£å†³æ–¹æ¡ˆæœ€å¥½ä¸ºå¯¹æ•°å¤æ‚åº¦ã€‚
      * </pre>
      *
      * @param nums

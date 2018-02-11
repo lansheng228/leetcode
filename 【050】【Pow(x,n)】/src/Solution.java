@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-23
  * Time: 10:56
  * Declaration: All Rights Reserved !!!
@@ -9,11 +9,11 @@ public class Solution {
      * <pre>
      * Implement pow(x, n).
      *
-     * ÌâÄ¿´óÒâ£º
-     * ÊµÏÖxµÄn´Î·½
+     * é¢˜ç›®å¤§æ„ï¼š
+     * å®ç°xçš„næ¬¡æ–¹
      *
-     * ½âÌâ·½·¨£º
-     * µİ¹éÇó½â
+     * è§£é¢˜æ–¹æ³•ï¼š
+     * é€’å½’æ±‚è§£
      * </pre>
      *
      * @param x
@@ -25,10 +25,10 @@ public class Solution {
             throw new IllegalArgumentException();
         }
 
-        // Ö¸ÊıÕı¸º±ê¼Ç
+        // æŒ‡æ•°æ­£è´Ÿæ ‡è®°
         boolean isNegative = false;
 
-        // ÇónµÄ¾ø¶ÔÖµ
+        // æ±‚nçš„ç»å¯¹å€¼
         if (n < 0) {
             n = -n;
             isNegative = true;
@@ -48,7 +48,7 @@ public class Solution {
             return 1;
         } else {
             double result = pow(x, n / 2);
-            // nÊÇÆæÊı
+            // næ˜¯å¥‡æ•°
             if (n % 2 != 0) {
                 return x * result * result;
             } else {

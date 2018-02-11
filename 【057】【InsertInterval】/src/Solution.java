@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-24
  * Time: 19:33
  * Declaration: All Rights Reserved !!!
@@ -25,13 +25,13 @@ public class Solution {
      *
      * This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»ÏµÁĞ·Ç¸²¸ÇµÄÇø¼ä£¬²åÈëÒ»¸öĞÂµÄÇø¼ä£¬ÓĞ±ØÒªµÄÊ±ºò½øĞĞÇø¼äºÏ²¢
-     * Çø¼ä¿ªÊ¼ÊÇÒÔÆğÊ¼Ê±¼ä½øĞĞºÏ²¢µÄ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ç³»åˆ—éè¦†ç›–çš„åŒºé—´ï¼Œæ’å…¥ä¸€ä¸ªæ–°çš„åŒºé—´ï¼Œæœ‰å¿…è¦çš„æ—¶å€™è¿›è¡ŒåŒºé—´åˆå¹¶
+     * åŒºé—´å¼€å§‹æ˜¯ä»¥èµ·å§‹æ—¶é—´è¿›è¡Œåˆå¹¶çš„
      *
-     * ½âÌâË¼Â·£º
-     * Èç¹ûÔ­À´µÄÇø¼ä±È²åÈëÇø¼äĞ¡¾Í²åÈë½á¹û¼¯£¬Èç¹û²åÈëÇø¼äÓĞÖØµş£¬¸üĞÂ²åÈëÇø¼ä£¬
-     * Èç¹û²åÈëÇø¼äĞ¡ÓÚÔ­À´µÄÇø¼ä£¬ÏÈ²åÈë²åÈëÇø¼ä£¬ÔÙÌí¼Ó´óµÄÇø¼ä
+     * è§£é¢˜æ€è·¯ï¼š
+     * å¦‚æœåŸæ¥çš„åŒºé—´æ¯”æ’å…¥åŒºé—´å°å°±æ’å…¥ç»“æœé›†ï¼Œå¦‚æœæ’å…¥åŒºé—´æœ‰é‡å ï¼Œæ›´æ–°æ’å…¥åŒºé—´ï¼Œ
+     * å¦‚æœæ’å…¥åŒºé—´å°äºåŸæ¥çš„åŒºé—´ï¼Œå…ˆæ’å…¥æ’å…¥åŒºé—´ï¼Œå†æ·»åŠ å¤§çš„åŒºé—´
      * </pre>
      *
      * @param intervals
@@ -40,25 +40,25 @@ public class Solution {
      */
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
 
-        // ±£´æ½á¹ûµÄ¼¯ºÏ
+        // ä¿å­˜ç»“æœçš„é›†åˆ
         List<Interval> result = new LinkedList<>();
 
-        // ÊäÈë¼¯·Ç¿Õ
+        // è¾“å…¥é›†éç©º
         if (intervals != null) {
-            // ±éÀúÔªËØ
+            // éå†å…ƒç´ 
             for (Interval item : intervals) {
-                // newInterval == null ±íÊ¾²åÈëµÄÇø¼äÒÑ¾­´¦ÀíÍêÁË
-                // ½«±È²åÈëÇø¼äĞ¡µÄÇø¼ä¼ÓÈë½á¹û¼¯ÖĞ
+                // newInterval == null è¡¨ç¤ºæ’å…¥çš„åŒºé—´å·²ç»å¤„ç†å®Œäº†
+                // å°†æ¯”æ’å…¥åŒºé—´å°çš„åŒºé—´åŠ å…¥ç»“æœé›†ä¸­
                 if (newInterval == null || item.end < newInterval.start) {
                     result.add(item);
                 }
-                // ½«±È²åÈëÇø¼ä´óµÄÇø¼ä¼ÓÈë½á¹û¼¯ÖĞ£¬Í¬Ê±½«²åÈëµÄÇø¼ä¼ÓÈë½á¹û¼¯
+                // å°†æ¯”æ’å…¥åŒºé—´å¤§çš„åŒºé—´åŠ å…¥ç»“æœé›†ä¸­ï¼ŒåŒæ—¶å°†æ’å…¥çš„åŒºé—´åŠ å…¥ç»“æœé›†
                 else if (item.start > newInterval.end) {
                     result.add(newInterval);
                     result.add(item);
                     newInterval = null;
                 }
-                // ²åÈëÇø¼äÓĞÖØµş£¬¸üĞÂ²åÈëÇø¼ä
+                // æ’å…¥åŒºé—´æœ‰é‡å ï¼Œæ›´æ–°æ’å…¥åŒºé—´
                 else {
                     newInterval.start = Math.min(newInterval.start, item.start);
                     newInterval.end = Math.max(newInterval.end, item.end);
@@ -66,7 +66,7 @@ public class Solution {
             }
         }
 
-        // Èç¹û²åÈëÇø¼ä·Ç¿ÕËµÃ÷²åÈëÇø¼ä»¹Î´±»´¦Àí
+        // å¦‚æœæ’å…¥åŒºé—´éç©ºè¯´æ˜æ’å…¥åŒºé—´è¿˜æœªè¢«å¤„ç†
         if (newInterval != null) {
             result.add(newInterval);
         }

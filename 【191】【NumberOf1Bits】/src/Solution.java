@@ -1,18 +1,18 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-17
  * Time: 21:51
  * Declaration: All Rights Reserved !!!
  */
 public class Solution {
     /**
-     * Write a function that takes an unsigned integer and returns the number of ¡¯1' bits it has
+     * Write a function that takes an unsigned integer and returns the number of â€™1' bits it has
      * (also known as the Hamming weight).
      *
-     * For example, the 32-bit integer ¡¯11' has binary representation 00000000000000000000000000001011,
+     * For example, the 32-bit integer â€™11' has binary representation 00000000000000000000000000001011,
      * so the function should return 3.
      *
-     * ¶ş½øÖÆÊıÖĞµÄÎ»Êı
+     * äºŒè¿›åˆ¶æ•°ä¸­çš„ä½æ•°
      *
      * @param n
      * @return

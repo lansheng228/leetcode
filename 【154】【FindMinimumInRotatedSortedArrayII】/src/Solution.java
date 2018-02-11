@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-21
  * Time: 15:21
  * Declaration: All Rights Reserved !!!
@@ -19,11 +19,11 @@ public class Solution {
      * Find the minimum element.
      * The array may contain duplicates.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¡°²éÕÒĞı×ªÅÅĞòµÄÊı×é×îĞ¡Öµ¡±µÄºóĞø£ºÔÊĞíÖØ¸´ÔªËØ£¬µ«ÊÇÁ½¸ö×ÖÊı×éÒÀÈ»¾Ö²¿ÓĞĞò¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * â€œæŸ¥æ‰¾æ—‹è½¬æ’åºçš„æ•°ç»„æœ€å°å€¼â€çš„åç»­ï¼šå…è®¸é‡å¤å…ƒç´ ï¼Œä½†æ˜¯ä¸¤ä¸ªå­—æ•°ç»„ä¾ç„¶å±€éƒ¨æœ‰åºã€‚
      *
-     * ½âÌâË¼Â·£º
-     * ²ÉÓÃÀà¶ş·ÖËÑË÷Ëã·¨½øĞĞ²éÕÒ
+     * è§£é¢˜æ€è·¯ï¼š
+     * é‡‡ç”¨ç±»äºŒåˆ†æœç´¢ç®—æ³•è¿›è¡ŒæŸ¥æ‰¾
      *
      * </pre>
      *
@@ -31,7 +31,7 @@ public class Solution {
      * @return
      */
     public int findMin(int[] nums) {
-        // ²ÎÊıĞ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (nums == null || nums.length < 1) {
             throw new IllegalArgumentException();
         }
@@ -40,10 +40,10 @@ public class Solution {
         int hi = nums.length - 1;
         int mid = 0;
 
-        // ¿ÉÒÔÅÅ³ıÊı×éÈ«¾ÖÓĞĞòµÄÇé¿ö
+        // å¯ä»¥æ’é™¤æ•°ç»„å…¨å±€æœ‰åºçš„æƒ…å†µ
         while (nums[lo] >= nums[hi]) {
 
-            // Èç¹ûÖ»ÓĞÁ½¸öÔªËØ£¬·µ»ØºóÒ»¸ö
+            // å¦‚æœåªæœ‰ä¸¤ä¸ªå…ƒç´ ï¼Œè¿”å›åä¸€ä¸ª
             if (hi - lo == 1) {
                 mid = hi;
                 break;
@@ -52,17 +52,17 @@ public class Solution {
             mid = lo + ((hi - lo) >> 1);
 
             if (nums[mid] == nums[lo] && nums[mid] == nums[hi]) {
-                // Ö»ÄÜ²ÉÓÃË³ĞòËÑË÷·½·¨£¬²»ÄÜ²ÉÓÃlo++£¬hi--µÄ·½Ê½
-                // ÒòÎªlo¿ÉÄÜÊÇÇ°Ò»¸öÓĞĞòÊı×éµÄ×îºóÒ»¸ö
-                // hiÒ²¿ÉÄÜÊÇºóÒ»¸öÓĞĞòÊı×éµÄµÚÒ»¸ö
+                // åªèƒ½é‡‡ç”¨é¡ºåºæœç´¢æ–¹æ³•ï¼Œä¸èƒ½é‡‡ç”¨lo++ï¼Œhi--çš„æ–¹å¼
+                // å› ä¸ºloå¯èƒ½æ˜¯å‰ä¸€ä¸ªæœ‰åºæ•°ç»„çš„æœ€åä¸€ä¸ª
+                // hiä¹Ÿå¯èƒ½æ˜¯åä¸€ä¸ªæœ‰åºæ•°ç»„çš„ç¬¬ä¸€ä¸ª
                 return sequenceSearch(nums, lo, hi);
             }
 
-            // Èç¹ûmidÔÚÇ°Ò»¸öÓĞĞòÊı×éÖĞ
+            // å¦‚æœmidåœ¨å‰ä¸€ä¸ªæœ‰åºæ•°ç»„ä¸­
             if (nums[mid] >= nums[lo]) {
                 lo = mid;
             }
-            // Èç¹ûmidÔÚºóÒ»¸öÓĞĞòÊı×éÖĞ
+            // å¦‚æœmidåœ¨åä¸€ä¸ªæœ‰åºæ•°ç»„ä¸­
             else if (nums[mid] <= nums[hi]) {
                 hi = mid;
             }
@@ -74,12 +74,12 @@ public class Solution {
     }
 
     /**
-     * Ë³ĞòËÑË÷Êı×éÖĞµÄ×îĞ¡Öµ£¬numsÊÇÓÉÓĞĞòÊı×é°´Ä³¸öÖáĞı×ªµÃÀ´µÄ
+     * é¡ºåºæœç´¢æ•°ç»„ä¸­çš„æœ€å°å€¼ï¼Œnumsæ˜¯ç”±æœ‰åºæ•°ç»„æŒ‰æŸä¸ªè½´æ—‹è½¬å¾—æ¥çš„
      *
-     * @param nums  ËÑË÷Êı×é
-     * @param start ¿ªÊ¼Î»ÖÃ
-     * @param end   ½áÊøÎ»ÖÃ
-     * @return ×îĞ¡Öµ
+     * @param nums  æœç´¢æ•°ç»„
+     * @param start å¼€å§‹ä½ç½®
+     * @param end   ç»“æŸä½ç½®
+     * @return æœ€å°å€¼
      */
     public int sequenceSearch(int[] nums, int start, int end) {
         for (int i = start; i < end; i++) {

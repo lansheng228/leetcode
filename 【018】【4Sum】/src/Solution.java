@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:28
  * Declaration: All Rights Reserved !!!
@@ -12,12 +12,12 @@ import java.util.List;
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given an array S of n integers, are there elements a, b, c, and d in S
      * such that a + b + c + d = target? Find all unique quadruplets in the array
      * which gives the sum of target.
      * Note:
-     * Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a ¡Ü b ¡Ü c ¡Ü d)
+     * Elements in a quadruplet (a,b,c,d) must be in non-descending order. (ie, a â‰¤ b â‰¤ c â‰¤ d)
      * The solution set must not contain duplicate quadruplets.
      *
      * For example, given array S = {1 0 -1 0 -2 2}, and target = 0.
@@ -27,12 +27,12 @@ public class Solution {
      * (-2, -1, 1, 2)
      * (-2,  0, 0, 2)
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÕûÊıÊı×é£¬ÕÒ³öa + b + c + d = targetµÄÎ¨Ò»½â¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„ï¼Œæ‰¾å‡ºa + b + c + d = targetçš„å”¯ä¸€è§£ã€‚
      *
-     * ½âÌâË¼Â·
-     * ÏÈÈ·¶¨aºÍdµÄÁ½¸öÊı£¬¶ÔÓÚaºÍdÁ½¸öÊı£¬²»ÄÜÍ¬Ê±ÖØ¸´Ê¹ÓÃ¡£È»ºóÔÙÈ·¶¨bºÍc£¬Í¬ÑùÕâÁ½¸öÊıÒ²²»ÄÜ
-     * Í¬Ê±ÖØ¸´Ê¹ÓÃ¡£ÕÒ³öËùÓĞÂú×ãÌõ¼şµÄ½â£¬Í¬Ê±¿ÉÒÔ±£Ö¤½â²»ÖØ¸´¡£
+     * è§£é¢˜æ€è·¯
+     * å…ˆç¡®å®šaå’Œdçš„ä¸¤ä¸ªæ•°ï¼Œå¯¹äºaå’Œdä¸¤ä¸ªæ•°ï¼Œä¸èƒ½åŒæ—¶é‡å¤ä½¿ç”¨ã€‚ç„¶åå†ç¡®å®šbå’Œcï¼ŒåŒæ ·è¿™ä¸¤ä¸ªæ•°ä¹Ÿä¸èƒ½
+     * åŒæ—¶é‡å¤ä½¿ç”¨ã€‚æ‰¾å‡ºæ‰€æœ‰æ»¡è¶³æ¡ä»¶çš„è§£ï¼ŒåŒæ—¶å¯ä»¥ä¿è¯è§£ä¸é‡å¤ã€‚
      * </pre>
      *
      * @param num
@@ -45,20 +45,20 @@ public class Solution {
             return result;
         }
 
-        Arrays.sort(num); // ¶ÔÊı×é½øĞĞÅÅĞò
+        Arrays.sort(num); // å¯¹æ•°ç»„è¿›è¡Œæ’åº
 
-        for (int i = 0; i < num.length - 3; i++) { // µÚÒ»¸ö¼ÓÊı
-            if (i > 0 && num[i] == num[i - 1]) { // µÚÒ»¸ö¼ÓÊıÊ¹ÓÃ²»ÖØ¸´
+        for (int i = 0; i < num.length - 3; i++) { // ç¬¬ä¸€ä¸ªåŠ æ•°
+            if (i > 0 && num[i] == num[i - 1]) { // ç¬¬ä¸€ä¸ªåŠ æ•°ä½¿ç”¨ä¸é‡å¤
                 continue;
             }
 
-            for (int j = num.length - 1; j > i + 2; j--) { // µÚËÄ¸ö¼ÓÊı
-                if (j < num.length - 1 && num[j] == num[j + 1]) { // µÚËÄ¸ö¼ÓÊıÊ¹ÓÃ²»ÖØ¸´
+            for (int j = num.length - 1; j > i + 2; j--) { // ç¬¬å››ä¸ªåŠ æ•°
+                if (j < num.length - 1 && num[j] == num[j + 1]) { // ç¬¬å››ä¸ªåŠ æ•°ä½¿ç”¨ä¸é‡å¤
                     continue;
                 }
 
-                int start = i + 1; // µÚ¶ş¸ö¼ÓÊı
-                int end = j - 1; // µÚÈı¸ö¼ÓÊı
+                int start = i + 1; // ç¬¬äºŒä¸ªåŠ æ•°
+                int end = j - 1; // ç¬¬ä¸‰ä¸ªåŠ æ•°
                 int n = target - num[i] - num[j];
 
                 while (start < end) {
@@ -73,19 +73,19 @@ public class Solution {
 
                         do {
                             start++;
-                        } while (start < end && num[start] == num[start - 1]); // ±£Ö¤ÔÙ´ÎÊ¹ÓÃµÚ¶ş¸öÊı²»ÖØ¸´
+                        } while (start < end && num[start] == num[start - 1]); // ä¿è¯å†æ¬¡ä½¿ç”¨ç¬¬äºŒä¸ªæ•°ä¸é‡å¤
 
                         do {
                             end--;
-                        } while (start < end && num[end] == num[end + 1]); // ±£Ö¤ÔÙ´ÎÊ¹ÓÃµÚÈı¸öÊı²»ÖØ¸´
+                        } while (start < end && num[end] == num[end + 1]); // ä¿è¯å†æ¬¡ä½¿ç”¨ç¬¬ä¸‰ä¸ªæ•°ä¸é‡å¤
                     } else if (num[start] + num[end] < n) {
                         do {
                             start++;
-                        } while (start < end && num[start] == num[start - 1]); // ±£Ö¤ÔÙ´ÎÊ¹ÓÃµÚ¶ş¸öÊı²»ÖØ¸´
+                        } while (start < end && num[start] == num[start - 1]); // ä¿è¯å†æ¬¡ä½¿ç”¨ç¬¬äºŒä¸ªæ•°ä¸é‡å¤
                     } else {
                         do {
                             end--;
-                        } while (start < end && num[end] == num[end + 1]); // ±£Ö¤ÔÙ´ÎÊ¹ÓÃµÚÈı¸öÊı²»ÖØ¸´
+                        } while (start < end && num[end] == num[end + 1]); // ä¿è¯å†æ¬¡ä½¿ç”¨ç¬¬ä¸‰ä¸ªæ•°ä¸é‡å¤
                     }
                 }
             }

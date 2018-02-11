@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:32
  * Declaration: All Rights Reserved !!!
@@ -7,18 +7,18 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a non-negative number represented as an array of digits, plus one to the number.
      * The digits are stored such that the most significant digit is at the head of the list.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÓÃÊı×é±íÊ¾µÄÒ»¸öÊı£¬¶ÔËü½øĞĞ¼ÓÒ»²Ù×÷¡£
-     * Ã¿Ò»¸öÊıÎ»¶¼´æ´¢ÔÚÊı×éµÄÒ»¸öÎ»ÖÃÉÏ¡£Êı×éÏÂ±ê´Ó´óµ½Ğ¡±íÊ¾ÊıÎ»´ÓµÍÎ»µ½¸ßÎ»¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªç”¨æ•°ç»„è¡¨ç¤ºçš„ä¸€ä¸ªæ•°ï¼Œå¯¹å®ƒè¿›è¡ŒåŠ ä¸€æ“ä½œã€‚
+     * æ¯ä¸€ä¸ªæ•°ä½éƒ½å­˜å‚¨åœ¨æ•°ç»„çš„ä¸€ä¸ªä½ç½®ä¸Šã€‚æ•°ç»„ä¸‹æ ‡ä»å¤§åˆ°å°è¡¨ç¤ºæ•°ä½ä»ä½ä½åˆ°é«˜ä½ã€‚
      *
-     * ½âÌâË¼Â·
-     * Ö±½ÓÇó½â£¬ÉèÖÃÒ»¸ö½øÎ»±êÖ¾carry£¬³õÖµÎª1£¬±íÊ¾¼Ó1£¬´Ó×îµÍÎ»¿ªÊ¼tmp = a[x] + carry£¬
-     * a[x] = tmp%10£¬carry = tmp/10£¬Èç¹ûcarry²»Îª0¶ÔÏÂÒ»Î»ÔÙ½øĞĞ²Ù×÷£¬Ö±µ½ËùÓĞµÄÊıÎ»´¦ÀíÍê»òÕßcarray
-     * Îª0¾ÍÍË³ö£¬Èç¹û×îºó»¹ÓĞcarray²»Îª0ËµÃ÷Õû¸öÊı×éÒªÀ©Õ¹Ò»¸öÊıÎ»¡£
+     * è§£é¢˜æ€è·¯
+     * ç›´æ¥æ±‚è§£ï¼Œè®¾ç½®ä¸€ä¸ªè¿›ä½æ ‡å¿—carryï¼Œåˆå€¼ä¸º1ï¼Œè¡¨ç¤ºåŠ 1ï¼Œä»æœ€ä½ä½å¼€å§‹tmp = a[x] + carryï¼Œ
+     * a[x] = tmp%10ï¼Œcarry = tmp/10ï¼Œå¦‚æœcarryä¸ä¸º0å¯¹ä¸‹ä¸€ä½å†è¿›è¡Œæ“ä½œï¼Œç›´åˆ°æ‰€æœ‰çš„æ•°ä½å¤„ç†å®Œæˆ–è€…carray
+     * ä¸º0å°±é€€å‡ºï¼Œå¦‚æœæœ€åè¿˜æœ‰carrayä¸ä¸º0è¯´æ˜æ•´ä¸ªæ•°ç»„è¦æ‰©å±•ä¸€ä¸ªæ•°ä½ã€‚
      * </pre>
      *
      * @param digits
@@ -26,19 +26,19 @@ public class Solution {
      */
     public int[] plusOne(int[] digits) {
 
-        int carry = 1; // ½øÎ»±êÖ¾£¬ÏÂÒ»Î»À´µÄ½øÎ»±êÖ¾
+        int carry = 1; // è¿›ä½æ ‡å¿—ï¼Œä¸‹ä¸€ä½æ¥çš„è¿›ä½æ ‡å¿—
         int tmp;
         for (int i = digits.length - 1; i >= 0; i--) {
             tmp = digits[i];
-            digits[i] = (tmp + carry) % 10; // ¼ÆËãµ±Ç°Î»µÄĞÂÖµ
-            carry = (tmp + carry) / 10; // ¼ÆËãĞÂµÄ½øÎ»
+            digits[i] = (tmp + carry) % 10; // è®¡ç®—å½“å‰ä½çš„æ–°å€¼
+            carry = (tmp + carry) / 10; // è®¡ç®—æ–°çš„è¿›ä½
 
-            if (carry == 0) { // Ã»ÓĞ½øÎ»ÁË¾Í¿ÉÒÔÍË³öÁË
+            if (carry == 0) { // æ²¡æœ‰è¿›ä½äº†å°±å¯ä»¥é€€å‡ºäº†
                 break;
             }
         }
 
-        if (carry == 1) { // ×îºó»¹ÓĞÒ»¸ö½øÎ»
+        if (carry == 1) { // æœ€åè¿˜æœ‰ä¸€ä¸ªè¿›ä½
             int[] result = new int[digits.length + 1];
             System.arraycopy(digits, 0, result, 1, digits.length);
             result[0] = carry;

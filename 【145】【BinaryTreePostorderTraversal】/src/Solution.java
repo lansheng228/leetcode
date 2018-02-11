@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 14:54
  * Declaration: All Rights Reserved !!!
@@ -24,26 +24,26 @@ public class Solution {
      *
      * Note: Recursive solution is trivial, could you do it iteratively?
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¿Å¶þ²æÊ÷£¬Êä³öËüµÄºóÐò±éÀúµÄ½áµãÖµ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€é¢—äºŒå‰æ ‘ï¼Œè¾“å‡ºå®ƒçš„åŽåºéåŽ†çš„ç»“ç‚¹å€¼
      *
-     * ×¢Òâ£º
-     *   - µÝ¹é½â·¨ºÜÈÝÒ×£¬Çë³¢ÊÔÌæ´ú·½Ê½
+     * æ³¨æ„ï¼š
+     *   - é€’å½’è§£æ³•å¾ˆå®¹æ˜“ï¼Œè¯·å°è¯•æ›¿ä»£æ–¹å¼
      *
-     * ½âÌâË¼Â·£º
-     * ·ÇµÝ¹é
-     * ¸ù¾ÝºóÐò±éÀúµÄË³Ðò£¬ÏÈ·ÃÎÊ×ó×ÓÊ÷£¬ÔÙ·ÃÎÊÓÒ×ÓÊ÷£¬ºó·ÃÎÊ¸ù½Úµã£¬¶ø¶ÔÓÚÃ¿¸ö×ÓÊ÷À´Ëµ£¬
-     * ÓÖ°´ÕÕÍ¬ÑùµÄ·ÃÎÊË³Ðò½øÐÐ±éÀú£¬ºóÐò±éÀúµÄ·ÇµÝ¹éµÄÊµÏÖÏà¶ÔÀ´ËµÒªÄÑÒ»Ð©£¬Òª±£Ö¤¸ù½Ú
-     * µãÔÚ×ó×ÓÊ÷ºÍÓÒ×ÓÊ÷±»·ÃÎÊºó²ÅÄÜ·ÃÎÊ£¬Ë¼Â·ÈçÏÂ£º
+     * è§£é¢˜æ€è·¯ï¼š
+     * éžé€’å½’
+     * æ ¹æ®åŽåºéåŽ†çš„é¡ºåºï¼Œå…ˆè®¿é—®å·¦å­æ ‘ï¼Œå†è®¿é—®å³å­æ ‘ï¼ŒåŽè®¿é—®æ ¹èŠ‚ç‚¹ï¼Œè€Œå¯¹äºŽæ¯ä¸ªå­æ ‘æ¥è¯´ï¼Œ
+     * åˆæŒ‰ç…§åŒæ ·çš„è®¿é—®é¡ºåºè¿›è¡ŒéåŽ†ï¼ŒåŽåºéåŽ†çš„éžé€’å½’çš„å®žçŽ°ç›¸å¯¹æ¥è¯´è¦éš¾ä¸€äº›ï¼Œè¦ä¿è¯æ ¹èŠ‚
+     * ç‚¹åœ¨å·¦å­æ ‘å’Œå³å­æ ‘è¢«è®¿é—®åŽæ‰èƒ½è®¿é—®ï¼Œæ€è·¯å¦‚ä¸‹ï¼š
      *
-     * ¶ÔÓÚÈÎÒ»½ÚµãP£¬
-     * 1£©ÏÈ½«½ÚµãPÈëÕ»£»
-     * 2£©ÈôP²»´æÔÚ×óº¢×ÓºÍÓÒº¢×Ó£¬»òÕßP´æÔÚ×óº¢×Ó»òÓÒº¢×Ó£¬µ«×óÓÒº¢×ÓÒÑ¾­±»Êä³ö£¬Ôò¿É
-     *      ÒÔÖ±½ÓÊä³ö½ÚµãP£¬²¢½«Æä³öÕ»£¬½«³öÕ»½ÚµãP±ê¼ÇÎªÉÏÒ»¸öÊä³öµÄ½Úµã£¬ÔÙ½«´ËÊ±µÄ
-     *      Õ»¶¥½áµãÉèÎªµ±Ç°½Úµã£»
-     * 3£©Èô²»Âú×ã2£©ÖÐµÄÌõ¼þ£¬Ôò½«PµÄÓÒº¢×ÓºÍ×óº¢×ÓÒÀ´ÎÈëÕ»£¬µ±Ç°½ÚµãÖØÐÂÖÃÎªÕ»¶¥½áµã£¬
-     *      Ö®ºóÖØ¸´²Ù×÷2£©£»
-     * 4£©Ö±µ½Õ»¿Õ£¬±éÀú½áÊø¡£
+     * å¯¹äºŽä»»ä¸€èŠ‚ç‚¹Pï¼Œ
+     * 1ï¼‰å…ˆå°†èŠ‚ç‚¹På…¥æ ˆï¼›
+     * 2ï¼‰è‹¥Pä¸å­˜åœ¨å·¦å­©å­å’Œå³å­©å­ï¼Œæˆ–è€…På­˜åœ¨å·¦å­©å­æˆ–å³å­©å­ï¼Œä½†å·¦å³å­©å­å·²ç»è¢«è¾“å‡ºï¼Œåˆ™å¯
+     *      ä»¥ç›´æŽ¥è¾“å‡ºèŠ‚ç‚¹Pï¼Œå¹¶å°†å…¶å‡ºæ ˆï¼Œå°†å‡ºæ ˆèŠ‚ç‚¹Pæ ‡è®°ä¸ºä¸Šä¸€ä¸ªè¾“å‡ºçš„èŠ‚ç‚¹ï¼Œå†å°†æ­¤æ—¶çš„
+     *      æ ˆé¡¶ç»“ç‚¹è®¾ä¸ºå½“å‰èŠ‚ç‚¹ï¼›
+     * 3ï¼‰è‹¥ä¸æ»¡è¶³2ï¼‰ä¸­çš„æ¡ä»¶ï¼Œåˆ™å°†Pçš„å³å­©å­å’Œå·¦å­©å­ä¾æ¬¡å…¥æ ˆï¼Œå½“å‰èŠ‚ç‚¹é‡æ–°ç½®ä¸ºæ ˆé¡¶ç»“ç‚¹ï¼Œ
+     *      ä¹‹åŽé‡å¤æ“ä½œ2ï¼‰ï¼›
+     * 4ï¼‰ç›´åˆ°æ ˆç©ºï¼ŒéåŽ†ç»“æŸã€‚
      * </pre>
      *
      * @param root
@@ -53,31 +53,31 @@ public class Solution {
         List<Integer> list = new LinkedList<>();
 
         if (root != null) {
-            // Ë«¶Ë¶ÓÁÐ£¬µ±×÷Õ»À´Ê¹ÓÃ
+            // åŒç«¯é˜Ÿåˆ—ï¼Œå½“ä½œæ ˆæ¥ä½¿ç”¨
             Deque<TreeNode> deque = new LinkedList<>();
-            // Ö¸ÏòÇ°Ò»¸ö´¦ÀíµÄ½áµã
+            // æŒ‡å‘å‰ä¸€ä¸ªå¤„ç†çš„ç»“ç‚¹
             TreeNode prev = null;
-            // Ö¸Ïòµ±Ç°´¦ÀíµÄ½áµã
+            // æŒ‡å‘å½“å‰å¤„ç†çš„ç»“ç‚¹
             TreeNode curr;
-            // ¸ù½áµãÈëÕ»
+            // æ ¹ç»“ç‚¹å…¥æ ˆ
             deque.addLast(root);
-            // Õ»·Ç¿Õ
+            // æ ˆéžç©º
             while (!deque.isEmpty()) {
-                // »ñÈ¡Õ»¶¥ÔªËØ£¨²»É¾³ý£©
+                // èŽ·å–æ ˆé¡¶å…ƒç´ ï¼ˆä¸åˆ é™¤ï¼‰
                 curr = deque.getLast();
-                if ((curr.left == null && curr.right == null) // µ±Ç°ÔªËØÎÞ×óÓÒ×ÓÊ÷
-                        // prev == null && curr.left == prev£¬µ±Ç°½áµãÖ»ÓÐ×ó×ÓÊ÷£¬²¢ÇÒ×ó×ÓÊ÷ÒÑ¾­±éÀúÍê
-                        // prev == null && curr.right == prev£¬µ±Ç°½áµãÓÐ×óÓÒ×ÓÊ÷£¬²¢ÇÒ×óÓÒ×ÓÊ÷ÒÑ¾­±éÀúÍê
+                if ((curr.left == null && curr.right == null) // å½“å‰å…ƒç´ æ— å·¦å³å­æ ‘
+                        // prev == null && curr.left == prevï¼Œå½“å‰ç»“ç‚¹åªæœ‰å·¦å­æ ‘ï¼Œå¹¶ä¸”å·¦å­æ ‘å·²ç»éåŽ†å®Œ
+                        // prev == null && curr.right == prevï¼Œå½“å‰ç»“ç‚¹æœ‰å·¦å³å­æ ‘ï¼Œå¹¶ä¸”å·¦å³å­æ ‘å·²ç»éåŽ†å®Œ
                         || (prev != null && (curr.left == prev || curr.right == prev))) {
-                    // É¾³ýÕ»¶¥ÔªËØ
+                    // åˆ é™¤æ ˆé¡¶å…ƒç´ 
                     curr = deque.removeLast();
-                    // ½áµãÖµÈëÕ»
+                    // ç»“ç‚¹å€¼å…¥æ ˆ
                     list.add(curr.val);
-                    // ¸üÐÂÉÏÒ»¸ö´¦ÀíµÄ½áµã
+                    // æ›´æ–°ä¸Šä¸€ä¸ªå¤„ç†çš„ç»“ç‚¹
                     prev = curr;
                 } else {
 
-                    // ×óÓÒ×ÓÊ÷Î´±éÀúÍê£¬½«·Ç¿Õ×óÓÒ×ÓÊ÷ÈëÕ»
+                    // å·¦å³å­æ ‘æœªéåŽ†å®Œï¼Œå°†éžç©ºå·¦å³å­æ ‘å…¥æ ˆ
 
                     if (curr.right != null) {
                         deque.addLast(curr.right);

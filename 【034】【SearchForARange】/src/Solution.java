@@ -1,5 +1,5 @@
 /**
- * Author: ������
+ * Author: 王俊超
  * Date: 2015-08-21
  * Time: 16:55
  * Declaration: All Rights Reserved !!!
@@ -7,25 +7,25 @@
 public class Solution {
     /**
      * <pre>
-     * ԭ��
+     * 原题
      * Given a sorted array of integers, find the starting and ending position of a given target value.
-     * Your algorithm��s runtime complexity must be in the order of O(log n).
+     * Your algorithm’s runtime complexity must be in the order of O(log n).
      * If the target is not found in the array, return [-1, -1].
      * For example,
      * Given [5, 7, 7, 8, 8, 10] and target value 8,
      * return [3, 4].
      *
-     * ��Ŀ����
-     * ����һ���ź�������飬ͬʱ����һ��Ҫ���ҵ�ֵ ���ҳ�������������еĳ�������ʼ�ͽ���λ�á�
-     * �㷨��ʱ�临�Ӷ�Ҫ��Ϊlog(N)��
-     * ���û���ҵ��ͷ���[-1, -1]
+     * 题目大意
+     * 给定一个排好序的数组，同时给定一个要查找的值 ，找出这个数在数组中的出现在起始和结束位置。
+     * 算法的时间复杂度要求为log(N)。
+     * 如果没有找到就返回[-1, -1]
      *
-     * ����˼·
-     * �ٶ������ǵ�������ģ����ö��ֲ����㷨���������Ƿ�������������������ھͷ���[-1,-1]
-     * ������ھͷֱ�����������һ�γ����ֵ�λ�ú��ʼ���ֵ�λ�á��������ֵ�λ��ʱ���ȴ���
-     * �����һ��λ�ÿ�ʼ�ң�������ڴ��ҵ�ֵ����ǰ��һ��λ�ã������ھ�ǰ��2������2��ָ�������ӣ�
-     * ���С�ھ��˻ص�ԭ��λ�õĺ�һ�����в��ң����°�1��2��4�����������ӵķ�ʽ���У�ֱ���ҵ�Ϊֹ��
-     * ���������ȵ�Ԫ��Ҳ��һ���ġ�
+     * 解题思路
+     * 假定数组是递增有序的）先用二分查找算法看数组中是否存在这个数，如果不存在就返回[-1,-1]
+     * 如果存在就分别找这个数最后一次出来现的位置和最开始出现的位置。找最后出现的位置时，先从数
+     * 组最后一个位置开始找，如果大于待找的值，就前近一个位置，还大于就前近2个，以2找指数数增加，
+     * 如果小于就退回到原来位置的后一个进行查找，重新按1，2，4、、、这样子的方式进行，直到找到为止。
+     * 对于找最先的元素也是一样的。
      * </pre>
      *
      * @param A
@@ -41,7 +41,7 @@ public class Solution {
         int lo = 0;
         int hi = A.length - 1;
         int mi = 0;
-        // �����������Ƿ����ֵΪtarget��Ԫ��
+        // 查找数组中是否存在值为target的元素
         while (lo <= hi) {
             mi = lo + (hi - lo) / 2;
             if (target < A[mi]) {
@@ -65,13 +65,13 @@ public class Solution {
     }
 
     /**
-     * ��target���ȳ��ֵ�λ�ã����ҵķ�Χ��[lo, hi]��A[hi]����target��AΪ��������
+     * 找target最先出现的位置，查找的范围是[lo, hi]，A[hi]等于target，A为有序数组
      *
-     * @param A      �����ҵ�����
-     * @param lo     ���ҵ���ʼλ��
-     * @param hi     ���ҵĽ���λ��
-     * @param target ���ҵ�ֵ
-     * @return target���ȳ��ֵ�λ��
+     * @param A      待查找的数组
+     * @param lo     查找的起始位置
+     * @param hi     查找的结束位置
+     * @param target 查找的值
+     * @return target最先出现的位置
      */
     private int searchFirst(int[] A, int lo, int hi, int target) {
 
@@ -87,7 +87,7 @@ public class Solution {
                     gap = 1;
                     hi--;
                 }
-            } else {// ����һ�ε�λ�ú���gap����Ȼ���
+            } else {// 在上一次的位置后退gap个依然相等
                 gap *= 2;
             }
         } while (true);
@@ -95,13 +95,13 @@ public class Solution {
     }
 
     /**
-     * ��target�����ֵ�λ�ã����ҵķ�Χ��[lo, hi]��A[lo]����target��AΪ��������
+     * 找target最后出现的位置，查找的范围是[lo, hi]，A[lo]等于target，A为有序数组
      *
-     * @param A      �����ҵ�����
-     * @param lo     ���ҵ���ʼλ��
-     * @param hi     ���ҵĽ���λ��
-     * @param target ���ҵ�ֵ
-     * @return target�����ֵ�λ��
+     * @param A      待查找的数组
+     * @param lo     查找的起始位置
+     * @param hi     查找的结束位置
+     * @param target 查找的值
+     * @return target最后出现的位置
      */
     private int searchLast(int[] A, int lo, int hi, int target) {
         int gap = 1;
@@ -116,7 +116,7 @@ public class Solution {
                     gap = 1;
                     lo++;
                 }
-            } else {// ����һ�ε�λ��ǰ��gap����Ȼ���
+            } else {// 在上一次的位置前进gap个依然相等
                 gap *= 2;
             }
         } while (true);

@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:02
  * Declaration: All Rights Reserved !!!
@@ -7,7 +7,7 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŽŸé¢˜
      * Given a binary tree, flatten it to a linked list in-place.
      * For example,
      * Given
@@ -32,12 +32,12 @@ public class Solution {
      *          \
      *           6
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¿Ã¶þ²æÊ÷£¬½«Ëü×ª³Éµ¥Á´±í£¬Ê¹ÓÃÔ­µØËã·¨¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€æ£µäºŒå‰æ ‘ï¼Œå°†å®ƒè½¬æˆå•é“¾è¡¨ï¼Œä½¿ç”¨åŽŸåœ°ç®—æ³•ã€‚
      *
-     * ½âÌâË¼Â·
-     * ´Ó¸ù½áµã£¨root£©ÕÒ×ó×ÓÊ÷£¨l£©µÄ×îÓÒ×Ó½áµã£¨x£©£¬½«rootµÄÓÒ×ÓÊ÷£¨r£©½Óµ½xµÄÓÒ×ÓÊ÷ÉÏ£¨xµÄÓÒ×ÓÊ÷Îª¿Õ£©£¬
-     * rootµÄ×ó×ÓÊ÷ÕûÌåµ÷ÕûÎªÓÒ×ÓÊ÷£¬rootµÄ×ó×ÓÊ÷¸³¿Õ¡£
+     * è§£é¢˜æ€è·¯
+     * ä»Žæ ¹ç»“ç‚¹ï¼ˆrootï¼‰æ‰¾å·¦å­æ ‘ï¼ˆlï¼‰çš„æœ€å³å­ç»“ç‚¹ï¼ˆxï¼‰ï¼Œå°†rootçš„å³å­æ ‘ï¼ˆrï¼‰æŽ¥åˆ°xçš„å³å­æ ‘ä¸Šï¼ˆxçš„å³å­æ ‘ä¸ºç©ºï¼‰ï¼Œ
+     * rootçš„å·¦å­æ ‘æ•´ä½“è°ƒæ•´ä¸ºå³å­æ ‘ï¼Œrootçš„å·¦å­æ ‘èµ‹ç©ºã€‚
      * </pre>
      *
      * @param root
@@ -63,6 +63,6 @@ public class Solution {
             }
         }
 
-        head.right = null; // È¥µôÒýÓÃ·½±ãÀ¬»ø»ØÊÕ
+        head.right = null; // åŽ»æŽ‰å¼•ç”¨æ–¹ä¾¿åžƒåœ¾å›žæ”¶
     }
 }

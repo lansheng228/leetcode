@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 11:13
  * Declaration: All Rights Reserved !!!
@@ -17,56 +17,19 @@ public class Solution {
      * For example, given n = 3, a solution set is:
      * "((()))", "(()())", "(())()", "()(())", "()()()"
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨n¶ÔÀ¨ºÅ£¬Êä³öËûÃÇËùÓĞÕıÈ·µÄ×éºÏ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šnå¯¹æ‹¬å·ï¼Œè¾“å‡ºä»–ä»¬æ‰€æœ‰æ­£ç¡®çš„ç»„åˆ
      *
-     * ½âÌâË¼Â·£º
-     * ²ÉÓÃµİ¹éÇó½âÊÔ
+     * è§£é¢˜æ€è·¯ï¼š
+     * é‡‡ç”¨é€’å½’æ±‚è§£è¯•
      * </pre>
      *
      * @param n
      * @return
      */
     public List<String> generateParenthesis(int n) {
-        // ±£´æ½á¹ûµÄ¶ÓÁĞ
+        // ä¿å­˜ç»“æœçš„é˜Ÿåˆ—
         List<String> result = new ArrayList<>();
-        // À¨ºÅÊı´óÓÚ0
+        // æ‹¬å·æ•°å¤§äº0
         if (n > 0) {
-            // ’ÇÊ¹ÓÃÊı×é
-            char[] parentheses = new char[2 * n];
-            // ÎÊÌâÇó½â
-            solve(n, n, parentheses, result);
-        }
-        return result;
-    }
-
-    /**
-     * @param left        Ê£Óà¿ÉÓÃµÄ×óÀ¨ºÅÊı
-     * @param right       Ê£Óà¿ÉÓÃµÄÓÒÀ¨ºÅÊı
-     * @param parentheses µ½ÉÏÒ»´ÎÎªÖ¹À¨ºÅÊ¹ÓÃµÄÇé¿ö
-     * @param result      ´æ·Å½á¹ûµÄ¼¯ºÏ
-     */
-    public void solve(int left, int right, char[] parentheses, List<String> result) {
-
-        // Ê£ÏÂµÄÀ¨ºÅÊı²»ÄÜĞ¡ÓÚ0£¬²¢ÇÒÃ¿´ÎÊ£ÏÂµÄÓÒÀ¨ºÅÊı¶¼²»ÄÜĞ¡ÓÚ×óÀ¨ºÅÊı
-        if (left < 0 || right < 0 || right < left) {
-            // Ê²Ã´¶¼²»ÓÃ×ö
-        }
-        // ×óÓÒÀ¨ºÅ¶¼±»Ê¹ÓÃÍêÁË
-        else if (left == 0 && right == 0) {
-            result.add(new String(parentheses));
-        }
-        // ¿ÉÒÔÊ¹ÓÃ
-        else {
-            // µ±Ç°Ê¹ÓÃµÄÎ»ÖÃ
-            int idx = parentheses.length - left - right;
-            // Ê¹ÓÃ×óÀ¨ºÅ
-            parentheses[idx] = '(';
-            // µİ¹éÇó½â
-            solve(left - 1, right, parentheses, result);
-            // Ê¹ÓÃÓÒÀ¨ºÅ
-            parentheses[idx] = ')';
-            solve(left, right - 1, parentheses, result);
-        }
-    }
-}
+            // 

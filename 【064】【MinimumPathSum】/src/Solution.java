@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 15:59
  * Declaration: All Rights Reserved !!!
@@ -13,19 +13,19 @@ public class Solution {
      *
      * Note: You can only move either down or right at any point in time.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸öm x nµÄ·½¸ñ£¬Ã¿¸öÔªËØµÄÖµ¶¼ÊÇ·Ç¸ºµÄ£¬ÕÒ³ö´Ó×óÉÏ½Ç¶¥µã£¬µ½ÓÒÏÂ½Ç¶¥µãºÍµÄÖµ×îĞ¡µÄÂ·¾¶£¬
-     * ·µ»ØÕÒµ½µÄ×îĞ¡ºÍ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªm x nçš„æ–¹æ ¼ï¼Œæ¯ä¸ªå…ƒç´ çš„å€¼éƒ½æ˜¯éè´Ÿçš„ï¼Œæ‰¾å‡ºä»å·¦ä¸Šè§’é¡¶ç‚¹ï¼Œåˆ°å³ä¸‹è§’é¡¶ç‚¹å’Œçš„å€¼æœ€å°çš„è·¯å¾„ï¼Œ
+     * è¿”å›æ‰¾åˆ°çš„æœ€å°å’Œ
      *
-     * ×¢Òâ£º
-     *   - Ã¿´ÎÖ»ÄÜÏòÏÂ»ñÈ¡ÏòÉÏÒÆ¶¯Ò»¸ö·½¸ñ
+     * æ³¨æ„ï¼š
+     *   - æ¯æ¬¡åªèƒ½å‘ä¸‹è·å–å‘ä¸Šç§»åŠ¨ä¸€ä¸ªæ–¹æ ¼
      *
-     * Ô¿³×Ë¼Â·£º
-     * ·ÖÖÎ·¨£¬
-     * µÚÒ»¸ö£º  S[0][0] = grid[0][0]
-     * µÚÒ»ĞĞ£º  S[0][j] = S[0][j - 1] + grid[0][j]
-     * µÚÒ»ÁĞ£º  S[i][0] = S[i - 1][0] + grid[i][0]
-     * ÆäËüÇé¿ö£ºS[i][j] = min(S[i - 1][j], S[i][j - 1]) + grid[i][j]
+     * é’¥åŒ™æ€è·¯ï¼š
+     * åˆ†æ²»æ³•ï¼Œ
+     * ç¬¬ä¸€ä¸ªï¼š  S[0][0] = grid[0][0]
+     * ç¬¬ä¸€è¡Œï¼š  S[0][j] = S[0][j - 1] + grid[0][j]
+     * ç¬¬ä¸€åˆ—ï¼š  S[i][0] = S[i - 1][0] + grid[i][0]
+     * å…¶å®ƒæƒ…å†µï¼šS[i][j] = min(S[i - 1][j], S[i][j - 1]) + grid[i][j]
      * </pre>
      *
      * @param grid
@@ -33,27 +33,27 @@ public class Solution {
      */
 
     public int minPathSum(int[][] grid) {
-        // ²ÎÊı¼ìÑé
+        // å‚æ•°æ£€éªŒ
         if (grid == null || grid.length < 1 || grid[0].length < 1) {
             return 0;
         }
 
 
         int[][] result = new int[grid.length][grid[0].length];
-        // µÚÒ»¸ö
+        // ç¬¬ä¸€ä¸ª
         result[0][0] = grid[0][0];
 
-        // µÚÒ»ĞĞ
+        // ç¬¬ä¸€è¡Œ
         for (int i = 1; i < result[0].length; i++) {
             result[0][i] = result[0][i - 1] + grid[0][i];
         }
 
-        // µÚÒ»ÁĞ
+        // ç¬¬ä¸€åˆ—
         for (int i = 1; i < result.length; i++) {
             result[i][0] = result[i - 1][0] + grid[i][0];
         }
 
-        // ÆäËüÇé¿ö
+        // å…¶å®ƒæƒ…å†µ
         for (int i = 1; i < result.length; i++) {
             for (int j = 1; j < result[0].length; j++) {
                 result[i][j] = Math.min(result[i - 1][j], result[i][j - 1]) + grid[i][j];
@@ -64,44 +64,44 @@ public class Solution {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // ¶¯Ì¬¹é»®ºÍ·ÖÖ¦ÏŞ½ç£¬ÏÂÃæµÄ·½·¨»á³¬Ê±
+    // åŠ¨æ€å½’åˆ’å’Œåˆ†æé™ç•Œï¼Œä¸‹é¢çš„æ–¹æ³•ä¼šè¶…æ—¶
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public int minPathSum2(int[][] grid) {
-        // ²ÎÊı¼ìÑé
+        // å‚æ•°æ£€éªŒ
         if (grid == null || grid.length < 1 || grid[0].length < 1) {
             return 0;
         }
 
-        // ÓÃÓÚ¼ÇÂ¼×îĞ¡µÄÂ·¾¶¸÷
+        // ç”¨äºè®°å½•æœ€å°çš„è·¯å¾„å„
         int[] minSum = {Integer.MAX_VALUE};
         int[] curSum = {0};
-        // ½âÌâ
+        // è§£é¢˜
         solve(grid, 0, 0, curSum, minSum);
 
-        // ·µ»Ø½á¹û
+        // è¿”å›ç»“æœ
         return minSum[0];
     }
 
     public void solve(int[][] grid, int row, int col, int[] curSum, int[] minSum) {
-        // Èç¹ûÒÑ¾­µ½´ïÖÕµã
+        // å¦‚æœå·²ç»åˆ°è¾¾ç»ˆç‚¹
         if (row == grid.length - 1 && col == grid[0].length - 1) {
             curSum[0] += grid[row][col];
 
-            // ¸üĞÂ×îĞ¡µÄºÍ
+            // æ›´æ–°æœ€å°çš„å’Œ
             if (curSum[0] < minSum[0]) {
                 minSum[0] = curSum[0];
             }
 
             curSum[0] -= grid[row][col];
         }
-        // »¹Î´µ½´ïÖÕµã£¬²¢ÇÒÔÚÍø¸ñÄÚ
+        // è¿˜æœªåˆ°è¾¾ç»ˆç‚¹ï¼Œå¹¶ä¸”åœ¨ç½‘æ ¼å†…
         else if (row >= 0 && row < grid.length && col >= 0 && col < grid[0].length) {
             curSum[0] += grid[row][col];
-            // µ±Ç°µÄºÍÖ»ÓĞ²»Ğ¡ÓÚ¼ÇÂ¼µ½µÄ×îĞ¡Â·¾¶Öµ²ÅÄÜ½øĞĞÏÂÒ»²½²Ù×÷
+            // å½“å‰çš„å’Œåªæœ‰ä¸å°äºè®°å½•åˆ°çš„æœ€å°è·¯å¾„å€¼æ‰èƒ½è¿›è¡Œä¸‹ä¸€æ­¥æ“ä½œ
             if (curSum[0] <= minSum[0]) {
-                // ÏòÓÒ×ß
+                // å‘å³èµ°
                 solve(grid, row, col + 1, curSum, minSum);
-                // ÏòÏÂ×ß
+                // å‘ä¸‹èµ°
                 solve(grid, row + 1, col, curSum, minSum);
             }
             curSum[0] -= grid[row][col];

@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: ������
+ * Author: 王俊超
  * Date: 2015-06-22
  * Time: 19:27
  * Declaration: All Rights Reserved !!!
@@ -31,54 +31,54 @@ public class Solution {
      *  / \    \
      * 4-> 5 -> 7 -> NULL
      *
-     * ��Ŀ���⣺
-     * ����һ�ö�������ÿ�����ڵ���������һ��nextָ�룬ָ������ͬһ������ڵ��ұߵĽڵ㡣��ͬ��Ľ�㶼������
+     * 题目大意：
+     * 给你一棵二叉树，每个树节点中增加了一个next指针，指向了其同一层的相邻的右边的节点。将同层的结点都串起来
      *
-     * ����˼·��
-     * �������в�α�������ÿһ�㴮������
+     * 解题思路：
+     * 对树进行层次遍历，将每一层串接起来
      * </pre>
      *
      * @param root
      */
     public void connect(TreeLinkNode root) {
         if (root != null) {
-            // ������
+            // 保存结点
             List<TreeLinkNode> list = new LinkedList<>();
-            // ��ǰ�����Ľ���ǰһ�����
+            // 当前处理的结点的前一个结点
             TreeLinkNode prev = null;
-            // ��ǰ�����Ľ��
+            // 当前处理的结点
             TreeLinkNode node;
-            // ��ǰ��ʣ��Ľ�����
+            // 当前层剩余的结点个数
             int curr = 1;
-            // ��¼��һ���Ԫ�ظ���
+            // 记录下一层的元素个数
             int next = 0;
 
-            // ��������
+            // 根结点入队
             list.add(root);
 
-            // ���зǿ�
+            // 队列非空
             while (list.size() > 0) {
-                // ɾ������Ԫ��
+                // 删除队首元素
                 node = list.remove(0);
-                // ��ǰ��ʣ��������
+                // 当前层剩余数减少
                 curr--;
 
-                // �������ǿգ����ӽ�����
+                // 左子树非空，左子结点入队
                 if (node.left != null) {
                     list.add(node.left);
                     next++;
                 }
 
-                // �������ǿգ����ӽ�����
+                // 右子树非空，右子结点入队
                 if (node.right != null) {
                     list.add(node.right);
                     next++;
                 }
 
-                // �����ǰ�㴦������
+                // 如果当前层处理完了
                 if (curr == 0) {
 
-                    // ����һ���Ԫ�ؽ��д���
+                    // 对下一层的元素进行串接
                     Iterator<TreeLinkNode> iterable = list.iterator();
                     if (iterable.hasNext()) {
                         prev = iterable.next();
@@ -89,9 +89,9 @@ public class Solution {
                         }
                     }
 
-                    // ���µ�ǰ��ʣ��Ľ����
+                    // 更新当前层剩余的结点数
                     curr = next;
-                    // ����ͳ���²�����
+                    // 重新统计下层结点数
                     next = 0;
                 }
             }

@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:39
  * Declaration: All Rights Reserved !!!
@@ -14,8 +14,8 @@ public class Solution {
 
     /**
      * <pre>
-     * Ô­Ìâ
-     * Given two integers n and k, return all possible combinations of k numbers out of 1 ¡­ n.
+     * åŸé¢˜
+     * Given two integers n and k, return all possible combinations of k numbers out of 1 â€¦ n.
      * For example,
      * If n = 4 and k = 2, a solution is:
      *
@@ -28,11 +28,11 @@ public class Solution {
      *  [1,4],
      * ]
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Á½¸öÊınºÍk£¬Çó´Ó1-nÖĞk¸öÊıµÄËùÓĞ×éºÏ¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸¤ä¸ªæ•°nå’Œkï¼Œæ±‚ä»1-nä¸­kä¸ªæ•°çš„æ‰€æœ‰ç»„åˆã€‚
      *
-     * ½âÌâË¼Â·
-     * ²ÉÓÃµİ¹é·ÖÖÎ·¨½øĞĞÇó½â£¬Ïê¼û´úÂë¡£
+     * è§£é¢˜æ€è·¯
+     * é‡‡ç”¨é€’å½’åˆ†æ²»æ³•è¿›è¡Œæ±‚è§£ï¼Œè¯¦è§ä»£ç ã€‚
      * </pre>
      *
      * @param n
@@ -51,11 +51,11 @@ public class Solution {
     }
 
     /**
-     * Çó×éºÏ
+     * æ±‚ç»„åˆ
      *
-     * @param start ¿ÉÑ¡ÔñµÄÊı¿ªÊ¼Î»ÖÃ
-     * @param end   ¿ÉÑ¡ÔñµÄÊıµÄ½áÊøÎ»ÖÃ
-     * @param num   ÔÚ[start, end]ÖĞÑ¡ÔñµÄÊıµÄÊıÄ¿
+     * @param start å¯é€‰æ‹©çš„æ•°å¼€å§‹ä½ç½®
+     * @param end   å¯é€‰æ‹©çš„æ•°çš„ç»“æŸä½ç½®
+     * @param num   åœ¨[start, end]ä¸­é€‰æ‹©çš„æ•°çš„æ•°ç›®
      */
     private void combine(int start, int end, int num) {
 
@@ -69,7 +69,7 @@ public class Solution {
             return;
         }
 
-        int endFirst = end - num + 1; // µÚÒ»¸öÊı¿ÉÒÔÑ¡ÔñµÄ×î´óÖµ
+        int endFirst = end - num + 1; // ç¬¬ä¸€ä¸ªæ•°å¯ä»¥é€‰æ‹©çš„æœ€å¤§å€¼
         for (int i = start; i <= endFirst; i++) {
             l.add(i);
             combine(i + 1, end, num - 1);

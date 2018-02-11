@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:36
  * Declaration: All Rights Reserved !!!
@@ -7,12 +7,12 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
      * Integers in each row are sorted from left to right.
      * The first integer of each row is greater than the last integer of the previous row.
      * For example,
-     * Consider the following matrix:¡¡¡¡Given target = 3, return true.
+     * Consider the following matrix:ã€€ã€€Given target = 3, return true.
      *
      * [
      *  [1,   3,  5,  7],
@@ -20,12 +20,12 @@ public class Solution {
      *  [23, 30, 34, 50]
      * ]
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸ö¶şÎ¬¾ØÕó£¬ÊµÏÖÒ»¸öËã·¨ÔÚ¾ØÕóÖĞÊµÏÖ¿ìËÙËÑË÷¡£¼´¸ø¶¨k£¬ÔÚ¾ØÕóÖĞËÑË÷k
-     * ¾ØÕóÖĞÏÂÃæµÄĞÔÖÊ£ºÃ¿Ò»ĞĞÃ¿Ò»ÁĞ¶¼ÊÇÅÅºÃĞòµÄ£¬Ã¿Ò»ĞĞµÄµÚÒ»¸öÊı¶¼±ÈÉÏÒ»ĞĞµÄ×îºóÒ»¸öÊı´ó¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªäºŒç»´çŸ©é˜µï¼Œå®ç°ä¸€ä¸ªç®—æ³•åœ¨çŸ©é˜µä¸­å®ç°å¿«é€Ÿæœç´¢ã€‚å³ç»™å®škï¼Œåœ¨çŸ©é˜µä¸­æœç´¢k
+     * çŸ©é˜µä¸­ä¸‹é¢çš„æ€§è´¨ï¼šæ¯ä¸€è¡Œæ¯ä¸€åˆ—éƒ½æ˜¯æ’å¥½åºçš„ï¼Œæ¯ä¸€è¡Œçš„ç¬¬ä¸€ä¸ªæ•°éƒ½æ¯”ä¸Šä¸€è¡Œçš„æœ€åä¸€ä¸ªæ•°å¤§ã€‚
      *
-     * ½âÌâË¼Â·
-     * ½â·¨Ò»£ºÏÈÓÃ¶ş²æ²é¿´ÕÒËã·¨ÕÒµ½Êı×ÖËùÔÚµÄÁĞ£¬ÔÙÓÃ¶ş²æ²éÕÒËã·¨ÕÒÊı×ÖËùÔÚµÄÁĞ¡£ÕÒµ½¾Í·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * è§£é¢˜æ€è·¯
+     * è§£æ³•ä¸€ï¼šå…ˆç”¨äºŒå‰æŸ¥çœ‹æ‰¾ç®—æ³•æ‰¾åˆ°æ•°å­—æ‰€åœ¨çš„åˆ—ï¼Œå†ç”¨äºŒå‰æŸ¥æ‰¾ç®—æ³•æ‰¾æ•°å­—æ‰€åœ¨çš„åˆ—ã€‚æ‰¾åˆ°å°±è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      * </pre>
      *
      * @param matrix
@@ -44,7 +44,7 @@ public class Solution {
         int high = row - 1;
         int mid = 0;
 
-        // ÕÒ½á¹ûËùÔÚµÄÁĞ
+        // æ‰¾ç»“æœæ‰€åœ¨çš„åˆ—
         while (low <= high) {
             mid = low + (high - low) / 2;
 
@@ -57,20 +57,20 @@ public class Solution {
             }
         }
 
-        // ¾ö¶¨ÁĞËùÔÚµÄ×îÖÕÎ»ÖÃ
+        // å†³å®šåˆ—æ‰€åœ¨çš„æœ€ç»ˆä½ç½®
         int targetRow = mid;
         if (matrix[mid][column - 1] < target) {
             targetRow++;
         }
 
-        // Ä¿±êÁĞ³¬³ö£¬ÎŞ½á¹û
+        // ç›®æ ‡åˆ—è¶…å‡ºï¼Œæ— ç»“æœ
         if (targetRow >= row) {
             return false;
         }
 
         low = 0;
         high = column - 1;
-        // ÕÒËùÔÚµÄĞĞ£¬ÕÒµ½·µ»Øtrue£¬Ã»ÓĞ·µ»Øfalse
+        // æ‰¾æ‰€åœ¨çš„è¡Œï¼Œæ‰¾åˆ°è¿”å›trueï¼Œæ²¡æœ‰è¿”å›false
         while (low <= high) {
             mid = low + (high - low) / 2;
 

@@ -1,16 +1,16 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:13
  * Declaration: All Rights Reserved !!!
  */
 public class Solution {
-    private int result = 0; // ¼ÇÂ¼×ÜµÄ½á¹û
-    private int num = 0; // ¼Ç¸ùµ½Ò¶×ÓµÄÊı×Ö
+    private int result = 0; // è®°å½•æ€»çš„ç»“æœ
+    private int num = 0; // è®°æ ¹åˆ°å¶å­çš„æ•°å­—
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a binary tree containing digits from 0-9 only, each root-to-leaf path
      * could represent a number.
      * An example is the root-to-leaf path 1->2->3 which represents the number 123.
@@ -24,11 +24,11 @@ public class Solution {
      * The root-to-leaf path 1->2 represents the number 12.
      * The root-to-leaf path 1->3 represents the number 13.
      * Return the sum = 12 + 13 = 25.
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸ö¶ş²æÊ÷£¬Ã¿¸ö½áµãµÄÖµÊÇ0-9£¬¸ùµ½Ò¶×Ó×é³ÉÒ»¸öÊı×Ö£¬ÇóËùÓĞµÄ¸ùµ½Ò¶×Ó×é³ÉµÄÊı×ÖµÄºÍ¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªäºŒå‰æ ‘ï¼Œæ¯ä¸ªç»“ç‚¹çš„å€¼æ˜¯0-9ï¼Œæ ¹åˆ°å¶å­ç»„æˆä¸€ä¸ªæ•°å­—ï¼Œæ±‚æ‰€æœ‰çš„æ ¹åˆ°å¶å­ç»„æˆçš„æ•°å­—çš„å’Œã€‚
      *
-     * ½âÌâË¼Â·
-     * ²ÉÓÃ»ØËİ·¨¡£
+     * è§£é¢˜æ€è·¯
+     * é‡‡ç”¨å›æº¯æ³•ã€‚
      * </pre>
      *
      * @param root
@@ -43,7 +43,7 @@ public class Solution {
         if (root != null) {
             num = num * 10 + root.val;
 
-            // ÒÑ¾­µ½ÁË¸ù½áµãÁË
+            // å·²ç»åˆ°äº†æ ¹ç»“ç‚¹äº†
             if (root.left == null && root.right == null) {
                 result += num;
             }

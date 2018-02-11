@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:10
  * Declaration: All Rights Reserved !!!
@@ -7,7 +7,7 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a string, determine if it is a palindrome, considering only
      * alphanumeric characters and ignoring cases.
      * For example,
@@ -18,12 +18,12 @@ public class Solution {
      * question to ask during an interview.
      * For the purpose of this problem, we define empty string as valid palindrome.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸ö×Ö·û´®£¬ÅĞ¶ÏËüÊÇ·ñÊÇ»ØÎÄ×Ö·û´®£¬½ö¿¼ÂÇ×ÖÄ¸£¬²¢ÇÒºöÂÔ´óĞ¡Ğ´¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œåˆ¤æ–­å®ƒæ˜¯å¦æ˜¯å›æ–‡å­—ç¬¦ä¸²ï¼Œä»…è€ƒè™‘å­—æ¯ï¼Œå¹¶ä¸”å¿½ç•¥å¤§å°å†™ã€‚
      *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃÊ×Î²Ö¸Õë£¬·Ö±ğÕÒµ½µÚÒ»¸ö·ûºÏÌõ¼şµÄÎ»ÖÃ£¬½øĞĞ±È½Ï£¬Èç¹ûÏàµÈ¾Í½øĞĞÏÂÒ»×é±È½Ï£¬
-     * ²»ÏàµÈ¾Í·µ»Øfalse£¬Ö±µ½ËùÓĞµÄ×ÖÄ¸¶¼´¦ÀíÍê¡£
+     * è§£é¢˜æ€è·¯
+     * ä½¿ç”¨é¦–å°¾æŒ‡é’ˆï¼Œåˆ†åˆ«æ‰¾åˆ°ç¬¬ä¸€ä¸ªç¬¦åˆæ¡ä»¶çš„ä½ç½®ï¼Œè¿›è¡Œæ¯”è¾ƒï¼Œå¦‚æœç›¸ç­‰å°±è¿›è¡Œä¸‹ä¸€ç»„æ¯”è¾ƒï¼Œ
+     * ä¸ç›¸ç­‰å°±è¿”å›falseï¼Œç›´åˆ°æ‰€æœ‰çš„å­—æ¯éƒ½å¤„ç†å®Œã€‚
      * </pre>
      *
      * @param s
@@ -43,11 +43,11 @@ public class Solution {
         char r;
 
         while (left < right) {
-            while (left < s.length() && !isAlphanumericCharacters(s.charAt(left))) { // ´Ó×óÏòÓÒÕÒÊı×ÖÓë×ÖÄ¸
+            while (left < s.length() && !isAlphanumericCharacters(s.charAt(left))) { // ä»å·¦å‘å³æ‰¾æ•°å­—ä¸å­—æ¯
                 left++;
             }
 
-            while (right >= 0 && !isAlphanumericCharacters(s.charAt(right))) { // ´ÓÓÒÏò×óÕÒÊı×ÖÓë×ÖÄ¸
+            while (right >= 0 && !isAlphanumericCharacters(s.charAt(right))) { // ä»å³å‘å·¦æ‰¾æ•°å­—ä¸å­—æ¯
                 right--;
             }
 
@@ -67,10 +67,10 @@ public class Solution {
     }
 
     /**
-     * ÅĞ¶ÏÊÇ·ñÊÇ×ÖÄ¸»òÕßÊı×Ö
+     * åˆ¤æ–­æ˜¯å¦æ˜¯å­—æ¯æˆ–è€…æ•°å­—
      *
-     * @param c ´ıÅĞ¶ÏµÄÊı×Ö
-     * @return ÅĞ¶Ï½á¹û
+     * @param c å¾…åˆ¤æ–­çš„æ•°å­—
+     * @return åˆ¤æ–­ç»“æœ
      */
     private boolean isAlphanumericCharacters(char c) {
         return c >= '0' && c <= '9' || c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';

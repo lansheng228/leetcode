@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-19
  * Time: 14:10
  * Declaration: All Rights Reserved !!!
@@ -14,21 +14,21 @@ public class Solution {
      * two distinct indices i and j in the array such that nums[i] = nums[j] and the
      * difference between i and j is at most k.
      * 
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸öÕûÊıÊı×énumsÓëÒ»¸öÕûÊık£¬µ±ÇÒ½öµ±´æÔÚÁ½¸ö²»Í¬µÄÏÂ±êiºÍjÂú×ãnums[i] = nums[j]
-     * ²¢ÇÒ|i-j|<=kÊ±·µ»Øtrue£¬·ñÔò·µ»Øfalse¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªæ•´æ•°æ•°ç»„numsä¸ä¸€ä¸ªæ•´æ•°kï¼Œå½“ä¸”ä»…å½“å­˜åœ¨ä¸¤ä¸ªä¸åŒçš„ä¸‹æ ‡iå’Œjæ»¡è¶³nums[i] = nums[j]
+     * å¹¶ä¸”|i-j|<=kæ—¶è¿”å›trueï¼Œå¦åˆ™è¿”å›falseã€‚
      *
-     * ½âÌâË¼Â·£º
-     * ¶Ônums[0...n-1]£¬´æÈëÒ»¸ömapÖĞ£¬(muns[i], i)£¬Èç¹û¼ünums[k]ÒÑ¾­´æÔÚ£¬
-     * Ôò±È½ÏÖ®Ç°µÄÏÂ±êºÍÏÖÔÚµÄÏÂ±êµÄ²îÖµ£¬Èç¹û²îÖµ²»´óÓÚk£¬ËµÃ÷µ½ÁËÂú×ãÌõ¼şµÄÁ½¸öÖµ£¬
-     * ·ñÔòÊ¹ÓÃĞÂµÄÏÂ±ê×÷ÎªÖµ
+     * è§£é¢˜æ€è·¯ï¼š
+     * å¯¹nums[0...n-1]ï¼Œå­˜å…¥ä¸€ä¸ªmapä¸­ï¼Œ(muns[i], i)ï¼Œå¦‚æœé”®nums[k]å·²ç»å­˜åœ¨ï¼Œ
+     * åˆ™æ¯”è¾ƒä¹‹å‰çš„ä¸‹æ ‡å’Œç°åœ¨çš„ä¸‹æ ‡çš„å·®å€¼ï¼Œå¦‚æœå·®å€¼ä¸å¤§äºkï¼Œè¯´æ˜åˆ°äº†æ»¡è¶³æ¡ä»¶çš„ä¸¤ä¸ªå€¼ï¼Œ
+     * å¦åˆ™ä½¿ç”¨æ–°çš„ä¸‹æ ‡ä½œä¸ºå€¼
      *
      * @param nums
      * @param k
      * @return
      */
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        // ÊäÈëÌõ¼şÅĞ¶Ï
+        // è¾“å…¥æ¡ä»¶åˆ¤æ–­
         if (nums == null || nums.length < 2 || k < 1) {
             return false;
         }
@@ -36,13 +36,13 @@ public class Solution {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
 
-            // Èç¹ûÃ»ÓĞ¶ÔÓ¦µÄkeyÌí¼Ó½øÈ¥
+            // å¦‚æœæ²¡æœ‰å¯¹åº”çš„keyæ·»åŠ è¿›å»
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], i);
             }
-            // ÒÑ¾­ÓĞ¶ÔÓ¦µÄkey-value¶Ô
+            // å·²ç»æœ‰å¯¹åº”çš„key-valueå¯¹
             else {
-                // Ô­À´±£´æµÄÖµ¶ÔÓ¦µÄÏÂ±ê£¬ËüÒ»¶¨Ğ¡ÓÚÏÖÔÚµÄÏÂ±ê
+                // åŸæ¥ä¿å­˜çš„å€¼å¯¹åº”çš„ä¸‹æ ‡ï¼Œå®ƒä¸€å®šå°äºç°åœ¨çš„ä¸‹æ ‡
                 int value = map.get(nums[i]);
                 if (i - value <= k) {
                     return true;

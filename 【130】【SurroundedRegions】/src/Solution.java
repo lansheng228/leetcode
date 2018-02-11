@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 08:51
  * Declaration: All Rights Reserved !!!
@@ -25,29 +25,29 @@ public class Solution {
      * X X X X
      * X O X X
      *
-     * ÌâÄ¿´óÒâ£º
-     * Ò»¸ö¶þÎ¬·ç¸ñ£¬°üº¬'X'Óë'O'£¬½«ËùÒÔ±»X°üÎ§µÄOÇøÓòÓÃXÌæ´ú£¬·µ»ØÌæ´úºóºó½á¹û
-     * ½âÌâË¼Â·£º
-     * ²ÉÓÃ¹ã¶ÈÓÅÏÈ±éÀúµÄ·½Ê½£¬£¨Ò²¿ÉÒÔ²ÉÓÃ³¢ÊÔÉî¶ÈÓÅÏÈµÄ·½Ê½£¨»áÓÐÕ»Òç³ö£©£©,±ê¼Ç³öËùÓÐµÄ±»°üÎ§µÄµã£¬Ê£ÏÂµÄ¾ÍÊÇ²»±»°üÎ§µÄµã
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ä¸€ä¸ªäºŒç»´é£Žæ ¼ï¼ŒåŒ…å«'X'ä¸Ž'O'ï¼Œå°†æ‰€ä»¥è¢«XåŒ…å›´çš„OåŒºåŸŸç”¨Xæ›¿ä»£ï¼Œè¿”å›žæ›¿ä»£åŽåŽç»“æžœ
+     * è§£é¢˜æ€è·¯ï¼š
+     * é‡‡ç”¨å¹¿åº¦ä¼˜å…ˆéåŽ†çš„æ–¹å¼ï¼Œï¼ˆä¹Ÿå¯ä»¥é‡‡ç”¨å°è¯•æ·±åº¦ä¼˜å…ˆçš„æ–¹å¼ï¼ˆä¼šæœ‰æ ˆæº¢å‡ºï¼‰ï¼‰,æ ‡è®°å‡ºæ‰€æœ‰çš„è¢«åŒ…å›´çš„ç‚¹ï¼Œå‰©ä¸‹çš„å°±æ˜¯ä¸è¢«åŒ…å›´çš„ç‚¹
      * </pre>
      *
      * @param board
      */
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // ÏÂÃæ²ÉÓÃ¹ã¶È¶ÈÓÅÏÈ±éÀúµÄ·½Ê½£¬ÕÒ³öËùÓÐµÄ¡¾²»¡¿±»°üÎ§µÄµã
+    // ä¸‹é¢é‡‡ç”¨å¹¿åº¦åº¦ä¼˜å…ˆéåŽ†çš„æ–¹å¼ï¼Œæ‰¾å‡ºæ‰€æœ‰çš„ã€ä¸ã€‘è¢«åŒ…å›´çš„ç‚¹
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public void solve(char[][] board) {
-        // ²ÎÊýÐ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (board == null || board.length < 1 || board[0].length < 1) {
             return;
         }
 
         boolean[][] visited = new boolean[board.length][board[0].length];
-        // ¹ã¶ÈÓÅÏÈËÑË÷Ê±ÍâÎ§Ò»È¦µÄÔªËØ
+        // å¹¿åº¦ä¼˜å…ˆæœç´¢æ—¶å¤–å›´ä¸€åœˆçš„å…ƒç´ 
         List<Coordinate> round = new LinkedList<>();
-        // ´¦Àí¶¥²¿ÐÐ
+        // å¤„ç†é¡¶éƒ¨è¡Œ
         for (int col = 0; col < board[0].length; col++) {
-            // ¶¥²¿ÐÐ£¬²¢ÇÒµãÊÇO²¢ÇÒµãÎ´±»·ÃÎÊ¹ý
+            // é¡¶éƒ¨è¡Œï¼Œå¹¶ä¸”ç‚¹æ˜¯Oå¹¶ä¸”ç‚¹æœªè¢«è®¿é—®è¿‡
             if (!visited[0][col] && board[0][col] == 'O') {
                 round.clear();
                 round.add(new Coordinate(0, col));
@@ -55,9 +55,9 @@ public class Solution {
             }
         }
 
-        // ´¦Àíµ×²¿ÐÐ
+        // å¤„ç†åº•éƒ¨è¡Œ
         for (int col = 0; col < board[0].length; col++) {
-            // ¶¥²¿ÐÐ£¬²¢ÇÒµãÊÇO²¢ÇÒµãÎ´±»·ÃÎÊ¹ý
+            // é¡¶éƒ¨è¡Œï¼Œå¹¶ä¸”ç‚¹æ˜¯Oå¹¶ä¸”ç‚¹æœªè¢«è®¿é—®è¿‡
             if (!visited[board.length - 1][col] && board[board.length - 1][col] == 'O') {
                 round.clear();
                 round.add(new Coordinate(board.length - 1, col));
@@ -65,9 +65,9 @@ public class Solution {
             }
         }
 
-        // ´¦Àí×ó±ßÁÐ
+        // å¤„ç†å·¦è¾¹åˆ—
         for (int row = 1; row < board.length - 1; row++) {
-            // ¶¥²¿ÐÐ£¬²¢ÇÒµãÊÇO²¢ÇÒµãÎ´±»·ÃÎÊ¹ý
+            // é¡¶éƒ¨è¡Œï¼Œå¹¶ä¸”ç‚¹æ˜¯Oå¹¶ä¸”ç‚¹æœªè¢«è®¿é—®è¿‡
             if (!visited[row][0] && board[row][0] == 'O') {
                 round.clear();
                 round.add(new Coordinate(row, 0));
@@ -75,9 +75,9 @@ public class Solution {
             }
         }
 
-        // ´¦ÀíÓÒ±ßÁÐ
+        // å¤„ç†å³è¾¹åˆ—
         for (int row = 1; row < board.length - 1; row++) {
-            // ¶¥²¿ÐÐ£¬²¢ÇÒµãÊÇO²¢ÇÒµãÎ´±»·ÃÎÊ¹ý
+            // é¡¶éƒ¨è¡Œï¼Œå¹¶ä¸”ç‚¹æ˜¯Oå¹¶ä¸”ç‚¹æœªè¢«è®¿é—®è¿‡
             if (!visited[row][board[0].length - 1] && board[row][board[0].length - 1] == 'O') {
                 round.clear();
                 round.add(new Coordinate(row, board[0].length - 1));
@@ -85,11 +85,11 @@ public class Solution {
             }
         }
 
-        // ±ê¼ÇÍø¸ñ
+        // æ ‡è®°ç½‘æ ¼
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                // Èç¹ûÎ´±»·ÃÎÊ¹ý£¬ÓÐÁ½ÖÖ¿ÉÄÜ£¬µÚÒ»ÊÇXµã£¬µÚ¶þÊÇOµã£¬OµãÒ»¶¨ÊÇ±»X°üÎ§µÄ
-                // ´ËÊ±½«Î´·ÃÎÊ¹ýµÄµãÉèÖÃÎªXÊÇÕýÈ·µÄ
+                // å¦‚æžœæœªè¢«è®¿é—®è¿‡ï¼Œæœ‰ä¸¤ç§å¯èƒ½ï¼Œç¬¬ä¸€æ˜¯Xç‚¹ï¼Œç¬¬äºŒæ˜¯Oç‚¹ï¼ŒOç‚¹ä¸€å®šæ˜¯è¢«XåŒ…å›´çš„
+                // æ­¤æ—¶å°†æœªè®¿é—®è¿‡çš„ç‚¹è®¾ç½®ä¸ºXæ˜¯æ­£ç¡®çš„
                 if (!visited[i][j]) {
                     board[i][j] = 'X';
                 }
@@ -98,11 +98,11 @@ public class Solution {
     }
 
     /**
-     * Éî¶ÈÓÅÏÈ£¬ÕÒ²»±»°üÎ§µÄµã
+     * æ·±åº¦ä¼˜å…ˆï¼Œæ‰¾ä¸è¢«åŒ…å›´çš„ç‚¹
      *
-     * @param board   ¶þÎ¬Íø¸ñ
-     * @param visited ·ÃÎÊ±ê¼ÇÊý×é
-     * @param round   ¹ã¶ÈÓÅÏÈËÑË÷Ê±ÍâÎ§Ò»È¦µÄÔªËØ
+     * @param board   äºŒç»´ç½‘æ ¼
+     * @param visited è®¿é—®æ ‡è®°æ•°ç»„
+     * @param round   å¹¿åº¦ä¼˜å…ˆæœç´¢æ—¶å¤–å›´ä¸€åœˆçš„å…ƒç´ 
      */
     public void bfs(char[][] board, boolean[][] visited, List<Coordinate> round) {
         Coordinate c;
@@ -119,36 +119,36 @@ public class Solution {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // ÏÂÃæ²ÉÓÃ¹ã¶È¶ÈÓÅÏÈ±éÀúµÄ·½Ê½£¬ÕÒ³öËùÓÐµÄ±»°üÎ§µÄµã£¬²¢ÇÒ±ê¼Ç»á³¬Ê±
+    // ä¸‹é¢é‡‡ç”¨å¹¿åº¦åº¦ä¼˜å…ˆéåŽ†çš„æ–¹å¼ï¼Œæ‰¾å‡ºæ‰€æœ‰çš„è¢«åŒ…å›´çš„ç‚¹ï¼Œå¹¶ä¸”æ ‡è®°ä¼šè¶…æ—¶
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public void solve2(char[][] board) {
-        // ²ÎÊýÐ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (board == null || board.length < 1 || board[0].length < 1) {
             return;
         }
 
         boolean[][] visited = new boolean[board.length][board[0].length];
 
-        // ¹ã¶ÈÓÅÏÈËÑË÷Ê±ÍâÎ§Ò»È¦µÄÔªËØ
+        // å¹¿åº¦ä¼˜å…ˆæœç´¢æ—¶å¤–å›´ä¸€åœˆçš„å…ƒç´ 
         List<Coordinate> round = new LinkedList<>();
-        // ¹ã¶ÈÓÅÏÈËÑË÷½øµÄËùÓÐÔªËØ
+        // å¹¿åº¦ä¼˜å…ˆæœç´¢è¿›çš„æ‰€æœ‰å…ƒç´ 
         List<Coordinate> all = new LinkedList<>();
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (!visited[i][j] && board[i][j] == 'O') {
-                    // ¹ã¶ÈÓÅÏÈËÑË÷µÚÒ»È¦µÄÔªËØ
+                    // å¹¿åº¦ä¼˜å…ˆæœç´¢ç¬¬ä¸€åœˆçš„å…ƒç´ 
                     round.add(new Coordinate(i, j));
                     boolean result = bfs(board, visited, round, all);
-                    // Ò»´ÎËÑË÷µÄËùÓÐO¶¼ÔÚÍø¸ñÄÚ£¬²¢ÇÒ²»ÔÚ±ß½çÉÏ
+                    // ä¸€æ¬¡æœç´¢çš„æ‰€æœ‰Oéƒ½åœ¨ç½‘æ ¼å†…ï¼Œå¹¶ä¸”ä¸åœ¨è¾¹ç•Œä¸Š
                     if (result) {
-                        // ÉèÖÃ±ê¼Ç
+                        // è®¾ç½®æ ‡è®°
                         for (Coordinate c : all) {
                             board[c.x][c.y] = 'X';
                         }
                     }
 
-                    // Çå¿ÕÔªËØ
+                    // æ¸…ç©ºå…ƒç´ 
                     round.clear();
                     all.clear();
                 }
@@ -158,13 +158,13 @@ public class Solution {
     }
 
     /**
-     * ¹ã¶ÈÓÅÏÈ±éÀú
+     * å¹¿åº¦ä¼˜å…ˆéåŽ†
      *
-     * @param board   ¶þÎ¬Íø¸ñ
-     * @param visited ·ÃÎÊ±ê¼ÇÊý×é
-     * @param round   ¹ã¶ÈÓÅÏÈËÑË÷Ê±ÍâÎ§Ò»È¦µÄÔªËØ
-     * @param all     ¹ã¶ÈÓÅÏÈËÑË÷½øµÄËùÓÐÔªËØ
-     * @return trueµãÊÇO£¬µãÔÚÍø¸ñÄÚ£¬²¢ÇÒ²»ÔÚ±ß½çÉÏ£¬Èç¹ûµãÊÇX£¬×Ü·µ»Øtrue
+     * @param board   äºŒç»´ç½‘æ ¼
+     * @param visited è®¿é—®æ ‡è®°æ•°ç»„
+     * @param round   å¹¿åº¦ä¼˜å…ˆæœç´¢æ—¶å¤–å›´ä¸€åœˆçš„å…ƒç´ 
+     * @param all     å¹¿åº¦ä¼˜å…ˆæœç´¢è¿›çš„æ‰€æœ‰å…ƒç´ 
+     * @return trueç‚¹æ˜¯Oï¼Œç‚¹åœ¨ç½‘æ ¼å†…ï¼Œå¹¶ä¸”ä¸åœ¨è¾¹ç•Œä¸Šï¼Œå¦‚æžœç‚¹æ˜¯Xï¼Œæ€»è¿”å›žtrue
      */
     public boolean bfs(char[][] board, boolean[][] visited, List<Coordinate> round, List<Coordinate> all) {
         boolean result = true;
@@ -173,31 +173,31 @@ public class Solution {
         while (size > 0) {
             size--;
 
-            // È¡¶ÓÊ×ÔªËØ
+            // å–é˜Ÿé¦–å…ƒç´ 
             c = round.remove(0);
-            // Ìí¼Óµ½±éÀú¼ÇÂ¼ÔªËØ¼¯ºÏÖÐ
+            // æ·»åŠ åˆ°éåŽ†è®°å½•å…ƒç´ é›†åˆä¸­
             all.add(c);
-            // ±ê¼ÇÒÑ¾­±»·ÃÎÊ¹ýÁË
+            // æ ‡è®°å·²ç»è¢«è®¿é—®è¿‡äº†
             visited[c.x][c.y] = true;
-            // ÅÐ¶ÏcÊÇ·ñÊÇOÄÚµã
+            // åˆ¤æ–­cæ˜¯å¦æ˜¯Oå†…ç‚¹
             result &= isInner(board, c.x, c.y);
 
-            // cµÄÉÏÃæÒ»¸öµãÊÇ·ñÊÇO£¬²¢ÇÒÃ»ÓÐ·ÃÎÊ¹ý£¬Âú×ã¾ÍÌí¼Óµ½round¶ÓÁÐÖÐ
+            // cçš„ä¸Šé¢ä¸€ä¸ªç‚¹æ˜¯å¦æ˜¯Oï¼Œå¹¶ä¸”æ²¡æœ‰è®¿é—®è¿‡ï¼Œæ»¡è¶³å°±æ·»åŠ åˆ°roundé˜Ÿåˆ—ä¸­
             if (isO(board, c.x - 1, c.y) && !visited[c.x - 1][c.y]) {
                 round.add(new Coordinate(c.x - 1, c.y));
             }
 
-            // cµÄÓÒÃæÒ»¸öµãÊÇ·ñÊÇO£¬²¢ÇÒÃ»ÓÐ·ÃÎÊ¹ý£¬Âú×ã¾ÍÌí¼Óµ½round¶ÓÁÐÖÐ
+            // cçš„å³é¢ä¸€ä¸ªç‚¹æ˜¯å¦æ˜¯Oï¼Œå¹¶ä¸”æ²¡æœ‰è®¿é—®è¿‡ï¼Œæ»¡è¶³å°±æ·»åŠ åˆ°roundé˜Ÿåˆ—ä¸­
             if (isO(board, c.x, c.y + 1) && !visited[c.x][c.y + 1]) {
                 round.add(new Coordinate(c.x, c.y + 1));
             }
 
-            // cµÄÏÂÃæÒ»¸öµãÊÇ·ñÊÇO£¬²¢ÇÒÃ»ÓÐ·ÃÎÊ¹ý£¬Âú×ã¾ÍÌí¼Óµ½round¶ÓÁÐÖÐ
+            // cçš„ä¸‹é¢ä¸€ä¸ªç‚¹æ˜¯å¦æ˜¯Oï¼Œå¹¶ä¸”æ²¡æœ‰è®¿é—®è¿‡ï¼Œæ»¡è¶³å°±æ·»åŠ åˆ°roundé˜Ÿåˆ—ä¸­
             if (isO(board, c.x + 1, c.y) && !visited[c.x + 1][c.y]) {
                 round.add(new Coordinate(c.x + 1, c.y));
             }
 
-            // cµÄ×óÃæÒ»¸öµãÊÇ·ñÊÇO£¬²¢ÇÒÃ»ÓÐ·ÃÎÊ¹ý£¬Âú×ã¾ÍÌí¼Óµ½round¶ÓÁÐÖÐ
+            // cçš„å·¦é¢ä¸€ä¸ªç‚¹æ˜¯å¦æ˜¯Oï¼Œå¹¶ä¸”æ²¡æœ‰è®¿é—®è¿‡ï¼Œæ»¡è¶³å°±æ·»åŠ åˆ°roundé˜Ÿåˆ—ä¸­
             if (isO(board, c.x, c.y - 1) && !visited[c.x][c.y - 1]) {
                 round.add(new Coordinate(c.x, c.y - 1));
             }
@@ -212,31 +212,31 @@ public class Solution {
     }
 
     /**
-     * ÅÐ¶ÏµãÔÚ¶þÎ¬·ç¸ñÄÚ²¿£¬²¢ÇÒ²»ÔÚ±ß½çÉÏ
+     * åˆ¤æ–­ç‚¹åœ¨äºŒç»´é£Žæ ¼å†…éƒ¨ï¼Œå¹¶ä¸”ä¸åœ¨è¾¹ç•Œä¸Š
      *
-     * @param board ¶þÎ¬Íø¸ñ
-     * @param x     ºá×ø±ê
-     * @param y     ×Ý×ø±ê
-     * @return trueÊÇ
+     * @param board äºŒç»´ç½‘æ ¼
+     * @param x     æ¨ªåæ ‡
+     * @param y     çºµåæ ‡
+     * @return trueæ˜¯
      */
     public boolean isInner(char[][] board, int x, int y) {
         return x > 0 && x < board.length - 1 && y > 0 && y < board[0].length - 1;
     }
 
     /**
-     * ÅÐ¶ÏµãÊÇ·ñÊÇO
+     * åˆ¤æ–­ç‚¹æ˜¯å¦æ˜¯O
      *
-     * @param board ¶þÎ¬Íø¸ñ
-     * @param x     ºá×ø±ê
-     * @param y     ×Ý×ø±ê
-     * @return trueÊÇ
+     * @param board äºŒç»´ç½‘æ ¼
+     * @param x     æ¨ªåæ ‡
+     * @param y     çºµåæ ‡
+     * @return trueæ˜¯
      */
     public boolean isO(char[][] board, int x, int y) {
         return x >= 0 && x < board.length && y >= 0 && y < board[0].length && board[x][y] == 'O';
     }
 
     /**
-     * ×ø±ê¶ÔÏó
+     * åæ ‡å¯¹è±¡
      */
     public static class Coordinate {
         private int x;

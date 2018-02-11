@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-24
  * Time: 20:42
  * Declaration: All Rights Reserved !!!
@@ -18,19 +18,19 @@ public class Solution {
      * The function prototype should be:
      * bool isMatch(const char *s, const char *p)
      * Some examples:
-     * isMatch("aa","a") ¡ú false
-     * isMatch("aa","aa") ¡ú true
-     * isMatch("aaa","aa") ¡ú false
-     * isMatch("aa", "a*") ¡ú true
-     * isMatch("aa", ".*") ¡ú true
-     * isMatch("ab", ".*") ¡ú true
-     * isMatch("aab", "c*a*b") ¡ú true
+     * isMatch("aa","a") â†’ false
+     * isMatch("aa","aa") â†’ true
+     * isMatch("aaa","aa") â†’ false
+     * isMatch("aa", "a*") â†’ true
+     * isMatch("aa", ".*") â†’ true
+     * isMatch("ab", ".*") â†’ true
+     * isMatch("aab", "c*a*b") â†’ true
      *
-     * ÌâÄ¿´óÒâ£º
-     * ÊµÏÖÒ»¸öÕıÔò±í´ïÊ½Æ¥ÅäËã·¨£¬.Æ¥ÅäÈÎÒâÒ»¸ö×Ö·û£¬*Æ¥Åä0¸ö»òÕß¶à¸öÇ°µ¼×Ö·û
+     * é¢˜ç›®å¤§æ„ï¼š
+     * å®ç°ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…ç®—æ³•ï¼Œ.åŒ¹é…ä»»æ„ä¸€ä¸ªå­—ç¬¦ï¼Œ*åŒ¹é…0ä¸ªæˆ–è€…å¤šä¸ªå‰å¯¼å­—ç¬¦
      *
-     * Ô¿³×Ë¼Â·£º
-     * ¼ûÌâ×¢ÊÍ
+     * é’¥åŒ™æ€è·¯ï¼š
+     * è§é¢˜æ³¨é‡Š
      *
      * </pre>
      *
@@ -61,13 +61,13 @@ public class Solution {
         return match[0];
     }
 
-    // ÏÂÃæµÄ´úÂëÓÃÊ±±È½Ï³¤
+    // ä¸‹é¢çš„ä»£ç ç”¨æ—¶æ¯”è¾ƒé•¿
     public boolean isMatch2(String s, String p) {
-        // ÊäÈë¶¼Îªnull
+        // è¾“å…¥éƒ½ä¸ºnull
         if (s == null && p == null) {
             return true;
         }
-        // ÓĞÒ»¸öÎªnull
+        // æœ‰ä¸€ä¸ªä¸ºnull
         else if (s == null || p == null) {
             return false;
         }
@@ -76,39 +76,39 @@ public class Solution {
     }
 
     /**
-     * ÕıÔò±í´ïÊ½Æ¥Åä
+     * æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…
      *
-     * @param s    Æ¥Åä´®
-     * @param sIdx µ±Ç°Æ¥ÅäµÄÎ»ÖÃ
-     * @param p    Ä£Ê½´®
-     * @param pIdx Ä£Ê½´®µÄÆ¥ÅäÎ»ÖÃ
-     * @return Æ¥Åä½á¹û
+     * @param s    åŒ¹é…ä¸²
+     * @param sIdx å½“å‰åŒ¹é…çš„ä½ç½®
+     * @param p    æ¨¡å¼ä¸²
+     * @param pIdx æ¨¡å¼ä¸²çš„åŒ¹é…ä½ç½®
+     * @return åŒ¹é…ç»“æœ
      */
     public boolean isMatch(String s, int sIdx, String p, int pIdx) {
-        // Í¬Ê±µ½¸÷×ÔµÄÄ©Î²
+        // åŒæ—¶åˆ°å„è‡ªçš„æœ«å°¾
         if (s.length() == sIdx && p.length() == pIdx) {
             return true;
         }
-        // µ±Æ¥Åä´®Ã»ÓĞµ½´ïÄ©Î²£¬Ä£Ê½´®ÒÑ¾­µ½ÁËÄ©Î²
+        // å½“åŒ¹é…ä¸²æ²¡æœ‰åˆ°è¾¾æœ«å°¾ï¼Œæ¨¡å¼ä¸²å·²ç»åˆ°äº†æœ«å°¾
         else if (s.length() != sIdx && p.length() == pIdx) {
             return false;
         }
-        // ÆäËüÇé¿ö
+        // å…¶å®ƒæƒ…å†µ
         else {
-            // Èç¹ûµ±Ç°Æ¥ÅäµÄÏÂÒ»¸ö×Ö·ûÊÇ*ºÅ
+            // å¦‚æœå½“å‰åŒ¹é…çš„ä¸‹ä¸€ä¸ªå­—ç¬¦æ˜¯*å·
             if (pIdx < p.length() - 1 && p.charAt(pIdx + 1) == '*') {
-                // Æ¥Åä´®Î´½áÊø²¢ÇÒµ±Ç°×Ö·ûÆ¥Åä£¨×Ö·ûÏàµÈ»òÕßÊÇ.ºÅ£©
+                // åŒ¹é…ä¸²æœªç»“æŸå¹¶ä¸”å½“å‰å­—ç¬¦åŒ¹é…ï¼ˆå­—ç¬¦ç›¸ç­‰æˆ–è€…æ˜¯.å·ï¼‰
                 if (sIdx < s.length() && (s.charAt(sIdx) == p.charAt(pIdx) || p.charAt(pIdx) == '.')) {
-                    return isMatch(s, sIdx + 1, p, pIdx + 2) // Æ¥Åä´®ÏòÇ°ÒÆ¶¯Ò»¸ö×Ö·û£¨Ö»Æ¥ÅäÒ»´Î£©
-                            || isMatch(s, sIdx + 1, p, pIdx) //  Æ¥Åä´®ÏòÇ°ÒÆ¶¯Ò»¸ö×Ö·û£¨ÏÂÒ»´ÎÆ¥ÅäÍ¬ÑùµÄ£¨Ä£Ê½´®²»¶¯£©£©
-                            || isMatch(s, sIdx, p, pIdx + 2); // ºöÂÔÆ¥ÅäµÄÄ£Ê½´®
+                    return isMatch(s, sIdx + 1, p, pIdx + 2) // åŒ¹é…ä¸²å‘å‰ç§»åŠ¨ä¸€ä¸ªå­—ç¬¦ï¼ˆåªåŒ¹é…ä¸€æ¬¡ï¼‰
+                            || isMatch(s, sIdx + 1, p, pIdx) //  åŒ¹é…ä¸²å‘å‰ç§»åŠ¨ä¸€ä¸ªå­—ç¬¦ï¼ˆä¸‹ä¸€æ¬¡åŒ¹é…åŒæ ·çš„ï¼ˆæ¨¡å¼ä¸²ä¸åŠ¨ï¼‰ï¼‰
+                            || isMatch(s, sIdx, p, pIdx + 2); // å¿½ç•¥åŒ¹é…çš„æ¨¡å¼ä¸²
                 } else {
-                    // ºöÂÔ*
+                    // å¿½ç•¥*
                     return isMatch(s, sIdx, p, pIdx + 2);
                 }
             }
 
-            // Æ¥ÅäÒ»¸ö×Ö·û
+            // åŒ¹é…ä¸€ä¸ªå­—ç¬¦
             if (sIdx < s.length() && (s.charAt(sIdx) == p.charAt(pIdx) || p.charAt(pIdx) == '.')) {
                 return isMatch(s, sIdx + 1, p, pIdx + 1);
             }

@@ -1,7 +1,7 @@
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-23
  * Time: 08:51
  * Declaration: All Rights Reserved !!!
@@ -25,11 +25,11 @@ public class Solution {
      * Bonus point if you are able to do this using only O(n) extra space,
      * where n is the total number of rows in the triangle.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸öÈý½ÇÐÎ£¬ÕÒ³ö´Ó¶¥µ½µ×µÄ×îÐ¡Â·¾¶ºÍ£¬Ã¿Ò»²½¿ÉÒÔ´ÓÉÏÒ»ÐÐÒÆ¶¯µ½ÏÂÒ»ÐÐÏàÁÚµÄÊý×Ö
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªä¸‰è§’å½¢ï¼Œæ‰¾å‡ºä»Žé¡¶åˆ°åº•çš„æœ€å°è·¯å¾„å’Œï¼Œæ¯ä¸€æ­¥å¯ä»¥ä»Žä¸Šä¸€è¡Œç§»åŠ¨åˆ°ä¸‹ä¸€è¡Œç›¸é‚»çš„æ•°å­—
      *
-     * ½âÌâË¼Â·£º
-     * µÝÍÆ·½³Ì£º
+     * è§£é¢˜æ€è·¯ï¼š
+     * é€’æŽ¨æ–¹ç¨‹ï¼š
      * f(0,0)=a[0][0]
      * f(i,0)=a[i][0]+f(i-1,0) (i>0)
      * f(i,i)=a[i][i]+f(i-1,i-1)(i>0)
@@ -44,16 +44,16 @@ public class Solution {
         if (triangle == null || triangle.size() < 1) {
             return 0;
         }
-        // ´´½¨Êý×éµÄµÚ¶þÎ¬¶È
+        // åˆ›å»ºæ•°ç»„çš„ç¬¬äºŒç»´åº¦
         int[][] minSum = new int[triangle.size()][];
 
-        // ´´½¨Êý×éµÄµÚÒ»Î¬¶È
+        // åˆ›å»ºæ•°ç»„çš„ç¬¬ä¸€ç»´åº¦
         for (int i = 0; i < minSum.length; i++) {
             minSum[i] = new int[i + 1];
         }
-        // ÉèÖÃµÚÒ»ÐÐ
+        // è®¾ç½®ç¬¬ä¸€è¡Œ
         minSum[0][0] = triangle.get(0).get(0);
-        // ÉèÖÃÆäËüÐÐ
+        // è®¾ç½®å…¶å®ƒè¡Œ
         for (int i = 1; i < minSum.length; i++) {
             List<Integer> line = triangle.get(i);
             for (int j = 0; j < minSum[i].length; j++) {
@@ -66,7 +66,7 @@ public class Solution {
                 }
             }
         }
-        //ÕÒ×îºóÒ»ÐÐµÄ×îÐ¡Öµ¾ÍÊÇËùÇóµÄ½â
+        //æ‰¾æœ€åŽä¸€è¡Œçš„æœ€å°å€¼å°±æ˜¯æ‰€æ±‚çš„è§£
         int min = minSum[minSum.length - 1][0];
         int length = minSum[minSum.length - 1].length;
         for (int i = 1; i < length; i++) {

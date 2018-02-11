@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 15:42
  * Declaration: All Rights Reserved !!!
@@ -12,43 +12,8 @@ public class Solution {
      * If you were only permitted to complete at most one transaction (ie, buy one and sell
      * one share of the stock), design an algorithm to find the maximum profit.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸øÒ»¸öÊı×éprices[]£¬prices[i]´ú±í¹ÉÆ±ÔÚµÚiÌìµÄÊÛ¼Û£¬Çó³öÖ»×öÒ»´Î½»Ò×(Ò»´ÎÂòÈëºÍÂô³ö)ÄÜµÃµ½µÄ×î´óÊÕÒæ¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™ä¸€ä¸ªæ•°ç»„prices[]ï¼Œprices[i]ä»£è¡¨è‚¡ç¥¨åœ¨ç¬¬iå¤©çš„å”®ä»·ï¼Œæ±‚å‡ºåªåšä¸€æ¬¡äº¤æ˜“(ä¸€æ¬¡ä¹°å…¥å’Œå–å‡º)èƒ½å¾—åˆ°çš„æœ€å¤§æ”¶ç›Šã€‚
      *
-     * ½âÌâË¼Â·£º
-     * Ö»ĞèÒªÕÒ³ö×î´óµÄ²îÖµ¼´¿É£¬¼´ max(prices[j] ¨C prices[i]) £¬i < j¡£Ò»´Î±éÀú¼´¿É£¬ÔÚ±éÀúµÄÊ±¼äÓÃ±éÀú
-     * low¼ÇÂ¼ prices[o....i] ÖĞµÄ×îĞ¡Öµ£¬¾ÍÊÇµ±Ç°ÎªÖ¹µÄ×îµÍÊÛ¼Û£¬Ê±¼ä¸´ÔÓ¶ÈÎª O(n)¡£
-     * </pre>
-     *
-     * @param prices
-     * @return
-     */
-    public int maxProfit(int[] prices) {
-
-        if (prices == null || prices.length < 1) {
-            return 0;
-        }
-
-        int min = prices[0];
-        int profit = 0;
-
-        // µÚiÌìµÄ¼Û¸ñ¿ÉÒÔ¿´×÷ÊÇÂòÈë¼ÛÒ²¿ÉÒÔ¿´×÷ÊÇÂô³ö¼Û
-        for (int i = 1; i < prices.length; i++) {
-            // ÕÒµ½¸üµÍµÄÂòÈë¼Û
-            if (min > prices[i]) {
-                // ¸üĞÂÂòÈë¼Û
-                min = prices[i];
-            }
-            // µ±ÌìµÄ¼Û¸ñ²»µÍÓÚÂòÈë¼Û
-            else {
-                // Èç¹ûµ±ÌìÂò³öµÄ¼Û¸ñ±ÈÖ®Ç°Âô³öµÄ¼Û¸ñ¸ß
-                if (profit < prices[i] - min) {
-                    // ¸üĞÂÂô³ö¼Û
-                    profit = prices[i] - min;
-                }
-            }
-        }
-
-        return profit;
-    }
-}
+     * è§£é¢˜æ€è·¯ï¼š
+     * åªéœ€è¦æ‰¾å‡ºæœ€å¤§çš„å·®å€¼å³å¯ï¼Œå³ max(prices[j] 

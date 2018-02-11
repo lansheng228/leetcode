@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:08
  * Declaration: All Rights Reserved !!!
@@ -7,23 +7,23 @@
 public class Solution {
     /**
      * <pre>
-     *     Ô­Ìâ
-     * The string ¡°PAYPALISHIRING¡± is written in a zigzag pattern on a given number
+     *     åŸé¢˜
+     * The string â€œPAYPALISHIRINGâ€ is written in a zigzag pattern on a given number
      * of rows like this: (you may want to display this pattern in a fixed font for
      * better legibility)
-     * ¡¡¡¡P A H N
-     * ¡¡¡¡APLSIIG
-     * ¡¡¡¡Y I R
-     * And then read line by line: ¡°PAHNAPLSIIGYIR¡±
+     * ã€€ã€€P A H N
+     * ã€€ã€€APLSIIG
+     * ã€€ã€€Y I R
+     * And then read line by line: â€œPAHNAPLSIIGYIRâ€
      * Write the code that will take a string and make this conversion given a number of rows:
      * string convert(string text, int nRows);
-     * convert(¡°PAYPALISHIRING¡±,3) should return ¡°PAHNAPLSIIGYIR¡±.
-     * ÌâÄ¿´óÒâ
-     * ÊäÈëÒ»¸ö×Ö·û´®ºÍÖ¸¶¨µÄĞĞÊı£¬½«×Ö·ûÒÔZ×ÖĞÍÊä³ö¡£
+     * convert(â€œPAYPALISHIRINGâ€,3) should return â€œPAHNAPLSIIGYIRâ€.
+     * é¢˜ç›®å¤§æ„
+     * è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²å’ŒæŒ‡å®šçš„è¡Œæ•°ï¼Œå°†å­—ç¬¦ä»¥Zå­—å‹è¾“å‡ºã€‚
      *
-     * ½âÌâË¼Â·
-     * ¼ÆËã³ö×Ö·ûµÄ×î´óÁĞÊı£¬¸ù¾İÁĞÊıºÍĞĞÊı´´½¨Ò»¸öÒ»Î¬Êı×é£¬ÔÙ¼ÆËãÃ¿¸ö×Ö·ûÖĞÒ»Î¬Êı×éÖĞµÄÎ»ÖÃ£¬
-     * ÔÙ¶ÔÒ»Î¬Êı×éÖĞµÄ×Ö·û½øĞĞ½ô´Õ²Ù×÷£¬·µ»Ø½á¹û¡£
+     * è§£é¢˜æ€è·¯
+     * è®¡ç®—å‡ºå­—ç¬¦çš„æœ€å¤§åˆ—æ•°ï¼Œæ ¹æ®åˆ—æ•°å’Œè¡Œæ•°åˆ›å»ºä¸€ä¸ªä¸€ç»´æ•°ç»„ï¼Œå†è®¡ç®—æ¯ä¸ªå­—ç¬¦ä¸­ä¸€ç»´æ•°ç»„ä¸­çš„ä½ç½®ï¼Œ
+     * å†å¯¹ä¸€ç»´æ•°ç»„ä¸­çš„å­—ç¬¦è¿›è¡Œç´§å‡‘æ“ä½œï¼Œè¿”å›ç»“æœã€‚
      * </pre>
      *
      * @param s
@@ -37,37 +37,37 @@ public class Solution {
         }
 
         int index = s.length();
-        int rowLength = 0; // ¼ÆËãĞĞµÄ³¤¶È£¬°üÀ¨×îºó»»ĞĞ×Ö·û
+        int rowLength = 0; // è®¡ç®—è¡Œçš„é•¿åº¦ï¼ŒåŒ…æ‹¬æœ€åæ¢è¡Œå­—ç¬¦
 
-        int slash = nRows - 2; // Ò»¸öĞ±Ïß³ıÈ¥Ê×Î²ËùÕ¼ÓÃµÄĞĞÊı
+        int slash = nRows - 2; // ä¸€ä¸ªæ–œçº¿é™¤å»é¦–å°¾æ‰€å ç”¨çš„è¡Œæ•°
 
         while (index > 0) {
-            // ÊúĞÎµÄÒ»ÁĞ
+            // ç«–å½¢çš„ä¸€åˆ—
             index -= nRows;
             rowLength++;
 
-            // Ğ±×ÅµÄÁĞÊı
+            // æ–œç€çš„åˆ—æ•°
             for (int i = 0; i < slash && index > 0; i++) {
                 rowLength++;
                 index--;
             }
         }
 
-        char[] result = new char[nRows * rowLength]; // ±£´æ½á¹ûµÄÊı×é£¬×îºóÒ»ÁĞÓÃÓÚ±£´æ»»ĞĞ·û
-        for (int i = 0; i < result.length; i++) { // ³õÊ¼»¯Îª¿Õ¸ñ
+        char[] result = new char[nRows * rowLength]; // ä¿å­˜ç»“æœçš„æ•°ç»„ï¼Œæœ€åä¸€åˆ—ç”¨äºä¿å­˜æ¢è¡Œç¬¦
+        for (int i = 0; i < result.length; i++) { // åˆå§‹åŒ–ä¸ºç©ºæ ¼
             result[i] = ' ';
         }
 
-        int curColumn = 0; // µ±Ç°´¦ÀíµÄĞĞÊı
+        int curColumn = 0; // å½“å‰å¤„ç†çš„è¡Œæ•°
         index = 0;
         while (index < s.length()) {
-            // ´¦ÀíÊúÏß
+            // å¤„ç†ç«–çº¿
             for (int i = 0; i < nRows && index < s.length(); i++) {
                 result[rowLength * i + curColumn] = s.charAt(index);
                 index++;
             }
             curColumn++;
-            // ´¦ÀíĞ±Ïß
+            // å¤„ç†æ–œçº¿
             for (int i = nRows - 2; i > 0 && index < s.length(); i--) {
                 result[rowLength * i + curColumn] = s.charAt(index);
                 curColumn++;
@@ -75,14 +75,14 @@ public class Solution {
             }
         }
 
-        // ¶Ô×Ö·ûÊı×é½øĞĞ½ô´Õ²Ù×÷
+        // å¯¹å­—ç¬¦æ•°ç»„è¿›è¡Œç´§å‡‘æ“ä½œ
         index = 0;
-        while (index < s.length() && result[index] != ' ') { // ÕÒµÚÒ»¸öÊÇ¿Õ¸ñµÄ×Ö·ûÎ»ÖÃ
+        while (index < s.length() && result[index] != ' ') { // æ‰¾ç¬¬ä¸€ä¸ªæ˜¯ç©ºæ ¼çš„å­—ç¬¦ä½ç½®
             index++;
         }
         int next = index + 1;
         while (index < s.length()) {
-            while (next < result.length && result[next] == ' ') { // ÕÒ²»ÊÇ¿Õ¸ñµÄÔªËØ
+            while (next < result.length && result[next] == ' ') { // æ‰¾ä¸æ˜¯ç©ºæ ¼çš„å…ƒç´ 
                 next++;
             }
             result[index] = result[next];

@@ -1,25 +1,25 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 18:51
  * Declaration: All Rights Reserved !!!
  */
 public class Solution {
-    private int min = Integer.MAX_VALUE; // ¼ÇÂ¼Ê÷µÄ×îĞ¡Éî¶È
-    private int cur = 0; // iµ±Ç°´¦ÀíµÄÊ÷µÄ³¢ÊÔ
+    private int min = Integer.MAX_VALUE; // è®°å½•æ ‘çš„æœ€å°æ·±åº¦
+    private int cur = 0; // iå½“å‰å¤„ç†çš„æ ‘çš„å°è¯•
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a binary tree, find its minimum depth.
      * The minimum depth is the number of nodes along the shortest path from
      * the root node down to the nearest leaf node.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¿ÃÁ½²æÊ÷ÇóÊ÷µÄ×îĞ¡Éî¶È¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€æ£µä¸¤å‰æ ‘æ±‚æ ‘çš„æœ€å°æ·±åº¦ã€‚
      *
-     * ½âÌâË¼Â·
-     * ±éÀú·¨£¬¶ÔÕû¸öÊ÷½øĞĞ±éÀú£¬ÕÒ³ö×îĞ¡µÄÉî¶È¡£
+     * è§£é¢˜æ€è·¯
+     * éå†æ³•ï¼Œå¯¹æ•´ä¸ªæ ‘è¿›è¡Œéå†ï¼Œæ‰¾å‡ºæœ€å°çš„æ·±åº¦ã€‚
      * </pre>
      *
      * @param root
@@ -32,9 +32,9 @@ public class Solution {
     }
 
     /**
-     * ¼ÆËãÊ÷µÄÉî¶È
+     * è®¡ç®—æ ‘çš„æ·±åº¦
      *
-     * @param node µ±Ç°½áµã
+     * @param node å½“å‰ç»“ç‚¹
      */
     private void depth(TreeNode node) {
 
@@ -43,22 +43,22 @@ public class Solution {
             return;
         }
 
-        cur++; // µ±Ç°´¦ÀíµÄ²ã´Î¼Ó1
-        // Èç¹ûÊÇÒ¶½Úµã£¬²¢ÇÒÂ·¾¶±È¼ÇÂ¼µÄ×îĞ¡»¹Ğ¡
+        cur++; // å½“å‰å¤„ç†çš„å±‚æ¬¡åŠ 1
+        // å¦‚æœæ˜¯å¶èŠ‚ç‚¹ï¼Œå¹¶ä¸”è·¯å¾„æ¯”è®°å½•çš„æœ€å°è¿˜å°
         if (node.left == null && node.right == null && cur < min) {
-            min = cur; // ¸üĞÂ×îĞ¡Öµ
+            min = cur; // æ›´æ–°æœ€å°å€¼
         }
-        // ´¦Àí×ó×ÓÊ÷
+        // å¤„ç†å·¦å­æ ‘
         if (node.left != null) {
             depth(node.left);
         }
 
-        // ´¦ÀíÓÒ×ÓÊ÷
+        // å¤„ç†å³å­æ ‘
         if (node.right != null) {
             depth(node.right);
         }
 
-        cur--; // »¹Ô­
+        cur--; // è¿˜åŸ
 
     }
 }

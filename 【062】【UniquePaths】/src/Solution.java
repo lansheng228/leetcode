@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:30
  * Declaration: All Rights Reserved !!!
@@ -7,30 +7,30 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * A robot is located at the top-left corner of a m x n grid
-     * (marked ¡®Start¡¯ in the diagram below).
+     * (marked â€˜Startâ€™ in the diagram below).
      * The robot can only move either down or right at any point in time.
      * The robot is trying to reach the bottom-right corner of the grid
-     * (marked ¡®Finish¡¯ in the diagram below).
+     * (marked â€˜Finishâ€™ in the diagram below).
      * How many possible unique paths are there?
      *
      * Above is a 3 x 7 grid. How many possible unique paths are there?
      * Note: m and n will be at most 100.
      *
-     * ÌâÄ¿´óÒâ
-     * Ò»¸ö»úÆ÷ÈËÔÚÒ»¸öm*nµÄ·½¸ñµÄ×óÉÏ½Ç¡£
-     * »úÆ÷ÈËÖ»ÄÜÏòÓÒ»ò¶¼ÏòÏÂ×ßÒ»¸ö·½¸ñ£¬»úÆ÷ÈËÒªµ½´ïÓÒÏÂ½ÇµÄ·½¸ñ¡£
-     * ÇëÎÊÒ»¹²ÓĞ¶àÉÙÖÖÎ¨Ò»µÄÂ·¾¶¡£
-     * ×¢Òâ£º£íºÍ£î×î´ó²»³¬100¡£
+     * é¢˜ç›®å¤§æ„
+     * ä¸€ä¸ªæœºå™¨äººåœ¨ä¸€ä¸ªm*nçš„æ–¹æ ¼çš„å·¦ä¸Šè§’ã€‚
+     * æœºå™¨äººåªèƒ½å‘å³æˆ–éƒ½å‘ä¸‹èµ°ä¸€ä¸ªæ–¹æ ¼ï¼Œæœºå™¨äººè¦åˆ°è¾¾å³ä¸‹è§’çš„æ–¹æ ¼ã€‚
+     * è¯·é—®ä¸€å…±æœ‰å¤šå°‘ç§å”¯ä¸€çš„è·¯å¾„ã€‚
+     * æ³¨æ„ï¼šï½å’Œï½æœ€å¤§ä¸è¶…100ã€‚
      *
-     * ½âÌâË¼Â·
-     * µäĞÍµÄ¶¯Ì¬¹æ»®ÎÊÌâ£¬¶ÔÎÊÌâÊ¹ÓÃ¶¯Ì¬¹æ»®µÄ·½·¨½øĞĞÇó½â¡£
-     * ÓÃÒ»¸ö£í*nµÄ×éÊıA±£´æ½á¹û¡£
-     * ¶ÔÓÚAÊı×éÖĞµÄÔªËØÓĞ¡£
-     * 1¡¢µ±x=0»òÕßy=0Ê±ÓĞA[x][y] = 1£»
-     * 2¡¢µ±x>=1²¢ÇÒy>=1Ê±ÓĞA[\x][\y] = A[x-1][y]+A[\x][y-1]¡£
-     * 3¡¢ËùÇóµÄ½áµã¾ÍÊÇA[m-1][n-1]¡£
+     * è§£é¢˜æ€è·¯
+     * å…¸å‹çš„åŠ¨æ€è§„åˆ’é—®é¢˜ï¼Œå¯¹é—®é¢˜ä½¿ç”¨åŠ¨æ€è§„åˆ’çš„æ–¹æ³•è¿›è¡Œæ±‚è§£ã€‚
+     * ç”¨ä¸€ä¸ªï½*nçš„ç»„æ•°Aä¿å­˜ç»“æœã€‚
+     * å¯¹äºAæ•°ç»„ä¸­çš„å…ƒç´ æœ‰ã€‚
+     * 1ã€å½“x=0æˆ–è€…y=0æ—¶æœ‰A[x][y] = 1ï¼›
+     * 2ã€å½“x>=1å¹¶ä¸”y>=1æ—¶æœ‰A[\x][\y] = A[x-1][y]+A[\x][y-1]ã€‚
+     * 3ã€æ‰€æ±‚çš„ç»“ç‚¹å°±æ˜¯A[m-1][n-1]ã€‚
      * </pre>
      *
      * @param m
@@ -40,24 +40,24 @@ public class Solution {
     public int uniquePaths(int m, int n) {
         int[][] result = new int[m][n];
 
-        // µÚÒ»ÁĞµÄ½â
+        // ç¬¬ä¸€åˆ—çš„è§£
         for (int i = 0; i < m; i++) {
             result[i][0] = 1;
         }
 
-        // µÚÒ»ĞĞµÄ½â
+        // ç¬¬ä¸€è¡Œçš„è§£
         for (int i = 1; i < n; i++) {
             result[0][i] = 1;
         }
 
-        // ÆäËüÎ»ÖÃµÄ½â
+        // å…¶å®ƒä½ç½®çš„è§£
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 result[i][j] = result[i - 1][j] + result[i][j - 1];
             }
         }
 
-        // ËùÇóµÄ½â
+        // æ‰€æ±‚çš„è§£
         return result[m - 1][n - 1];
     }
 }

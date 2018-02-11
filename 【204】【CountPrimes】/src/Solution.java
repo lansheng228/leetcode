@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-19
  * Time: 14:51
  * Declaration: All Rights Reserved !!!
@@ -9,11 +9,11 @@ public class Solution {
      * Description:
      * Count the number of prime numbers less than a non-negative number, n.
      * <p>
-     * ÌâÄ¿´óÒâ£º
-     * Í³¼ÆĞ¡ÓÚ·Ç¸ºÕûÊınµÄËØÊıµÄ¸öÊı
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»Ÿè®¡å°äºéè´Ÿæ•´æ•°nçš„ç´ æ•°çš„ä¸ªæ•°
      * <p>
-     * ½âÌâË¼Â·£º
-     * Ê¹ÓÃ¼û°£À­ÍĞÉ«ÄáÉ¸·¨¡£
+     * è§£é¢˜æ€è·¯ï¼š
+     * ä½¿ç”¨è§åŸƒæ‹‰æ‰˜è‰²å°¼ç­›æ³•ã€‚
      *
      * @param n
      * @return
@@ -24,14 +24,14 @@ public class Solution {
             return 0;
         }
 
-        // Ä¬ÈÏËùÓĞµÄÔªËØÖµ¶¼»áÉèÖÃÎªfalse
+        // é»˜è®¤æ‰€æœ‰çš„å…ƒç´ å€¼éƒ½ä¼šè®¾ç½®ä¸ºfalse
         boolean[] notPrime = new boolean[n];
         notPrime[0] = true;
         notPrime[1] = true;
 
         for (int i = 2; i * i < n; i++) {
-            // Èç¹ûiÊÇÒ»¸öÖÊÊı£¬i½«iµÄ±¶ÊıÉèÖÃÎª·ÇÖÊÊı
-            // ÈçÊÇiÊÇÒ»¸öºÏÊı£¬ÔòËü±Ø¶¨ÒÑ¾­ÉèÖÃÎªtrueÁË£¬ÒòÎªÊÇ´Ó2¿ªÊ¼´¦ÀíµÄ
+            // å¦‚æœiæ˜¯ä¸€ä¸ªè´¨æ•°ï¼Œiå°†içš„å€æ•°è®¾ç½®ä¸ºéè´¨æ•°
+            // å¦‚æ˜¯iæ˜¯ä¸€ä¸ªåˆæ•°ï¼Œåˆ™å®ƒå¿…å®šå·²ç»è®¾ç½®ä¸ºtrueäº†ï¼Œå› ä¸ºæ˜¯ä»2å¼€å§‹å¤„ç†çš„
             if (!notPrime[i]) {
                 for (int j = 2 * i; j < n; j += i) {
                     notPrime[j] = true;
@@ -39,7 +39,7 @@ public class Solution {
             }
         }
 
-        // Í³¼ÆÖÊÊıµÄ¸öÊı
+        // ç»Ÿè®¡è´¨æ•°çš„ä¸ªæ•°
         int result = 0;
         for (boolean b : notPrime) {
             if (!b) {

@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-30
  * Time: 19:21
  * Declaration: All Rights Reserved !!!
@@ -14,12 +14,12 @@ public class Solution {
      * Merge k sorted linked lists and return it as one sorted list.
      * Analyze and describe its complexity.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ºÏ²¢k¸öÅÅºÃµÄµÄµ¥Á´±í
+     * é¢˜ç›®å¤§æ„ï¼š
+     * åˆå¹¶kä¸ªæ’å¥½çš„çš„å•é“¾è¡¨
      *
-     * ½âÌâË¼Â·£º
-     * Ê¹ÓÃÒ»¸öĞ¡¶ÑÀ´½øĞĞ²Ù×÷£¬ÏÈ½«k¸öµ¥Á´±íµÄµÚÒ»¸ö½áµãÈë¶Ñ£¬ÔÙÈ¡¶ÑÖĞµÄ×îĞ¡ËØ£¬´ËÎª×îĞ¡µÄÔªËØ£¬
-     * ½«Õâ¸öÔªËØµÄÏÂÒ»¸ö½áµã¶Ñ£¬ÔÙÈ¡¶ÑÖĞ×îĞ¡µÄ£¬ÒÀ´Î²Ù×÷Ö±µ½¶ÑÎª¿Õ
+     * è§£é¢˜æ€è·¯ï¼š
+     * ä½¿ç”¨ä¸€ä¸ªå°å †æ¥è¿›è¡Œæ“ä½œï¼Œå…ˆå°†kä¸ªå•é“¾è¡¨çš„ç¬¬ä¸€ä¸ªç»“ç‚¹å…¥å †ï¼Œå†å–å †ä¸­çš„æœ€å°ç´ ï¼Œæ­¤ä¸ºæœ€å°çš„å…ƒç´ ï¼Œ
+     * å°†è¿™ä¸ªå…ƒç´ çš„ä¸‹ä¸€ä¸ªç»“ç‚¹å †ï¼Œå†å–å †ä¸­æœ€å°çš„ï¼Œä¾æ¬¡æ“ä½œç›´åˆ°å †ä¸ºç©º
      * </pre>
      *
      * @param lists
@@ -27,17 +27,17 @@ public class Solution {
      */
     public ListNode mergeKLists(ListNode[] lists) {
 
-        // Îª¿Õ»òÕßÃ»ÓĞÔªËØ
+        // ä¸ºç©ºæˆ–è€…æ²¡æœ‰å…ƒç´ 
         if (lists == null || lists.length < 1) {
             return null;
         }
 
-        // Ö»ÓĞÒ»¸öÔªËØ
+        // åªæœ‰ä¸€ä¸ªå…ƒç´ 
         if (lists.length == 1) {
             return lists[0];
         }
 
-        // ´´½¨Ò»¸öĞ¡¶¥¶Ñ£¬²¢ÇÒÊ¹ÓÃÒ»¸öÄäÃûÄÚ²¿Àà×÷Îª±È½ÏÆ÷
+        // åˆ›å»ºä¸€ä¸ªå°é¡¶å †ï¼Œå¹¶ä¸”ä½¿ç”¨ä¸€ä¸ªåŒ¿åå†…éƒ¨ç±»ä½œä¸ºæ¯”è¾ƒå™¨
         MinHeap<ListNode> minHeap = new MinHeap<ListNode>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
@@ -54,22 +54,22 @@ public class Solution {
         });
 
 
-        // ½«Êı×éÖĞÁ´±íµÄµÚÒ»¸ö½áµãÈë¶Ñ
+        // å°†æ•°ç»„ä¸­é“¾è¡¨çš„ç¬¬ä¸€ä¸ªç»“ç‚¹å…¥å †
         for (ListNode node : lists) {
             if (node != null) {
                 minHeap.add(node);
             }
         }
 
-        // Í·½áµã£¬×÷¸¨ÖúÊ¹ÓÃ
+        // å¤´ç»“ç‚¹ï¼Œä½œè¾…åŠ©ä½¿ç”¨
         ListNode head = new ListNode(0);
-        // µ±Ç°´¦ÀíµÄ½áµã
+        // å½“å‰å¤„ç†çš„ç»“ç‚¹
         ListNode curr = head;
 
         while (!minHeap.isEmpty()) {
             ListNode node = minHeap.deleteTop();
 
-            // ½áµãµÄÏÂÒ»¸ö½áµã²»Îª¿Õ¾Í½«ÏÂÒ»¸ö½áµãÈë¶Ñ
+            // ç»“ç‚¹çš„ä¸‹ä¸€ä¸ªç»“ç‚¹ä¸ä¸ºç©ºå°±å°†ä¸‹ä¸€ä¸ªç»“ç‚¹å…¥å †
             if (node.next != null) {
                 minHeap.add(node.next);
             }
@@ -82,27 +82,27 @@ public class Solution {
     }
 
     /**
-     * Ğ¡¶¥¶Ñ
+     * å°é¡¶å †
      *
      * @param <T>
      */
     private static class MinHeap<T> {
-        // ¶ÑÖĞÔªËØ´æ·ÅµÄ¼¯ºÏ
+        // å †ä¸­å…ƒç´ å­˜æ”¾çš„é›†åˆ
         private List<T> items;
 
         private Comparator<T> comp;
 
         /**
-         * ¹¹ÔìÒ»¸ö×µ£¬Ê¼´óĞ¡ÊÇ32
+         * æ„é€ ä¸€ä¸ªæ¤ï¼Œå§‹å¤§å°æ˜¯32
          */
         public MinHeap(Comparator<T> comp) {
             this(32, comp);
         }
 
         /**
-         * ÔìÒèÒ»¸öÖ¸¶¨³õÊ¼´óĞ¡µÄ¶Ñ
+         * é€ è¯£ä¸€ä¸ªæŒ‡å®šåˆå§‹å¤§å°çš„å †
          *
-         * @param size ³õÊ¼´óĞ¡
+         * @param size åˆå§‹å¤§å°
          */
         public MinHeap(int size, Comparator<T> comp) {
             items = new ArrayList<>(size);
@@ -110,101 +110,101 @@ public class Solution {
         }
 
         /**
-         * ÏòÉÏµ÷Õû¶Ñ
+         * å‘ä¸Šè°ƒæ•´å †
          *
-         * @param index ±»ÉÏÒÆÔªËØµÄÆğÊ¼Î»ÖÃ
+         * @param index è¢«ä¸Šç§»å…ƒç´ çš„èµ·å§‹ä½ç½®
          */
         public void siftUp(int index) {
-            T intent = items.get(index); // »ñÈ¡¿ªÊ¼µ÷ÕûµÄÔªËØ¶ÔÏó
+            T intent = items.get(index); // è·å–å¼€å§‹è°ƒæ•´çš„å…ƒç´ å¯¹è±¡
 
-            while (index > 0) { // Èç¹û²»ÊÇ¸ùÔªËØ
-                int parentIndex = (index - 1) / 2; // ÕÒ¸¸ÔªËØ¶ÔÏóµÄÎ»ÖÃ
-                T parent = items.get(parentIndex);  // »ñÈ¡¸¸ÔªËØ¶ÔÏó
-                if (comp.compare(intent, parent) < 0) { //ÉÏÒÆµÄÌõ¼ş£¬×Ó½Úµã±È¸¸½ÚµãĞ¡
-                    items.set(index, parent); // ½«¸¸½ÚµãÏòÏÂ·Å
-                    index = parentIndex; // ¼ÇÂ¼¸¸½ÚµãÏÂ·ÅµÄÎ»ÖÃ
-                } else { // ×Ó½Úµã²»±È¸¸½ÚµãĞ¡£¬ËµÃ÷¸¸×ÓÂ·¾¶ÒÑ¾­°´´ÓĞ¡µ½´óÅÅºÃË³ĞòÁË£¬²»ĞèÒªµ÷ÕûÁË
+            while (index > 0) { // å¦‚æœä¸æ˜¯æ ¹å…ƒç´ 
+                int parentIndex = (index - 1) / 2; // æ‰¾çˆ¶å…ƒç´ å¯¹è±¡çš„ä½ç½®
+                T parent = items.get(parentIndex);  // è·å–çˆ¶å…ƒç´ å¯¹è±¡
+                if (comp.compare(intent, parent) < 0) { //ä¸Šç§»çš„æ¡ä»¶ï¼Œå­èŠ‚ç‚¹æ¯”çˆ¶èŠ‚ç‚¹å°
+                    items.set(index, parent); // å°†çˆ¶èŠ‚ç‚¹å‘ä¸‹æ”¾
+                    index = parentIndex; // è®°å½•çˆ¶èŠ‚ç‚¹ä¸‹æ”¾çš„ä½ç½®
+                } else { // å­èŠ‚ç‚¹ä¸æ¯”çˆ¶èŠ‚ç‚¹å°ï¼Œè¯´æ˜çˆ¶å­è·¯å¾„å·²ç»æŒ‰ä»å°åˆ°å¤§æ’å¥½é¡ºåºäº†ï¼Œä¸éœ€è¦è°ƒæ•´äº†
                     break;
                 }
             }
 
-            // index´ËÊ±¼ÇÂ¼ÊÇµÄ×îºóÒ»¸ö±»ÏÂ·ÅµÄ¸¸½ÚµãµÄÎ»ÖÃ£¨Ò²¿ÉÄÜÊÇ×ÔÉí£©£¬
-            // ËùÒÔ½«×î¿ªÊ¼µÄµ÷ÕûµÄÔªËØÖµ·ÅÈëindexÎ»ÖÃ¼´¿É
+            // indexæ­¤æ—¶è®°å½•æ˜¯çš„æœ€åä¸€ä¸ªè¢«ä¸‹æ”¾çš„çˆ¶èŠ‚ç‚¹çš„ä½ç½®ï¼ˆä¹Ÿå¯èƒ½æ˜¯è‡ªèº«ï¼‰ï¼Œ
+            // æ‰€ä»¥å°†æœ€å¼€å§‹çš„è°ƒæ•´çš„å…ƒç´ å€¼æ”¾å…¥indexä½ç½®å³å¯
             items.set(index, intent);
         }
 
         /**
-         * ÏòÏÂµ÷Õû¶Ñ
+         * å‘ä¸‹è°ƒæ•´å †
          *
-         * @param index ±»ÏÂÒÆµÄÔªËØµÄÆğÊ¼Î»ÖÃ
+         * @param index è¢«ä¸‹ç§»çš„å…ƒç´ çš„èµ·å§‹ä½ç½®
          */
         public void siftDown(int index) {
-            T intent = items.get(index);  // »ñÈ¡¿ªÊ¼µ÷ÕûµÄÔªËØ¶ÔÏó
-            int leftIndex = 2 * index + 1; // // »ñÈ¡¿ªÊ¼µ÷ÕûµÄÔªËØ¶ÔÏóµÄ×ó×Ó½áµãµÄÔªËØÎ»ÖÃ
+            T intent = items.get(index);  // è·å–å¼€å§‹è°ƒæ•´çš„å…ƒç´ å¯¹è±¡
+            int leftIndex = 2 * index + 1; // // è·å–å¼€å§‹è°ƒæ•´çš„å…ƒç´ å¯¹è±¡çš„å·¦å­ç»“ç‚¹çš„å…ƒç´ ä½ç½®
 
-            while (leftIndex < items.size()) { // Èç¹ûÓĞ×ó×Ó½áµã
-                T minChild = items.get(leftIndex); // È¡×ó×Ó½áµãµÄÔªËØ¶ÔÏó£¬²¢ÇÒ¼Ù¶¨ÆäÎªÁ½¸ö×Ó½áµãÖĞ×îĞ¡µÄ
-                int minIndex = leftIndex; // Á½¸ö×Ó½ÚµãÖĞ×îĞ¡½ÚµãÔªËØµÄÎ»ÖÃ£¬¼Ù¶¨¿ªÊ¼Ê±Îª×ó×Ó½áµãµÄÎ»ÖÃ
+            while (leftIndex < items.size()) { // å¦‚æœæœ‰å·¦å­ç»“ç‚¹
+                T minChild = items.get(leftIndex); // å–å·¦å­ç»“ç‚¹çš„å…ƒç´ å¯¹è±¡ï¼Œå¹¶ä¸”å‡å®šå…¶ä¸ºä¸¤ä¸ªå­ç»“ç‚¹ä¸­æœ€å°çš„
+                int minIndex = leftIndex; // ä¸¤ä¸ªå­èŠ‚ç‚¹ä¸­æœ€å°èŠ‚ç‚¹å…ƒç´ çš„ä½ç½®ï¼Œå‡å®šå¼€å§‹æ—¶ä¸ºå·¦å­ç»“ç‚¹çš„ä½ç½®
 
-                int rightIndex = leftIndex + 1;  // »ñÈ¡ÓÒ×Ó½áµãµÄÎ»ÖÃ
-                if (rightIndex < items.size()) {  // Èç¹ûÓĞÓÒ×Ó½áµã
-                    T rightChild = items.get(rightIndex);  // »ñÈ¡ÓÒ×Ó½áµãµÄÔªËØ¶ÔÏó
-                    if (comp.compare(rightChild, minChild) < 0) {  // ÕÒ³öÁ½¸ö×Ó½ÚµãÖĞµÄ×îĞ¡×Ó½áµã
+                int rightIndex = leftIndex + 1;  // è·å–å³å­ç»“ç‚¹çš„ä½ç½®
+                if (rightIndex < items.size()) {  // å¦‚æœæœ‰å³å­ç»“ç‚¹
+                    T rightChild = items.get(rightIndex);  // è·å–å³å­ç»“ç‚¹çš„å…ƒç´ å¯¹è±¡
+                    if (comp.compare(rightChild, minChild) < 0) {  // æ‰¾å‡ºä¸¤ä¸ªå­èŠ‚ç‚¹ä¸­çš„æœ€å°å­ç»“ç‚¹
                         minChild = rightChild;
                         minIndex = rightIndex;
                     }
                 }
 
-                // Èç¹û×îĞ¡×Ó½Úµã±È¸¸½ÚµãĞ¡£¬ÔòĞèÒªÏòÏÂµ÷Õû
+                // å¦‚æœæœ€å°å­èŠ‚ç‚¹æ¯”çˆ¶èŠ‚ç‚¹å°ï¼Œåˆ™éœ€è¦å‘ä¸‹è°ƒæ•´
                 if (comp.compare(minChild, intent) < 0) {
-                    items.set(index, minChild); // ½«×Ó½ÚµãÏòÉÏÒÆ
-                    index = minIndex; // ¼ÇÂ¼ÉÏÒÆ½ÚµãµÄÎ»ÖÃ
-                    leftIndex = index * 2 + 1; // ÕÒµ½ÉÏÒÆ½ÚµãµÄ×ó×Ó½ÚµãµÄÎ»ÖÃ
-                } else { // ×îĞ¡×Ó½Úµã²»±È¸¸½ÚµãĞ¡£¬ËµÃ÷¸¸×ÓÂ·¾¶ÒÑ¾­°´´ÓĞ¡µ½´óÅÅºÃË³ĞòÁË£¬²»ĞèÒªµ÷ÕûÁË
+                    items.set(index, minChild); // å°†å­èŠ‚ç‚¹å‘ä¸Šç§»
+                    index = minIndex; // è®°å½•ä¸Šç§»èŠ‚ç‚¹çš„ä½ç½®
+                    leftIndex = index * 2 + 1; // æ‰¾åˆ°ä¸Šç§»èŠ‚ç‚¹çš„å·¦å­èŠ‚ç‚¹çš„ä½ç½®
+                } else { // æœ€å°å­èŠ‚ç‚¹ä¸æ¯”çˆ¶èŠ‚ç‚¹å°ï¼Œè¯´æ˜çˆ¶å­è·¯å¾„å·²ç»æŒ‰ä»å°åˆ°å¤§æ’å¥½é¡ºåºäº†ï¼Œä¸éœ€è¦è°ƒæ•´äº†
                     break;
                 }
             }
 
-            // index´ËÊ±¼ÇÂ¼ÊÇµÄ×îºóÒ»¸ö±»ÉÏÒÆµÄ×Ó½ÚµãµÄÎ»ÖÃ£¨Ò²¿ÉÄÜÊÇ×ÔÉí£©£¬
-            // ËùÒÔ½«×î¿ªÊ¼µÄµ÷ÕûµÄÔªËØÖµ·ÅÈëindexÎ»ÖÃ¼´¿É
+            // indexæ­¤æ—¶è®°å½•æ˜¯çš„æœ€åä¸€ä¸ªè¢«ä¸Šç§»çš„å­èŠ‚ç‚¹çš„ä½ç½®ï¼ˆä¹Ÿå¯èƒ½æ˜¯è‡ªèº«ï¼‰ï¼Œ
+            // æ‰€ä»¥å°†æœ€å¼€å§‹çš„è°ƒæ•´çš„å…ƒç´ å€¼æ”¾å…¥indexä½ç½®å³å¯
             items.set(index, intent);
         }
 
         /**
-         * Ïò¶ÑÖĞÌí¼ÓÒ»¸öÔªËØ
+         * å‘å †ä¸­æ·»åŠ ä¸€ä¸ªå…ƒç´ 
          *
-         * @param item µÈ´ıÌí¼ÓµÄÔªËØ
+         * @param item ç­‰å¾…æ·»åŠ çš„å…ƒç´ 
          */
         public void add(T item) {
-            items.add(item); // ½«ÔªËØÌí¼Óµ½×îºó
-            siftUp(items.size() - 1); // Ñ­»·ÉÏÒÆ£¬ÒÔÍê³ÉÖØ¹¹
+            items.add(item); // å°†å…ƒç´ æ·»åŠ åˆ°æœ€å
+            siftUp(items.size() - 1); // å¾ªç¯ä¸Šç§»ï¼Œä»¥å®Œæˆé‡æ„
         }
 
         /**
-         * É¾³ı¶Ñ¶¥ÔªËØ
+         * åˆ é™¤å †é¡¶å…ƒç´ 
          *
-         * @return ¶Ñ¶¥²¿µÄÔªËØ
+         * @return å †é¡¶éƒ¨çš„å…ƒç´ 
          */
         public T deleteTop() {
-            if (items.isEmpty()) { // Èç¹û¶ÑÒÑ¾­Îª¿Õ£¬¾Í±¨³öÒì³£
+            if (items.isEmpty()) { // å¦‚æœå †å·²ç»ä¸ºç©ºï¼Œå°±æŠ¥å‡ºå¼‚å¸¸
                 throw new RuntimeException("The heap is empty.");
             }
 
-            T maxItem = items.get(0); // »ñÈ¡¶Ñ¶¥ÔªËØ
-            T lastItem = items.remove(items.size() - 1); // É¾³ı×îºóÒ»¸öÔªËØ
-            if (items.isEmpty()) { // É¾³ıÔªËØºó£¬Èç¹û¶ÑÎª¿ÕµÄÇé¿ö£¬ËµÃ÷É¾³ıµÄÔªËØÒ²ÊÇ¶Ñ¶¥ÔªËØ
+            T maxItem = items.get(0); // è·å–å †é¡¶å…ƒç´ 
+            T lastItem = items.remove(items.size() - 1); // åˆ é™¤æœ€åä¸€ä¸ªå…ƒç´ 
+            if (items.isEmpty()) { // åˆ é™¤å…ƒç´ åï¼Œå¦‚æœå †ä¸ºç©ºçš„æƒ…å†µï¼Œè¯´æ˜åˆ é™¤çš„å…ƒç´ ä¹Ÿæ˜¯å †é¡¶å…ƒç´ 
                 return lastItem;
             }
 
-            items.set(0, lastItem); // ½«É¾³ıµÄÔªËØ·ÅÈë¶Ñ¶¥
-            siftDown(0); // ×ÔÉÏÏòÏÂµ÷Õû¶Ñ
-            return maxItem; // ·µ»Ø¶Ñ¶¥ÔªËØ
+            items.set(0, lastItem); // å°†åˆ é™¤çš„å…ƒç´ æ”¾å…¥å †é¡¶
+            siftDown(0); // è‡ªä¸Šå‘ä¸‹è°ƒæ•´å †
+            return maxItem; // è¿”å›å †é¡¶å…ƒç´ 
         }
 
         /**
-         * ÅĞ¶Ï¶ÑÊÇ·ñÎª¿Õ
+         * åˆ¤æ–­å †æ˜¯å¦ä¸ºç©º
          *
-         * @return trueÊÇ¿Õ£¬false·ñ
+         * @return trueæ˜¯ç©ºï¼Œfalseå¦
          */
         public boolean isEmpty() {
             return items.isEmpty();

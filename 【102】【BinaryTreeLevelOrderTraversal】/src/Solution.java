@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 18:44
  * Declaration: All Rights Reserved !!!
@@ -12,8 +12,8 @@ import java.util.List;
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
-     * Given a binary tree, return the level order traversal of its nodes¡¯ values.
+     * åŸé¢˜
+     * Given a binary tree, return the level order traversal of its nodesâ€™ values.
      * (ie, from left to right, level by level).
      * For example:
      * Given binary tree {3,9,20,#,#,15,7},
@@ -31,11 +31,11 @@ public class Solution {
      *  [9,20],
      *  [15,7]
      * ]
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸ö¶ş²æÊ÷£¬Êä³öËüµÄÃ¿Ò»²ãµÄ½áµã¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªäºŒå‰æ ‘ï¼Œè¾“å‡ºå®ƒçš„æ¯ä¸€å±‚çš„ç»“ç‚¹ã€‚
      *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃÁ½¶ÓÁĞ£¬Ò»¸ö±£´æµ±Ç°´¦ÀíµÄ²ã£¬Ò»¸ö±£´æÏÂÒ»´ÎÒª´¦ÀíµÄ²ã¡£Ö»µ½Ã¿Ò»²ã¶¼´¦ÀíÍê¡£
+     * è§£é¢˜æ€è·¯
+     * ä½¿ç”¨ä¸¤é˜Ÿåˆ—ï¼Œä¸€ä¸ªä¿å­˜å½“å‰å¤„ç†çš„å±‚ï¼Œä¸€ä¸ªä¿å­˜ä¸‹ä¸€æ¬¡è¦å¤„ç†çš„å±‚ã€‚åªåˆ°æ¯ä¸€å±‚éƒ½å¤„ç†å®Œã€‚
      * </pre>
      *
      * @param root

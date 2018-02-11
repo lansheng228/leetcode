@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-21
  * Time: 14:46
  * Declaration: All Rights Reserved !!!
@@ -12,9 +12,9 @@ public class Solution {
      * Would this affect the run-time complexity? How and why?
      * Write a function to determine if a given target is in the array
      *
-     * ÌâÄ¿´óÒâ£º
-     * "ÔÚĞı×ªÊı×éÖĞËÑË÷Öµ"µÄºóĞø£¬Èç¹ûÊı×éÖĞµÄÖµÔÊĞíÖØ¸´
-     * Ğ´Ò»¸ö³ÌĞòÈ·¶¨Ò»¸ö¸ø¶¨µÄÖµÊÇ·ñÔÚÊı×éÖĞ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * "åœ¨æ—‹è½¬æ•°ç»„ä¸­æœç´¢å€¼"çš„åç»­ï¼Œå¦‚æœæ•°ç»„ä¸­çš„å€¼å…è®¸é‡å¤
+     * å†™ä¸€ä¸ªç¨‹åºç¡®å®šä¸€ä¸ªç»™å®šçš„å€¼æ˜¯å¦åœ¨æ•°ç»„ä¸­
      * </pre>
      * @param nums
      * @param target
@@ -22,24 +22,24 @@ public class Solution {
      */
     public boolean search(int[] nums, int target) {
         if (nums != null && nums.length > 0) {
-            // ÕÒ×îĞ¡ÔªËØ¶ÔÓ¦µÄÏÂ±ê
+            // æ‰¾æœ€å°å…ƒç´ å¯¹åº”çš„ä¸‹æ ‡
             int minIndex = findMinIndex(nums);
 
-            // Õû¸öÊı×éÈ«¾ÖÓĞĞò
+            // æ•´ä¸ªæ•°ç»„å…¨å±€æœ‰åº
             if (minIndex == 0) {
                 return binarySearch(nums, 0, nums.length - 1, target);
             }
-            // ÓĞÁ½¸ö¾Ö²¿ÓĞĞòÇø¼ä,  Èç 4 5 6 7 8 9 0 1 2 3
+            // æœ‰ä¸¤ä¸ªå±€éƒ¨æœ‰åºåŒºé—´,  å¦‚ 4 5 6 7 8 9 0 1 2 3
             else {
-                // ÌñºÃºÍºóÒ»¸öÓĞĞòÇø¼äµÄ×îºóÒ»¸öÔªËØÏàµÈ£¬·µ»Ø¶ÔÓ¦µÄÏÂ±ê
+                // æ¬å¥½å’Œåä¸€ä¸ªæœ‰åºåŒºé—´çš„æœ€åä¸€ä¸ªå…ƒç´ ç›¸ç­‰ï¼Œè¿”å›å¯¹åº”çš„ä¸‹æ ‡
                 if (nums[nums.length - 1] == target) {
                     return true;
                 }
-                // target¿ÉÄÜÔÚºóÒ»¸öÓĞĞòÇø¼äÖĞ
+                // targetå¯èƒ½åœ¨åä¸€ä¸ªæœ‰åºåŒºé—´ä¸­
                 else if (nums[nums.length - 1] > target) {
                     return binarySearch(nums, minIndex, nums.length - 1, target);
                 }
-                // target¿ÉÄÜÊÇÇ°Ò»¸öÓĞĞòÇø¼äÖĞ
+                // targetå¯èƒ½æ˜¯å‰ä¸€ä¸ªæœ‰åºåŒºé—´ä¸­
                 else {
                     return binarySearch(nums, 0, minIndex - 1, target);
                 }
@@ -50,13 +50,13 @@ public class Solution {
     }
 
     /**
-     * ¶ş·ÖËÑË÷
+     * äºŒåˆ†æœç´¢
      *
-     * @param nums   Êı×é
-     * @param start  ÆğÊ¼Î»ÖÃ
-     * @param end    ½áÊøÎ»ÖÃ
-     * @param target ËÑË÷Ä¿±ê
-     * @return trueÕÒµ½£¬falseÃ»ÓĞÕÒµ½
+     * @param nums   æ•°ç»„
+     * @param start  èµ·å§‹ä½ç½®
+     * @param end    ç»“æŸä½ç½®
+     * @param target æœç´¢ç›®æ ‡
+     * @return trueæ‰¾åˆ°ï¼Œfalseæ²¡æœ‰æ‰¾åˆ°
      */
     public boolean binarySearch(int[] nums, int start, int end, int target) {
 
@@ -78,7 +78,7 @@ public class Solution {
 
 
     public int findMinIndex(int[] nums) {
-        // ²ÎÊıĞ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (nums == null || nums.length < 1) {
             throw new IllegalArgumentException();
         }
@@ -87,9 +87,9 @@ public class Solution {
         int hi = nums.length - 1;
         int mid = 0;
 
-        // ¿ÉÒÔÅÅ³ıÊı×éÈ«¾ÖÓĞĞòµÄÇé¿ö
+        // å¯ä»¥æ’é™¤æ•°ç»„å…¨å±€æœ‰åºçš„æƒ…å†µ
         while (nums[lo] >= nums[hi]) {
-            // Èç¹ûÖ»ÓĞÁ½¸öÔªËØ£¬·µ»ØºóÒ»¸ö
+            // å¦‚æœåªæœ‰ä¸¤ä¸ªå…ƒç´ ï¼Œè¿”å›åä¸€ä¸ª
             if (hi - lo == 1) {
                 mid = hi;
                 break;
@@ -98,17 +98,17 @@ public class Solution {
             mid = lo + ((hi - lo) >> 1);
 
             if (nums[mid] == nums[lo] && nums[mid] == nums[hi]) {
-                // Ö»ÄÜ²ÉÓÃË³ĞòËÑË÷·½·¨£¬²»ÄÜ²ÉÓÃlo++£¬hi--µÄ·½Ê½
-                // ÒòÎªlo¿ÉÄÜÊÇÇ°Ò»¸öÓĞĞòÊı×éµÄ×îºóÒ»¸ö
-                // hiÒ²¿ÉÄÜÊÇºóÒ»¸öÓĞĞòÊı×éµÄµÚÒ»¸ö
+                // åªèƒ½é‡‡ç”¨é¡ºåºæœç´¢æ–¹æ³•ï¼Œä¸èƒ½é‡‡ç”¨lo++ï¼Œhi--çš„æ–¹å¼
+                // å› ä¸ºloå¯èƒ½æ˜¯å‰ä¸€ä¸ªæœ‰åºæ•°ç»„çš„æœ€åä¸€ä¸ª
+                // hiä¹Ÿå¯èƒ½æ˜¯åä¸€ä¸ªæœ‰åºæ•°ç»„çš„ç¬¬ä¸€ä¸ª
                 return sequenceSearchMinIndex(nums, lo, hi);
             }
 
-            // Èç¹ûmidÔÚÇ°Ò»¸öÓĞĞòÊı×éÖĞ
+            // å¦‚æœmidåœ¨å‰ä¸€ä¸ªæœ‰åºæ•°ç»„ä¸­
             if (nums[mid] >= nums[lo]) {
                 lo = mid;
             }
-            // Èç¹ûmidÔÚºóÒ»¸öÓĞĞòÊı×éÖĞ
+            // å¦‚æœmidåœ¨åä¸€ä¸ªæœ‰åºæ•°ç»„ä¸­
             else if (nums[mid] <= nums[hi]) {
                 hi = mid;
             }
@@ -118,12 +118,12 @@ public class Solution {
     }
 
     /**
-     * Ë³ĞòËÑË÷Êı×éÖĞµÄ×îĞ¡ÖµµÄÏÂ±ê£¬numsÊÇÓÉÓĞĞòÊı×é°´Ä³¸öÖáĞı×ªµÃÀ´µÄ
+     * é¡ºåºæœç´¢æ•°ç»„ä¸­çš„æœ€å°å€¼çš„ä¸‹æ ‡ï¼Œnumsæ˜¯ç”±æœ‰åºæ•°ç»„æŒ‰æŸä¸ªè½´æ—‹è½¬å¾—æ¥çš„
      *
-     * @param nums  ËÑË÷Êı×é
-     * @param start ¿ªÊ¼Î»ÖÃ
-     * @param end   ½áÊøÎ»ÖÃ
-     * @return ×îĞ¡ÖµµÄÏÂ±ê
+     * @param nums  æœç´¢æ•°ç»„
+     * @param start å¼€å§‹ä½ç½®
+     * @param end   ç»“æŸä½ç½®
+     * @return æœ€å°å€¼çš„ä¸‹æ ‡
      */
     public int sequenceSearchMinIndex(int[] nums, int start, int end) {
         for (int i = start; i < end; i++) {

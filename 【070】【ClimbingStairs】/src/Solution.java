@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-07-25
  * Time: 09:10
  * Declaration: All Rights Reserved !!!
@@ -9,17 +9,17 @@ public class Solution {
 
         int result = 0;
 
-        // Ö»ÓĞÒ»½×
+        // åªæœ‰ä¸€é˜¶
         if (n == 1) {
             result = 1;
         }
-        // Ö»ÓĞÁ½½×
+        // åªæœ‰ä¸¤é˜¶
         else if (n == 2) {
             result = 2;
         }
-        // Â¥Ìİ½×Êı´óÓÚ2
+        // æ¥¼æ¢¯é˜¶æ•°å¤§äº2
         else if (n > 2) {
-            // ±£´æËùÓĞµÄ½â·¨
+            // ä¿å­˜æ‰€æœ‰çš„è§£æ³•
             int[] ways = new int[n];
 
             ways[0] = 1;

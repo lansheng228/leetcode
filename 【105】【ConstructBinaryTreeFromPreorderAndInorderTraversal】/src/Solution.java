@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-23
  * Time: 14:04
  * Declaration: All Rights Reserved !!!
@@ -12,14 +12,14 @@ public class Solution {
      * Note:
      * You may assume that duplicates do not exist in the tree.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸öÇ°ÐòºÍÖÐÐò±éÀúÐòÁÐ£¬¹¹½¨Ò»¸ö¶þ²æÊ÷
-     * ×¢Òâ£º
-     *   - ¶þ²æÊ÷ÖÐÔªËØÖØ¸´ÔªËØ
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªå‰åºå’Œä¸­åºéåŽ†åºåˆ—ï¼Œæž„å»ºä¸€ä¸ªäºŒå‰æ ‘
+     * æ³¨æ„ï¼š
+     *   - äºŒå‰æ ‘ä¸­å…ƒç´ é‡å¤å…ƒç´ 
      *
-     * ½âÌâË¼Â·£º
-     * Ç°Ðò±éÀúµÚÒ»¸öÔªËØÊÇ¸ù½áµã£¨k£©£¬ÔÚÖÐÐò±éÀúÐòÁÐÖÐÕÒÖµÎªkµÄÏÂ±êidx
-     * idx½«ÖÐÐò±éÀúÐòÁÐ·Ö³É×óÓÒ×ÓÊ÷£¬¶ÔÇ°Ðò±éÀúÐòÁÐÒ²Ò»Ñù£¬¿É½øÐÐµÝ¹é²Ù×÷
+     * è§£é¢˜æ€è·¯ï¼š
+     * å‰åºéåŽ†ç¬¬ä¸€ä¸ªå…ƒç´ æ˜¯æ ¹ç»“ç‚¹ï¼ˆkï¼‰ï¼Œåœ¨ä¸­åºéåŽ†åºåˆ—ä¸­æ‰¾å€¼ä¸ºkçš„ä¸‹æ ‡idx
+     * idxå°†ä¸­åºéåŽ†åºåˆ—åˆ†æˆå·¦å³å­æ ‘ï¼Œå¯¹å‰åºéåŽ†åºåˆ—ä¹Ÿä¸€æ ·ï¼Œå¯è¿›è¡Œé€’å½’æ“ä½œ
      * </pre>
      *
      * @param preorder
@@ -28,7 +28,7 @@ public class Solution {
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
 
-        // ²ÎÊýÐ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (preorder == null || inorder == null || preorder.length == 0
                 || preorder.length != inorder.length) {
             return null;
@@ -37,44 +37,44 @@ public class Solution {
     }
 
     /**
-     * ¹¹½¨¶þ²æÊ÷£¬Êý¾ÝÊäÈëµÄÕýÈ·ÐÔÓÉÊäÈëÊý¾Ý×Ô¼º±£Ö¤
+     * æž„å»ºäºŒå‰æ ‘ï¼Œæ•°æ®è¾“å…¥çš„æ­£ç¡®æ€§ç”±è¾“å…¥æ•°æ®è‡ªå·±ä¿è¯
      *
-     * @param preorder ÏÈÐò±éÀúµÄ½á¹û
-     * @param x        ÏÈÐò±éÀúµÄ¿ªÊ¼Î»ÖÃ
-     * @param y        ÏÈÐò±éÀúµÄ½áÊøÎ»ÖÃ
-     * @param inorder  ÖÐÐò±éÀúµÄ½á¹û
-     * @param i        ÖÐÐò±éÀúµÄ¿ªÊ¼Î»ÖÃ
-     * @param j        ÖÐÐò±éÀúµÄ½áÊøÎ»ÖÃ
-     * @return ¶þ²æÊ÷µÄ¸ù½áµã
+     * @param preorder å…ˆåºéåŽ†çš„ç»“æžœ
+     * @param x        å…ˆåºéåŽ†çš„å¼€å§‹ä½ç½®
+     * @param y        å…ˆåºéåŽ†çš„ç»“æŸä½ç½®
+     * @param inorder  ä¸­åºéåŽ†çš„ç»“æžœ
+     * @param i        ä¸­åºéåŽ†çš„å¼€å§‹ä½ç½®
+     * @param j        ä¸­åºéåŽ†çš„ç»“æŸä½ç½®
+     * @return äºŒå‰æ ‘çš„æ ¹ç»“ç‚¹
      */
     public TreeNode solve(int[] preorder, int x, int y, int[] inorder, int i, int j) {
 
         if (x >= 0 && x <= y && i >= 0 && i <= j) {
-            // Ö»ÓÐÒ»¸öÔªËØ
+            // åªæœ‰ä¸€ä¸ªå…ƒç´ 
             if (x == y) {
                 return new TreeNode(preorder[x]);
             } else if (x < y) {
-                // ¼ÇÂ¼¸ù½áµãµÄË÷Òý
+                // è®°å½•æ ¹ç»“ç‚¹çš„ç´¢å¼•
                 int idx = i;
                 while (idx <= j && inorder[idx] != preorder[x]) {
                     idx++;
                 }
 
-                // ´´½¨¸ù½áµã
+                // åˆ›å»ºæ ¹ç»“ç‚¹
                 TreeNode root = new TreeNode(inorder[idx]);
 
-                // ×ó×ÓÊ÷µÄ½áµã¸öÊý
+                // å·¦å­æ ‘çš„ç»“ç‚¹ä¸ªæ•°
                 int leftLength = idx - i;
                 //
                 if (leftLength > 0) {
-                    // x + 1, x + leftLength£º×ó×ÓÊ÷ÆðÊ¼ºÍ½áÊøÎ»ÖÃ
+                    // x + 1, x + leftLengthï¼šå·¦å­æ ‘èµ·å§‹å’Œç»“æŸä½ç½®
                     root.left = solve(preorder, x + 1, x + leftLength, inorder, i, idx - 1);
                 }
 
-                // ÓÒ×ÓÊ÷µÄ½áµã¸öÊý
+                // å³å­æ ‘çš„ç»“ç‚¹ä¸ªæ•°
                 int rightLength = j - idx;
                 if (rightLength > 0) {
-                    // x + leftLength + 1, y£ºÓÒ×ÓÊ÷ÆðÊ¼ºÍ½áÊøÎ»ÖÃ
+                    // x + leftLength + 1, yï¼šå³å­æ ‘èµ·å§‹å’Œç»“æŸä½ç½®
                     root.right = solve(preorder, x + leftLength + 1, y, inorder, idx + 1, j);
                 }
                 return root;

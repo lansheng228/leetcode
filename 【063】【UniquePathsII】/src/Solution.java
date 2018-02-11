@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 21:38
  * Declaration: All Rights Reserved !!!
@@ -22,13 +22,13 @@ public class Solution {
      * The total number of unique paths is 2.
      * Note: m and n will be at most 100.
      *
-     * ÌâÄ¿´óÒâ£º
-     * Î¨Ò»Â·¾¶ÎÊÌâºóĞø£¬Èç¹ûÂ·¾¶ÖĞÓĞÕÏ°­£¬Çó×ÜµÄÂ·¾¶µÄÖÖÊı
-     * ×¢Òâ£º
-     * Íø¸ñµÄĞĞÊıºÍÁĞÊı¶¼²»³¬¹ı100
+     * é¢˜ç›®å¤§æ„ï¼š
+     * å”¯ä¸€è·¯å¾„é—®é¢˜åç»­ï¼Œå¦‚æœè·¯å¾„ä¸­æœ‰éšœç¢ï¼Œæ±‚æ€»çš„è·¯å¾„çš„ç§æ•°
+     * æ³¨æ„ï¼š
+     * ç½‘æ ¼çš„è¡Œæ•°å’Œåˆ—æ•°éƒ½ä¸è¶…è¿‡100
      *
-     * ½âÌâË¼Â·£º
-     * ²ÉÓÃ·ÖÖÎÇó½â·½·¨
+     * è§£é¢˜æ€è·¯ï¼š
+     * é‡‡ç”¨åˆ†æ²»æ±‚è§£æ–¹æ³•
      *
      * </pre>
      *
@@ -36,7 +36,7 @@ public class Solution {
      * @return
      */
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        // ÊäÈëĞ£Ñé
+        // è¾“å…¥æ ¡éªŒ
         if (obstacleGrid == null || obstacleGrid.length < 1 || obstacleGrid[0].length < 1
                 || obstacleGrid[0][0] == 1
                 || obstacleGrid[obstacleGrid.length - 1][obstacleGrid[0].length - 1] == 1) {
@@ -47,20 +47,20 @@ public class Solution {
         int cols = obstacleGrid[0].length;
         int[][] result = new int[rows][cols];
 
-        // µÚÒ»¸öÎ»ÖÃÓĞ¶àÉÙÖÖ·½·¨£¬ÎŞÕÏ°­¾ÍÊÇ1ÖÖ£¬ÓĞÕÏ°­¾ÍÊÇ0ÖÖ
+        // ç¬¬ä¸€ä¸ªä½ç½®æœ‰å¤šå°‘ç§æ–¹æ³•ï¼Œæ— éšœç¢å°±æ˜¯1ç§ï¼Œæœ‰éšœç¢å°±æ˜¯0ç§
         result[0][0] = obstacleGrid[0][0] == 0 ? 1 : 0;
 
-        // µÚÒ»ĞĞÓĞ¶àÉÙÖÖ×ß·¨£¬ÓĞÕÏ°­¾ÍÊÇ0
+        // ç¬¬ä¸€è¡Œæœ‰å¤šå°‘ç§èµ°æ³•ï¼Œæœ‰éšœç¢å°±æ˜¯0
         for (int i = 1; i < cols; i++) {
             result[0][i] = obstacleGrid[0][i] == 0 ? result[0][i - 1] : 0;
         }
 
-        // µÚÒ»ÁĞÓĞ¶àÉÙÖÖ×ß·¨£¬ÓĞÕÏ°­¾ÍÊÇ0
+        // ç¬¬ä¸€åˆ—æœ‰å¤šå°‘ç§èµ°æ³•ï¼Œæœ‰éšœç¢å°±æ˜¯0
         for (int i = 1; i < rows; i++) {
             result[i][0] = obstacleGrid[i][0] == 0 ? result[i - 1][0] : 0;
         }
 
-        // ÆäËüÎ»ÖÃµÄ½â·¨£¬ÓĞÕÏ°­¾ÍÊÇ0
+        // å…¶å®ƒä½ç½®çš„è§£æ³•ï¼Œæœ‰éšœç¢å°±æ˜¯0
         for (int i = 1; i < rows; i++) {
             for (int j = 1; j < cols; j++) {
                 result[i][j] = obstacleGrid[i][j] == 0 ? result[i - 1][j] + result[i][j - 1] : 0;
@@ -71,9 +71,9 @@ public class Solution {
     }
 
 
-    // Ê¹ÓÃµİ¹é·½·¨»á³¬Ê±
+    // ä½¿ç”¨é€’å½’æ–¹æ³•ä¼šè¶…æ—¶
     public int uniquePathsWithObstacles2(int[][] obstacleGrid) {
-        // ÊäÈëĞ£Ñé
+        // è¾“å…¥æ ¡éªŒ
         if (obstacleGrid == null || obstacleGrid.length < 1 || obstacleGrid[0].length < 1
                 || obstacleGrid[obstacleGrid.length - 1][obstacleGrid[0].length - 1] == 1) {
             return 0;
@@ -84,15 +84,15 @@ public class Solution {
     }
 
     public void solve(int[][] grid, int row, int col, int[] sum) {
-        // µ½´ïÖÕµã
+        // åˆ°è¾¾ç»ˆç‚¹
         if (row == grid.length - 1 && col == grid[0].length - 1) {
             sum[0]++;
         }
-        // Ã»ÓĞµ½ÖÕµã£¬µãÔÚÆåÅÌÄÚ£¬²¢ÇÒµ±Ç°Î»ÖÃ²»ÊÇ
+        // æ²¡æœ‰åˆ°ç»ˆç‚¹ï¼Œç‚¹åœ¨æ£‹ç›˜å†…ï¼Œå¹¶ä¸”å½“å‰ä½ç½®ä¸æ˜¯
         else if (row >= 0 && row < grid.length && col >= 0 && col < grid[0].length && grid[row][col] == 0) {
-            // ÍùÓÒ×ß
+            // å¾€å³èµ°
             solve(grid, row, col + 1, sum);
-            // ÍùÏÂ×ß
+            // å¾€ä¸‹èµ°
             solve(grid, row + 1, col, sum);
         }
     }

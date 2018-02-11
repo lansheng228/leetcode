@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:40
  * Declaration: All Rights Reserved !!!
@@ -7,7 +7,7 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a sorted array, remove the duplicates in place such that each element
      * appear only once and return the new length.
      * Do not allocate extra space for another array, you must do this in place
@@ -15,15 +15,15 @@ public class Solution {
      * For example,
      * Given input array nums = [1,1,2],
      * Your function should return length = 2, with the first two elements of nums
-     * being 1 and 2 respectively. It doesn¡¯t matter what you leave beyond the new length.
+     * being 1 and 2 respectively. It doesnâ€™t matter what you leave beyond the new length.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÅÅĞòµÄÊı×é£¬½«Êı×éÖĞµÄÖØ¸´ÔªËØÈ¥µô£¬ÏàÍ¬µÄÖ»±£ÁôÒ»¸ö£¬²¢ÇÒ·µ»ØÊı×éĞÂµÄÔªËØ¸öÊı£¬
-     * ²»Òª´´½¨Ò»¸öĞÂµÄÊı×éÀ´±£´æ½á¹û¡£ÔÚ³£Á¿Ê±¼äÄÚ½â¾öÕâ¸öÎÊÌâ
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªæ’åºçš„æ•°ç»„ï¼Œå°†æ•°ç»„ä¸­çš„é‡å¤å…ƒç´ å»æ‰ï¼Œç›¸åŒçš„åªä¿ç•™ä¸€ä¸ªï¼Œå¹¶ä¸”è¿”å›æ•°ç»„æ–°çš„å…ƒç´ ä¸ªæ•°ï¼Œ
+     * ä¸è¦åˆ›å»ºä¸€ä¸ªæ–°çš„æ•°ç»„æ¥ä¿å­˜ç»“æœã€‚åœ¨å¸¸é‡æ—¶é—´å†…è§£å†³è¿™ä¸ªé—®é¢˜
      *
-     * ½âÌâË¼Â·
-     * ´ÓµÚ¶ş¸öÔªËØ¿ªÊ¼´¦Àí£¬¼ÇÎªµ±Ç°´¦ÀíµÄÔªËØ£¬Èç¹ûµ±Ç°ÔªËØÓëËûµÄÇ°Ò»¸öÔªËØÏàÍ¬¾ÍÉ¾³ıÕâ¸öÔªËØ£¬
-     * Èç¹û²»Í¬¾Í½«ËüÒÆ¶¯µ½ÕıÈ·µÄÎ»ÖÃ£¬·µ»Ø×îºóÊı×éÔªËØÈË¸öÊı¡£
+     * è§£é¢˜æ€è·¯
+     * ä»ç¬¬äºŒä¸ªå…ƒç´ å¼€å§‹å¤„ç†ï¼Œè®°ä¸ºå½“å‰å¤„ç†çš„å…ƒç´ ï¼Œå¦‚æœå½“å‰å…ƒç´ ä¸ä»–çš„å‰ä¸€ä¸ªå…ƒç´ ç›¸åŒå°±åˆ é™¤è¿™ä¸ªå…ƒç´ ï¼Œ
+     * å¦‚æœä¸åŒå°±å°†å®ƒç§»åŠ¨åˆ°æ­£ç¡®çš„ä½ç½®ï¼Œè¿”å›æœ€åæ•°ç»„å…ƒç´ äººä¸ªæ•°ã€‚
      * </pre>
      *
      * @param A
@@ -35,14 +35,14 @@ public class Solution {
             return 0;
         }
 
-        int index = 0;//[0,index]Ö»¼ÇÂ¼Êı×éÖĞ³öÏÖµÄ°´´ÓĞ¡µ½´óµÄÎ¨Ò»Ò»¸öÊı£¬ÒÑ¾­ÅÅºÃĞòÁË
+        int index = 0;//[0,index]åªè®°å½•æ•°ç»„ä¸­å‡ºç°çš„æŒ‰ä»å°åˆ°å¤§çš„å”¯ä¸€ä¸€ä¸ªæ•°ï¼Œå·²ç»æ’å¥½åºäº†
         int next = 1;
 
-        // Ëã·¨Ë¼Ïë£ºÕÒindexÖ®ºóµÄ±ÈA[index]´óµÄÊı£¬ÈçÊÇÕÒµ½¾ÍÒÆ¶¯µ½A[index+1]´¦£¬
-        // indexÒÆ¶¯µ½ÏÂÒ»¸öÎ»ÖÃ£¬nextÒÆ¶¯µ½ÏÂÒ»¸öÎ»ÖÃ£¬ÔÙÕÒ±ÈA[index]´óµÄÊı
+        // ç®—æ³•æ€æƒ³ï¼šæ‰¾indexä¹‹åçš„æ¯”A[index]å¤§çš„æ•°ï¼Œå¦‚æ˜¯æ‰¾åˆ°å°±ç§»åŠ¨åˆ°A[index+1]å¤„ï¼Œ
+        // indexç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªä½ç½®ï¼Œnextç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªä½ç½®ï¼Œå†æ‰¾æ¯”A[index]å¤§çš„æ•°
 
         while (next < A.length) {
-            while (next < A.length && A[index] == A[next]) { // ÕÒ²»µÈÓÚÊı×éÖĞ×î
+            while (next < A.length && A[index] == A[next]) { // æ‰¾ä¸ç­‰äºæ•°ç»„ä¸­æœ€
                 next++;
             }
 

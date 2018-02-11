@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 12:05
  * Declaration: All Rights Reserved !!!
@@ -13,18 +13,18 @@ public class Solution {
      * For example, given the array [?2,1,?3,4,?1,2,1,?5,4],
      * the contiguous subarray [4,?1,2,1] has the largest sum = 6.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ÇóÊý×éµÄ×î´ó×ÓÊý×éµÄºÍ
-     * ½âÌâË¼Â·£º
-     * ¶¯Ì¬¹æ»®ÎÊÌâ£¬ÒÑÖªÁËÇ°k¸öÔªËØµÄ×î´ó×ÓÐòÁÐºÍÎªmaxSub£¨ÒÑ¾­±»¼ÇÂ¼ÏÂÀ´ÁË£©£¬ÒÔ¼°Ò»¸öÁÙÊ±ºÍsum£¬
-     * Èç¹ûÌí¼ÓÁËµÚk+1Õâ¸öÔªËØ£¬ÓÉÓÚÊÇÁ¬Ðø×ÓÐòÁÐÕâ¸öÏÞÖÆ£¬ËùÒÔÈç¹ûk+1Õâ¸öÔªËØÖ®Ç°µÄºÍÊÇÐ¡ÓÚ0µÄ£¬
-     * ÄÇÃ´¶ÔÓÚÔö´ók+1Õâ¸öÔªËØ´Ó¶øÈ¥×é³É×î´ó×ÓÐòÁÐÊÇÃ»ÓÐ¹±Ï×µÄ£¬ËùÒÔ¿ÉÒÔ°Ñsum ÖÃ0¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * æ±‚æ•°ç»„çš„æœ€å¤§å­æ•°ç»„çš„å’Œ
+     * è§£é¢˜æ€è·¯ï¼š
+     * åŠ¨æ€è§„åˆ’é—®é¢˜ï¼Œå·²çŸ¥äº†å‰kä¸ªå…ƒç´ çš„æœ€å¤§å­åºåˆ—å’Œä¸ºmaxSubï¼ˆå·²ç»è¢«è®°å½•ä¸‹æ¥äº†ï¼‰ï¼Œä»¥åŠä¸€ä¸ªä¸´æ—¶å’Œsumï¼Œ
+     * å¦‚æžœæ·»åŠ äº†ç¬¬k+1è¿™ä¸ªå…ƒç´ ï¼Œç”±äºŽæ˜¯è¿žç»­å­åºåˆ—è¿™ä¸ªé™åˆ¶ï¼Œæ‰€ä»¥å¦‚æžœk+1è¿™ä¸ªå…ƒç´ ä¹‹å‰çš„å’Œæ˜¯å°äºŽ0çš„ï¼Œ
+     * é‚£ä¹ˆå¯¹äºŽå¢žå¤§k+1è¿™ä¸ªå…ƒç´ ä»Žè€ŒåŽ»ç»„æˆæœ€å¤§å­åºåˆ—æ˜¯æ²¡æœ‰è´¡çŒ®çš„ï¼Œæ‰€ä»¥å¯ä»¥æŠŠsum ç½®0ã€‚
      *</pre>
      * @param nums
      * @return
      */
     public int maxSubArray(int[] nums) {
-        // ²ÎÊýÐ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (nums == null || nums.length < 1) {
             throw new IllegalArgumentException();
         }
@@ -33,16 +33,16 @@ public class Solution {
         int curSum = 0;
 
         for (int i : nums) {
-            // µ±Ç°ºÍÐ¡ÓÚ0£¬¾Í½«µ±Ç°Öµ¸³¸øcurSum
+            // å½“å‰å’Œå°äºŽ0ï¼Œå°±å°†å½“å‰å€¼èµ‹ç»™curSum
             if (curSum <= 0){
                 curSum = i;
             }
-            // ·ñÔò½øÐÐÀÛ¼Ó
+            // å¦åˆ™è¿›è¡Œç´¯åŠ 
             else {
                 curSum += i;
             }
 
-            // ±£´æ½Ï´óµÄÖµ
+            // ä¿å­˜è¾ƒå¤§çš„å€¼
             if (max < curSum) {
                 max = curSum;
             }

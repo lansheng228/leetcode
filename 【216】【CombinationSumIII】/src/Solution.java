@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-21
  * Time: 21:31
  * Declaration: All Rights Reserved !!!
@@ -27,12 +27,12 @@ public class Solution {
      * Output:
      * [[1,2,6], [1,3,5], [2,3,4]]
      *
-     * ÌâÄ¿´óÒâ£º
-     * Ñ°ÕÒËùÓĞÂú×ãk¸öÊıÖ®ºÍµÈÓÚnµÄ×éºÏ£¬Ö»ÔÊĞíÊ¹ÓÃÊı×Ö1-9£¬²¢ÇÒÃ¿Ò»ÖÖ×éºÏÖĞµÄÊı×ÖÓ¦¸ÃÊÇÎ¨Ò»µÄ¡£
-     * È·±£×éºÏÖĞµÄÊı×ÖÒÔµİÔöË³ĞòÅÅÁĞ¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * å¯»æ‰¾æ‰€æœ‰æ»¡è¶³kä¸ªæ•°ä¹‹å’Œç­‰äºnçš„ç»„åˆï¼Œåªå…è®¸ä½¿ç”¨æ•°å­—1-9ï¼Œå¹¶ä¸”æ¯ä¸€ç§ç»„åˆä¸­çš„æ•°å­—åº”è¯¥æ˜¯å”¯ä¸€çš„ã€‚
+     * ç¡®ä¿ç»„åˆä¸­çš„æ•°å­—ä»¥é€’å¢é¡ºåºæ’åˆ—ã€‚
      *
-     * ½âÌâË¼Â·£º
-     * »ØËİ·¨
+     * è§£é¢˜æ€è·¯ï¼š
+     * å›æº¯æ³•
      * </pre>
      *
      * @param k
@@ -40,57 +40,57 @@ public class Solution {
      * @return
      */
     public List<List<Integer>> combinationSum3(int k, int n) {
-        // ÓÃÓÚ±£´æËùÓĞ½á¹û
+        // ç”¨äºä¿å­˜æ‰€æœ‰ç»“æœ
         List<List<Integer>> result = new LinkedList<>();
-        // ÓÃÓÚ±£´æÖĞ¼ä½á¹û
+        // ç”¨äºä¿å­˜ä¸­é—´ç»“æœ
         List<Integer> list = new LinkedList<>();
-        // Ìõ¼şÂú×ã¾Í½øĞĞ½âÌâ²Ù×÷
+        // æ¡ä»¶æ»¡è¶³å°±è¿›è¡Œè§£é¢˜æ“ä½œ
         if (k > 0 && k <= 9) {
                 solve(k, 1, n, 0, list, result);
         }
 
-        // ·µ»Ø½á¹û
+        // è¿”å›ç»“æœ
         return result;
     }
 
     /**
-     * Çó½â·½·¨
+     * æ±‚è§£æ–¹æ³•
      *
-     * @param k         Ã¿¸ö½âµÄÔªËØ¸öÊı
-     * @param cur       µ±Ç°´¦ÀíµÚk¸öÔªËØ
-     * @param remainder k - cur + 1¸öÔªËØµÄºÍ
-     * @param prevVal   µÚcur-1¸öÔªËØµÄÈ¡Öµ
-     * @param list      ½«½âµÄÔªËØµÄ¼¯ºÏÀà
-     * @param result    ±£´æËùÓĞ½á¹ûµÄÈİÆ÷
+     * @param k         æ¯ä¸ªè§£çš„å…ƒç´ ä¸ªæ•°
+     * @param cur       å½“å‰å¤„ç†ç¬¬kä¸ªå…ƒç´ 
+     * @param remainder k - cur + 1ä¸ªå…ƒç´ çš„å’Œ
+     * @param prevVal   ç¬¬cur-1ä¸ªå…ƒç´ çš„å–å€¼
+     * @param list      å°†è§£çš„å…ƒç´ çš„é›†åˆç±»
+     * @param result    ä¿å­˜æ‰€æœ‰ç»“æœçš„å®¹å™¨
      */
     public void solve(int k, int cur, int remainder, int prevVal, List<Integer> list, List<List<Integer>> result) {
-        // ´¦Àí×îºóÒ»¸öÔªËØ
+        // å¤„ç†æœ€åä¸€ä¸ªå…ƒç´ 
         if (cur == k) {
-            // remainderÎª×îºóÒ»¸ö½âÔªËØµÄÖµ£¬Ëü±ØĞë´óÓÚÇ°Ò»¸ö½âÔªËØµÄÖµ£¬²¢ÇÒ²»ÄÜ³¬³ö9
+            // remainderä¸ºæœ€åä¸€ä¸ªè§£å…ƒç´ çš„å€¼ï¼Œå®ƒå¿…é¡»å¤§äºå‰ä¸€ä¸ªè§£å…ƒç´ çš„å€¼ï¼Œå¹¶ä¸”ä¸èƒ½è¶…å‡º9
             if (remainder > prevVal && remainder <= 9) {
-                // Ìí¼ÓÔªËØÖµ
+                // æ·»åŠ å…ƒç´ å€¼
                 list.add(remainder);
 
-                // ¿½±´½á¹ûµ½ĞÂµÄ¶ÓÁĞÖĞ
+                // æ‹·è´ç»“æœåˆ°æ–°çš„é˜Ÿåˆ—ä¸­
                 List<Integer> one = new LinkedList<>();
                 for (Integer i : list) {
                     one.add(i);
                 }
 
-                // ±£´æ½á¹û
+                // ä¿å­˜ç»“æœ
                 result.add(one);
-                // É¾³ı×îºóÒ»¸öÔªËØ£¬½øĞĞÏÖ³¡»¹Ô­
+                // åˆ é™¤æœ€åä¸€ä¸ªå…ƒç´ ï¼Œè¿›è¡Œç°åœºè¿˜åŸ
                 list.remove(list.size() - 1);
             }
         }
-        // ²»ÊÇ×îºóÒ»¸öÔªËØ
+        // ä¸æ˜¯æœ€åä¸€ä¸ªå…ƒç´ 
         else if (cur < k){
             for (int i = prevVal + 1; i <= 9 - (k - cur); i++) {
-                // Ìí¼ÓÔªËØ
+                // æ·»åŠ å…ƒç´ 
                 list.add(i);
-                // µİ¹éÇó½â
+                // é€’å½’æ±‚è§£
                 solve(k, cur + 1, remainder - i, i, list, result);
-                // ÏÖ³¡»¹Ô­
+                // ç°åœºè¿˜åŸ
                 list.remove(list.size() - 1);
 
             }

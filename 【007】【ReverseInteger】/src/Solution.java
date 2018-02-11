@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:10
  * Declaration: All Rights Reserved !!!
@@ -7,16 +7,16 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Reverse digits of an integer.
      * Example1: x = 123, return 321
      * Example2: x = -123, return -321
      *
-     * ÌâÄ¿´óÒâ
-     * ÊäÈëÒ»¸öÕûÊı¶ÔÆä½øĞĞ·­×ª
+     * é¢˜ç›®å¤§æ„
+     * è¾“å…¥ä¸€ä¸ªæ•´æ•°å¯¹å…¶è¿›è¡Œç¿»è½¬
      *
-     * ½âÌâË¼Â·
-     * Í¨¹ıÇóÓàÊıÇóÉÌ·¨½øĞĞ²Ù×÷¡£
+     * è§£é¢˜æ€è·¯
+     * é€šè¿‡æ±‚ä½™æ•°æ±‚å•†æ³•è¿›è¡Œæ“ä½œã€‚
      * </pre>
      *
      * @param x
@@ -24,7 +24,7 @@ public class Solution {
      */
     public int reverse(int x) {
         long tmp = x;
-        // ·ÀÖ¹½á¹ûÒç³ö
+        // é˜²æ­¢ç»“æœæº¢å‡º
         long result = 0;
 
         while (tmp != 0) {
@@ -32,7 +32,7 @@ public class Solution {
             tmp = tmp / 10;
         }
 
-        // Òç³öÅĞ¶Ï
+        // æº¢å‡ºåˆ¤æ–­
         if (result < Integer.MIN_VALUE || result > Integer.MAX_VALUE) {
             result = 0;
         }

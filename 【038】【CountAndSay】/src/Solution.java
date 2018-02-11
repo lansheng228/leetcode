@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:47
  * Declaration: All Rights Reserved !!!
@@ -7,7 +7,7 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŽŸé¢˜
      * The count-and-say sequence is the sequence of integers beginning as follows:
      * 1, 11, 21, 1211, 111221, ...
      * 1 is read off as "one 1" or 11.
@@ -16,17 +16,17 @@ public class Solution {
      * Given an integer n, generate the nth sequence.
      * Note: The sequence of integers will be represented as a string.
      *
-     * ÌâÄ¿´óÒâ
-     * n=1Ê±Êä³ö×Ö·û´®1£»n=2Ê±£¬ÊýÉÏ´Î×Ö·û´®ÖÐµÄÊýÖµ¸öÊý£¬ÒòÎªÉÏ´Î×Ö·û´®ÓÐ1¸ö1£¬
-     * ËùÒÔÊä³ö11£»n=3Ê±£¬ÓÉÓÚÉÏ´Î×Ö·ûÊÇ11£¬ÓÐ2¸ö1£¬ËùÒÔÊä³ö21£»n=4Ê±£¬ÓÉÓÚÉÏ´Î×Ö·û´®ÊÇ21£¬
-     * ÓÐ1¸ö2ºÍ1¸ö1£¬ËùÒÔÊä³ö1211¡£ÒÀ´ÎÀàÍÆ£¬Ð´¸öcountAndSay(n)º¯Êý·µ»Ø×Ö·û´®¡£
+     * é¢˜ç›®å¤§æ„
+     * n=1æ—¶è¾“å‡ºå­—ç¬¦ä¸²1ï¼›n=2æ—¶ï¼Œæ•°ä¸Šæ¬¡å­—ç¬¦ä¸²ä¸­çš„æ•°å€¼ä¸ªæ•°ï¼Œå› ä¸ºä¸Šæ¬¡å­—ç¬¦ä¸²æœ‰1ä¸ª1ï¼Œ
+     * æ‰€ä»¥è¾“å‡º11ï¼›n=3æ—¶ï¼Œç”±äºŽä¸Šæ¬¡å­—ç¬¦æ˜¯11ï¼Œæœ‰2ä¸ª1ï¼Œæ‰€ä»¥è¾“å‡º21ï¼›n=4æ—¶ï¼Œç”±äºŽä¸Šæ¬¡å­—ç¬¦ä¸²æ˜¯21ï¼Œ
+     * æœ‰1ä¸ª2å’Œ1ä¸ª1ï¼Œæ‰€ä»¥è¾“å‡º1211ã€‚ä¾æ¬¡ç±»æŽ¨ï¼Œå†™ä¸ªcountAndSay(n)å‡½æ•°è¿”å›žå­—ç¬¦ä¸²ã€‚
      *
-     * ½âÌâË¼Â·
-     * µÚÒ»ÖÖÇé¿ö£ºn<0Ê±·µ»Ønull¡£
-     * µÚ¶þÖÖÇé¿ö£ºµ±n=1Ê±£¬·µ»Ø1
-     * µÚÈýÖÖÇé¿ö£ºµ±n>1Ê±£¬¼ÙÉèn-1·µ»ØµÄ×Ö·û´®ÊÇs£¬¶ÔsµÄ´®½øÐÐ´¦ÀíÀí£¬¶Ô²»Í¬µÄÊý×Ö
-     * ½øÐÐ·Ö×é±ÈÈç112365477899£¬·Ö³É11£¬2£¬3£¬6£¬5£¬4£¬77£¬8£¬99¡£×îÓÐ¾Í2¸ö1£¬
-     * 1¸ö2£¬1¸ö3£¬1¸ö6£¬1¸ö5£¬Ò»¸ö4£¬2¸ö7£¬1¸ö8£¬2¸ö9£¬¾ÍÊÇ211213161614271829£¬·µ»Ø´Ë½á¹û¡£
+     * è§£é¢˜æ€è·¯
+     * ç¬¬ä¸€ç§æƒ…å†µï¼šn<0æ—¶è¿”å›žnullã€‚
+     * ç¬¬äºŒç§æƒ…å†µï¼šå½“n=1æ—¶ï¼Œè¿”å›ž1
+     * ç¬¬ä¸‰ç§æƒ…å†µï¼šå½“n>1æ—¶ï¼Œå‡è®¾n-1è¿”å›žçš„å­—ç¬¦ä¸²æ˜¯sï¼Œå¯¹sçš„ä¸²è¿›è¡Œå¤„ç†ç†ï¼Œå¯¹ä¸åŒçš„æ•°å­—
+     * è¿›è¡Œåˆ†ç»„æ¯”å¦‚112365477899ï¼Œåˆ†æˆ11ï¼Œ2ï¼Œ3ï¼Œ6ï¼Œ5ï¼Œ4ï¼Œ77ï¼Œ8ï¼Œ99ã€‚æœ€æœ‰å°±2ä¸ª1ï¼Œ
+     * 1ä¸ª2ï¼Œ1ä¸ª3ï¼Œ1ä¸ª6ï¼Œ1ä¸ª5ï¼Œä¸€ä¸ª4ï¼Œ2ä¸ª7ï¼Œ1ä¸ª8ï¼Œ2ä¸ª9ï¼Œå°±æ˜¯211213161614271829ï¼Œè¿”å›žæ­¤ç»“æžœã€‚
      * </pre>
      *
      * @param n

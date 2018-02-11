@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: çŽ‹ä¿Šè¶…
  * Date: 2015-06-19
  * Time: 19:29
  * Declaration: All Rights Reserved !!!
@@ -18,9 +18,9 @@ public class Solution {
      * A = [2,3,1,1,4], return true.
      * A = [3,2,1,0,4], return false.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨µÄ·Ç¸ºÕûÊýµÄÊý×é£¬Ôò×î³õ¶¨Î»ÔÚÊý×éµÄµÚÒ»¸öÎ»ÖÃ¡£Êý×éÖÐµÄÃ¿¸öÔªËØ¶¼´ú±íÄãµÄ×î´óÌøÔ¾³¤¶ÈÔÚÄÇ¸öÎ»ÖÃ¡£
-     * ¾ö¶¨ÄãÊÇ·ñÄÜµ½´ï×îºóÒ»¸öË÷Òý¡£
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šçš„éžè´Ÿæ•´æ•°çš„æ•°ç»„ï¼Œåˆ™æœ€åˆå®šä½åœ¨æ•°ç»„çš„ç¬¬ä¸€ä¸ªä½ç½®ã€‚æ•°ç»„ä¸­çš„æ¯ä¸ªå…ƒç´ éƒ½ä»£è¡¨ä½ çš„æœ€å¤§è·³è·ƒé•¿åº¦åœ¨é‚£ä¸ªä½ç½®ã€‚
+     * å†³å®šä½ æ˜¯å¦èƒ½åˆ°è¾¾æœ€åŽä¸€ä¸ªç´¢å¼•ã€‚
      *
      * </pre>
      *

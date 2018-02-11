@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:41
  * Declaration: All Rights Reserved !!!
@@ -12,11 +12,11 @@ public class Solution {
     private List<List<Integer>> result;
     private List<Integer> l;
     private int[] set;
-    private int num; // ÔÚsetÖĞ»¹ĞèÒªµÄÑ¡ÔñµÄÔªËØ¸öÊı
+    private int num; // åœ¨setä¸­è¿˜éœ€è¦çš„é€‰æ‹©çš„å…ƒç´ ä¸ªæ•°
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a set of distinct integers, nums, return all possible subsets.
      * Note:
      * Elements in a subset must be in non-descending order.
@@ -35,11 +35,11 @@ public class Solution {
      *  []
      * ]
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸ö²»Í¬Êı×ÖµÄÊı×é£¬·µ»ØËüµÄËùÓĞ×Ó¼¯¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªä¸åŒæ•°å­—çš„æ•°ç»„ï¼Œè¿”å›å®ƒçš„æ‰€æœ‰å­é›†ã€‚
      *
-     * ½âÌâË¼Â·
-     * ÏÈ¶ÔÊı×éÖĞµÄÔªËØ½øĞĞÅÅĞò£¬È»ºóÔÙÓÃµİ¹é·ÖÖÎ·¨½øĞĞÇó½â¡£
+     * è§£é¢˜æ€è·¯
+     * å…ˆå¯¹æ•°ç»„ä¸­çš„å…ƒç´ è¿›è¡Œæ’åºï¼Œç„¶åå†ç”¨é€’å½’åˆ†æ²»æ³•è¿›è¡Œæ±‚è§£ã€‚
      * </pre>
      *
      * @param S
@@ -51,7 +51,7 @@ public class Solution {
         if (S != null) {
             l = new ArrayList<>();
 
-            // ¶ÔS½øĞĞÅÅĞò´¦Àí
+            // å¯¹Sè¿›è¡Œæ’åºå¤„ç†
             quickSort(S, 0, S.length - 1);
 
             set = S;
@@ -61,7 +61,7 @@ public class Solution {
             }
         }
 
-        // ¸³¿Õ£¬¼Ó¿ìÀ¬»ø»ØÊÕ
+        // èµ‹ç©ºï¼ŒåŠ å¿«åƒåœ¾å›æ”¶
         set = null;
         l = null;
 
@@ -69,9 +69,9 @@ public class Solution {
     }
 
     /**
-     * ÇóÔªËØ¸ö¸öÊıÊÇnumµÄ×Ó¼¯Êı
+     * æ±‚å…ƒç´ ä¸ªä¸ªæ•°æ˜¯numçš„å­é›†æ•°
      *
-     * @param start Ê£ÓàµÄÒªÌôÑ¡µÄnum¸öÔªËØÖĞ£¬µÚÒ»¸öµÄ×îĞ¡ÏÂ±ê
+     * @param start å‰©ä½™çš„è¦æŒ‘é€‰çš„numä¸ªå…ƒç´ ä¸­ï¼Œç¬¬ä¸€ä¸ªçš„æœ€å°ä¸‹æ ‡
      */
     public void subset(int start) {
         if (num == 0) {
@@ -84,7 +84,7 @@ public class Solution {
             return;
         }
 
-        int endFirst = set.length - num; // Ê£ÓàµÄÒªÌôÑ¡µÄnum¸öÔªËØÖĞ£¬µÚÒ»¸öµÄ×î´óÏÂ±ê
+        int endFirst = set.length - num; // å‰©ä½™çš„è¦æŒ‘é€‰çš„numä¸ªå…ƒç´ ä¸­ï¼Œç¬¬ä¸€ä¸ªçš„æœ€å¤§ä¸‹æ ‡
         for (int i = start; i <= endFirst; i++) {
             l.add(set[i]);
             num--;

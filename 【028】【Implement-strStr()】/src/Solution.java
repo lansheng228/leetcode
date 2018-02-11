@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 16:45
  * Declaration: All Rights Reserved !!!
@@ -7,16 +7,16 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Implement strStr().
      * Returns the index of the first occurrence of needle in haystack, or -1
      * if needle is not part of haystack.
      *
-     * ÌâÄ¿´óÒâ
-     * ÊµÏÖÊµÏÖstrStr()º¯Êı£¬ÅĞ¶ÏÒ»¸ö×Ö·û´®ÔÚÁíÒ»¸ö×Ö·û´®ÖĞ³öÏÖµÄÎ»ÖÃ¡£Èç¹û²»Æ¥Åä¾Í·µ»Ø-1¡£
+     * é¢˜ç›®å¤§æ„
+     * å®ç°å®ç°strStr()å‡½æ•°ï¼Œåˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²åœ¨å¦ä¸€ä¸ªå­—ç¬¦ä¸²ä¸­å‡ºç°çš„ä½ç½®ã€‚å¦‚æœä¸åŒ¹é…å°±è¿”å›-1ã€‚
      *
-     * ½âÌâË¼Â·
-     * Ê¹ÓÃKMPËã·¨½øĞĞÊµÏÖ
+     * è§£é¢˜æ€è·¯
+     * ä½¿ç”¨KMPç®—æ³•è¿›è¡Œå®ç°
      * </pre>
      *
      * @param haystack

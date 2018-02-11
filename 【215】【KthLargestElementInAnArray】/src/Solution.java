@@ -1,7 +1,7 @@
 import java.util.Collections;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-19
  * Time: 19:36
  * Declaration: All Rights Reserved !!!
@@ -16,14 +16,14 @@ public class Solution {
      * Given [3,2,1,5,6,4] and k = 2, return 5.
      *
      * Note:
-     * You may assume k is always valid, 1 ¡Ü k ¡Ü array's length.
+     * You may assume k is always valid, 1 â‰¤ k â‰¤ array's length.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ´ÓÒ»¸öÎ´¾­ÅÅĞòµÄÊı×éÖĞÕÒ³öµÚk´óµÄÔªËØ¡£×¢ÒâÊÇÅÅĞòÖ®ºóµÄµÚk´ó£¬¶ø·ÇµÚk¸ö²»ÖØ¸´µÄÔªËØ
-     * ¿ÉÒÔ¼ÙÉèkÒ»¶¨ÊÇÓĞĞ§µÄ£¬ 1 ¡Ü k ¡Ü Êı×é³¤¶È
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ä»ä¸€ä¸ªæœªç»æ’åºçš„æ•°ç»„ä¸­æ‰¾å‡ºç¬¬kå¤§çš„å…ƒç´ ã€‚æ³¨æ„æ˜¯æ’åºä¹‹åçš„ç¬¬kå¤§ï¼Œè€Œéç¬¬kä¸ªä¸é‡å¤çš„å…ƒç´ 
+     * å¯ä»¥å‡è®¾kä¸€å®šæ˜¯æœ‰æ•ˆçš„ï¼Œ 1 â‰¤ k â‰¤ æ•°ç»„é•¿åº¦
      *
-     * ½âÌâË¼Â·£º
-     * O(n)½â·¨£º¿ìËÙÑ¡Ôñ£¨QuickSelect£©Ëã·¨
+     * è§£é¢˜æ€è·¯ï¼š
+     * O(n)è§£æ³•ï¼šå¿«é€Ÿé€‰æ‹©ï¼ˆQuickSelectï¼‰ç®—æ³•
      * </pre>
      *
      * @param nums
@@ -41,19 +41,19 @@ public class Solution {
 
     public int findKthLargest(int[] nums, int start, int end, int k) {
 
-        // ÖĞÊàÖµ
+        // ä¸­æ¢å€¼
         int pivot = nums[start];
         int lo = start;
         int hi = end;
 
         while (lo < hi) {
-            // ½«Ğ¡ÓÚÖĞÊàÖµµÄÊıÒÆ¶¯µ½Êı×é×ó±ß
+            // å°†å°äºä¸­æ¢å€¼çš„æ•°ç§»åŠ¨åˆ°æ•°ç»„å·¦è¾¹
             while (lo < hi && nums[hi] >= pivot) {
                 hi--;
             }
             nums[lo] = nums[hi];
 
-            // ½«´óÓÚÖĞÊàÖµµÄÊıÒÆ¶¯µ½Êı×éÓÒ±ß
+            // å°†å¤§äºä¸­æ¢å€¼çš„æ•°ç§»åŠ¨åˆ°æ•°ç»„å³è¾¹
             while (lo < hi && nums[lo] <= pivot) {
                 lo++;
             }
@@ -62,19 +62,19 @@ public class Solution {
 
         nums[lo] = pivot;
 
-        // Èç¹ûÒÑ¾­ÕÒµ½ÁË
+        // å¦‚æœå·²ç»æ‰¾åˆ°äº†
         if (end - lo + 1 == k) {
             return pivot;
         }
-        // µÚk´óµÄÊıÔÚloÎ»ÖÃµÄÓÒ±ß
+        // ç¬¬kå¤§çš„æ•°åœ¨loä½ç½®çš„å³è¾¹
         else if (end - lo + 1 > k){
             return findKthLargest(nums, lo + 1, end, k);
         }
-        // µÚk´óµÄÊıÔÚloÎ»ÖÃµÄ×ó±ß
+        // ç¬¬kå¤§çš„æ•°åœ¨loä½ç½®çš„å·¦è¾¹
         else {
             // k-(end-lo+1)
-            // (end-lo+1)£º±íÊ¾´ÓloÎ»ÖÃ¿ªÊ¼µ½endÎ»ÖÃµÄÔªËØ¸öÊı£¬¾ÍÊÇÉáµôÓÒ°ë²¿·Ö
-            // Ô­À´µÄµÚk´ó±ä³Ék-(end-lo+1)´ó
+            // (end-lo+1)ï¼šè¡¨ç¤ºä»loä½ç½®å¼€å§‹åˆ°endä½ç½®çš„å…ƒç´ ä¸ªæ•°ï¼Œå°±æ˜¯èˆæ‰å³åŠéƒ¨åˆ†
+            // åŸæ¥çš„ç¬¬kå¤§å˜æˆk-(end-lo+1)å¤§
             return findKthLargest(nums, start, lo - 1, k - (end - lo + 1));
         }
     }

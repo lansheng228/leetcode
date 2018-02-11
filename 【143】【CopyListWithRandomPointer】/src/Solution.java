@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:21
  * Declaration: All Rights Reserved !!!
@@ -7,18 +7,18 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * A linked list is given such that each node contains an additional random pointer
      * which could point to any node in the list or null.
      * Return a deep copy of the list.
      *
-     * ÌâÄ¿´óÒâ
-     * Ò»¸öµ¥Á´±í°üº¬Ò»¸öÖ¸ÏòÈÎÒâ½áµã»òÕßnullµÄ½áµãÖ¸Õë£¬·µ»ØÕâ¸öÁ´±íµÄÉî¿½±´
+     * é¢˜ç›®å¤§æ„
+     * ä¸€ä¸ªå•é“¾è¡¨åŒ…å«ä¸€ä¸ªæŒ‡å‘ä»»æ„ç»“ç‚¹æˆ–è€…nullçš„ç»“ç‚¹æŒ‡é’ˆï¼Œè¿”å›è¿™ä¸ªé“¾è¡¨çš„æ·±æ‹·è´
      *
-     * ½âÌâË¼Â·
-     * µÚÒ»²½£º¸´ÖÆ½áµã£¬¸´ÖÆµÄ½áµã·ÅÔÚ´ı¸´ÖÆµÄ½áµãºó£¬ÒÀÈ»×é³ÉÒ»¸öµ¥Á´±í
-     * µÚ¶ş²½£º´®½ÓËæ»úÖ¸Õë
-     * µÚÈı²½£ºÁ´±í²ğ·Ö¡£²ğ³ÉÔ­Á´ºÍ¸´ÖÆÁ´
+     * è§£é¢˜æ€è·¯
+     * ç¬¬ä¸€æ­¥ï¼šå¤åˆ¶ç»“ç‚¹ï¼Œå¤åˆ¶çš„ç»“ç‚¹æ”¾åœ¨å¾…å¤åˆ¶çš„ç»“ç‚¹åï¼Œä¾ç„¶ç»„æˆä¸€ä¸ªå•é“¾è¡¨
+     * ç¬¬äºŒæ­¥ï¼šä¸²æ¥éšæœºæŒ‡é’ˆ
+     * ç¬¬ä¸‰æ­¥ï¼šé“¾è¡¨æ‹†åˆ†ã€‚æ‹†æˆåŸé“¾å’Œå¤åˆ¶é“¾
      * </pre>
      *
      * @param head
@@ -36,17 +36,17 @@ public class Solution {
     }
 
     /**
-     * ¸´ÖÆ½áµã£¬¸´ÖÆµÄ½áµã·ÅÔÚ´ı¸´ÖÆµÄ½áµãºó£¬ÒÀÈ»×é³ÉÒ»¸öµ¥Á´±í
+     * å¤åˆ¶ç»“ç‚¹ï¼Œå¤åˆ¶çš„ç»“ç‚¹æ”¾åœ¨å¾…å¤åˆ¶çš„ç»“ç‚¹åï¼Œä¾ç„¶ç»„æˆä¸€ä¸ªå•é“¾è¡¨
      *
-     * @param head Á´±íÍ·
+     * @param head é“¾è¡¨å¤´
      */
     public void copyNode(RandomListNode head) {
-        // ¼ÇÂ¼µ±Ç°Òª±»¸´ÖÆµÄçÇ
+        // è®°å½•å½“å‰è¦è¢«å¤åˆ¶çš„ç¼œ
         RandomListNode node = head;
         while (node != null) {
-            // ¸´ÖÆÒ»¸öĞÂµÄ½áµã
+            // å¤åˆ¶ä¸€ä¸ªæ–°çš„ç»“ç‚¹
             RandomListNode copyNode = new RandomListNode(node.label);
-            // ½«½áµã´®½Óµ½±»¸´ÖÆµÄ½áµãºó£¬²¢ÇÒÒÀÈ»×é³Éµ¥Á´±í
+            // å°†ç»“ç‚¹ä¸²æ¥åˆ°è¢«å¤åˆ¶çš„ç»“ç‚¹åï¼Œå¹¶ä¸”ä¾ç„¶ç»„æˆå•é“¾è¡¨
             copyNode.next = node.next;
             node.next = copyNode;
             node = copyNode.next;
@@ -54,53 +54,53 @@ public class Solution {
     }
 
     /**
-     * ´®½ÓËæ»úÖ¸Õë
+     * ä¸²æ¥éšæœºæŒ‡é’ˆ
      *
-     * @param head Á´±íÍ·
+     * @param head é“¾è¡¨å¤´
      */
     public void linkRandomPointer(RandomListNode head) {
-        // ¼ÇÂ¼µ±Ç°Òª±»¸´ÖÆµÄçÇ
+        // è®°å½•å½“å‰è¦è¢«å¤åˆ¶çš„ç¼œ
         RandomListNode node = head;
         while (node != null) {
-            // Ëæ»úÖ¸ÕëÓĞÖ¸ÏòÄ³¸ö¾ßÌåµÄ½áµã
+            // éšæœºæŒ‡é’ˆæœ‰æŒ‡å‘æŸä¸ªå…·ä½“çš„ç»“ç‚¹
             if (node.random != null) {
-                // ´®½Ónode±»¸´ÖÆ½áµãµÄËæ»úÖ¸Õë
+                // ä¸²æ¥nodeè¢«å¤åˆ¶ç»“ç‚¹çš„éšæœºæŒ‡é’ˆ
                 node.next.random = node.random.next;
             }
 
-            // Ö¸ÏòÏÂÒ»¸ö±»¸´ÖÆµÄ½áµã
+            // æŒ‡å‘ä¸‹ä¸€ä¸ªè¢«å¤åˆ¶çš„ç»“ç‚¹
             node = node.next.next;
         }
     }
 
     /**
-     * ½«Á´±í²ğ·Ö£¬»¹Ô­Ô­À´µÄÁ´±í£¬²¢ÇÒ×é×°¿½±´µÄÁ´±í
+     * å°†é“¾è¡¨æ‹†åˆ†ï¼Œè¿˜åŸåŸæ¥çš„é“¾è¡¨ï¼Œå¹¶ä¸”ç»„è£…æ‹·è´çš„é“¾è¡¨
      *
-     * @param head Á´±íÍ·
-     * @return ¿½±´µÄĞÂÁ´±íÍ·
+     * @param head é“¾è¡¨å¤´
+     * @return æ‹·è´çš„æ–°é“¾è¡¨å¤´
      */
     public RandomListNode splitList(RandomListNode head) {
-        // ĞÂÁ´±íÍ·
+        // æ–°é“¾è¡¨å¤´
         RandomListNode copyHead = head.next;
-        // µ±Ç°´¦ÀíµÄ±»¸´ÖÆµÄ½áµã
+        // å½“å‰å¤„ç†çš„è¢«å¤åˆ¶çš„ç»“ç‚¹
         RandomListNode node = head;
-        // µ±Ç°¸´ÖÆµÄ½áµã
+        // å½“å‰å¤åˆ¶çš„ç»“ç‚¹
         RandomListNode copy;
 
         while (node != null) {
-            // Ö¸Ïò¸´ÖÆ½áµã
+            // æŒ‡å‘å¤åˆ¶ç»“ç‚¹
             copy = node.next;
 
-            // node.nextÖ¸ÏòÏÂÒ»¸ö±»¸´ÖÆµÄ½áµã
+            // node.nextæŒ‡å‘ä¸‹ä¸€ä¸ªè¢«å¤åˆ¶çš„ç»“ç‚¹
             node.next = copy.next;
 
-            // ÏÂÒ»¸ö±»¸´ÖÆµÄ½áµã²»Îªnull
+            // ä¸‹ä¸€ä¸ªè¢«å¤åˆ¶çš„ç»“ç‚¹ä¸ä¸ºnull
             if (node.next != null) {
-                // copy.nextÖ¸ÏòÏÂÒ»¸ö¸´ÖÆµÄ½áµã
+                // copy.nextæŒ‡å‘ä¸‹ä¸€ä¸ªå¤åˆ¶çš„ç»“ç‚¹
                 copy.next = node.next.next;
             }
 
-            // nodeÖ¸ÏòÏÂÒ»¸öÒª±»´¦ÀíµÄ±»¸´ÖÆ½áµã
+            // nodeæŒ‡å‘ä¸‹ä¸€ä¸ªè¦è¢«å¤„ç†çš„è¢«å¤åˆ¶ç»“ç‚¹
             node = node.next;
         }
         return copyHead;

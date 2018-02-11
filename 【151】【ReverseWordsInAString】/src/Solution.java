@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-20
  * Time: 09:28
  * Declaration: All Rights Reserved !!!
@@ -13,11 +13,11 @@ public class Solution {
      * Given s = "the sky is blue",
      * return "blue is sky the".
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸ö×Ö·û´®£¬½«Æä·´×ª£¬ÆäµÄ×Ö´Ê²»×ª
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå°†å…¶åè½¬ï¼Œå…¶çš„å­—è¯ä¸è½¬
      *
-     * ½âÌâË¼Â·£º
-     * ÏÈ¶ÔÕû¸ö×Ö·û´®·´×ª£¬ÔÙ½«Ã¿¸öµ¥´Ê½øĞĞ·´×ª
+     * è§£é¢˜æ€è·¯ï¼š
+     * å…ˆå¯¹æ•´ä¸ªå­—ç¬¦ä¸²åè½¬ï¼Œå†å°†æ¯ä¸ªå•è¯è¿›è¡Œåè½¬
      * </pre>
      *
      * @param s
@@ -30,42 +30,42 @@ public class Solution {
         }
 
         char[] chars = s.toCharArray();
-        // ×Ö·ûÑ¹Ëõ
+        // å­—ç¬¦å‹ç¼©
         int realLength = compressWhiteSpace(chars);
 
-        // ½»»»Õû¸ö×Ö·û´®
+        // äº¤æ¢æ•´ä¸ªå­—ç¬¦ä¸²
         swapRange(chars, 0, realLength - 1);
 
-        // ¼ÇÂ¼µ¥´ÊµÄÆğµã
+        // è®°å½•å•è¯çš„èµ·ç‚¹
         int start = 0;
-        // ¼ÇÂ¼µ¥´ÊµÄÖÕµã
+        // è®°å½•å•è¯çš„ç»ˆç‚¹
         int end;
 
         while (start < realLength) {
-            // ´ÓstartÎ»ÖÃ¿ªÊ¼ÕÒµÚÒ»¸ö·Ç¿Õ°××Ö·û
+            // ä»startä½ç½®å¼€å§‹æ‰¾ç¬¬ä¸€ä¸ªéç©ºç™½å­—ç¬¦
             while (start < realLength && chars[start] == ' ') {
                 start++;
             }
 
             end = start + 1;
-            // ÕÒµÚÒ»¸ö¿Õ°××Ö·û
+            // æ‰¾ç¬¬ä¸€ä¸ªç©ºç™½å­—ç¬¦
             while (end < realLength && chars[end] != ' ') {
                 end++;
             }
 
-            // ·´×ª×Ö·û
+            // åè½¬å­—ç¬¦
             swapRange(chars, start, end - 1);
-            // ¼ÇÂ¼ĞÂµÄ¿ªÊ¼Î»ÖÃ
+            // è®°å½•æ–°çš„å¼€å§‹ä½ç½®
             start = end;
         }
         return new String(chars, 0, realLength);
     }
 
     /**
-     * ¶Ô×Ö·ûÊı×éµÄµÄ¿Õ°××Ö·û½øĞĞÑ¹Ëõ
+     * å¯¹å­—ç¬¦æ•°ç»„çš„çš„ç©ºç™½å­—ç¬¦è¿›è¡Œå‹ç¼©
      *
-     * @param chars ×Ö·ûÊı×é
-     * @return ĞÂµÄ³¤¶È
+     * @param chars å­—ç¬¦æ•°ç»„
+     * @return æ–°çš„é•¿åº¦
      */
     public int compressWhiteSpace(char[] chars) {
 
@@ -73,52 +73,52 @@ public class Solution {
             return 0;
         }
 
-        // ·ÅÔÚ×Ö·ûµÄÎ»ÖÃ
+        // æ”¾åœ¨å­—ç¬¦çš„ä½ç½®
         int pos = 0;
         for (int i = 0; i < chars.length; i++) {
-            // ´ÓiÎ»ÖÃ¿ªÊ¼ÕÒµÚÒ»¸ö·Ç¿Õ°××Ö·û
+            // ä»iä½ç½®å¼€å§‹æ‰¾ç¬¬ä¸€ä¸ªéç©ºç™½å­—ç¬¦
             while (i < chars.length && chars[i] == ' ') {
                 i++;
             }
 
-            // ÒÑ¾­´¦ÀíÍêÁË
+            // å·²ç»å¤„ç†å®Œäº†
             if (i >= chars.length) {
                 break;
             }
 
-            // ´ÓiÎ»ÖÃ¿ªÊ¼´¦Àí·Ç¿Õ°××Ö·û£¬Ö±µ½Óöµ½¿Õ°××Ö·û
-            // ¾ÍÊÇ´¦ÀíÒ»¸öµ¥´Ê
+            // ä»iä½ç½®å¼€å§‹å¤„ç†éç©ºç™½å­—ç¬¦ï¼Œç›´åˆ°é‡åˆ°ç©ºç™½å­—ç¬¦
+            // å°±æ˜¯å¤„ç†ä¸€ä¸ªå•è¯
             while (i < chars.length && chars[i] != ' ') {
                 chars[pos] = chars[i];
                 pos++;
                 i++;
             }
 
-            // ´¦ÀíÍêÒ»¸öµ¥´ÊÒª¿ÕÒ»¸ñ£¬×îºóÒ»¸öµ¥´Ê²»ÓĞ¶à¿ÕÒ»¸ñ¡¾A¡¿
+            // å¤„ç†å®Œä¸€ä¸ªå•è¯è¦ç©ºä¸€æ ¼ï¼Œæœ€åä¸€ä¸ªå•è¯ä¸æœ‰å¤šç©ºä¸€æ ¼ã€Aã€‘
             if (pos < chars.length) {
-                // Ìî³ä¿Õ¸ñ
+                // å¡«å……ç©ºæ ¼
                 chars[pos] = ' ';
             }
 
             pos++;
         }
 
-        // ËµÃ÷×Ö·û´®ÖĞÖ»ÓĞ¿Õ°××Ö·û
+        // è¯´æ˜å­—ç¬¦ä¸²ä¸­åªæœ‰ç©ºç™½å­—ç¬¦
         if (pos == 0) {
             return 0;
         } else {
-            // ¼õÒ»¾ÍÊÇÒªÈ¥µô¶àÓàµÄÒ»¸ö¿Õ¸ñ£¬¼û¡¾A¡¿
+            // å‡ä¸€å°±æ˜¯è¦å»æ‰å¤šä½™çš„ä¸€ä¸ªç©ºæ ¼ï¼Œè§ã€Aã€‘
             return pos - 1;
         }
 
     }
 
     /**
-     * ·´×ª×Ö×ÖÊıÊı×éÖĞ[x, y]Î»ÖÃµÄ×Ö·û
+     * åè½¬å­—å­—æ•°æ•°ç»„ä¸­[x, y]ä½ç½®çš„å­—ç¬¦
      *
-     * @param chars ×Ö·ûÊı×é
-     * @param x     xÎ»ÖÃ
-     * @param y     yÎ»ÖÃ
+     * @param chars å­—ç¬¦æ•°ç»„
+     * @param x     xä½ç½®
+     * @param y     yä½ç½®
      */
     public void swapRange(char[] chars, int x, int y) {
         for (; x < y; x++, y--) {
@@ -127,11 +127,11 @@ public class Solution {
     }
 
     /**
-     * ½»»»Êı×éÖĞx,yÁ½¸öÎ»ÖÃµÄµ¥´Ê
+     * äº¤æ¢æ•°ç»„ä¸­x,yä¸¤ä¸ªä½ç½®çš„å•è¯
      *
-     * @param chars ×Ö·ûÊı×é
-     * @param x     xÎ»ÖÃ
-     * @param y     yÎ»ÖÃ
+     * @param chars å­—ç¬¦æ•°ç»„
+     * @param x     xä½ç½®
+     * @param y     yä½ç½®
      */
     public void swap(char[] chars, int x, int y) {
         char z = chars[x];

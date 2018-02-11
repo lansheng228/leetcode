@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-22
  * Time: 12:56
  * Declaration: All Rights Reserved !!!
@@ -10,46 +10,46 @@ public class Solution {
      * Given an array where elements are sorted in ascending order,
      * convert it to a height balanced BST.
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¸ø¶¨Ò»¸öÉıĞòÅÅĞòÊı×é£¬½«Ëü×ª»»³ÉÒ»¸ö¸ß¶ÈÆ½ºâ¶ş²æÊ÷
+     * é¢˜ç›®å¤§æ„ï¼š
+     * ç»™å®šä¸€ä¸ªå‡åºæ’åºæ•°ç»„ï¼Œå°†å®ƒè½¬æ¢æˆä¸€ä¸ªé«˜åº¦å¹³è¡¡äºŒå‰æ ‘
      *
-     * ½âÌâË¼Â·£º
-     * ²ÉÓÃµİ¹é·ÖÖÎ·¨
+     * è§£é¢˜æ€è·¯ï¼š
+     * é‡‡ç”¨é€’å½’åˆ†æ²»æ³•
      * </pre>
      *
      * @param nums
      * @return
      */
     public TreeNode sortedArrayToBST(int[] nums) {
-        // ²ÎÊı¼ìÑé
+        // å‚æ•°æ£€éªŒ
         if (nums == null || nums.length < 1) {
             return null;
         }
 
-        // µİ¹é·ÖÖÎ·¨Çó½â
+        // é€’å½’åˆ†æ²»æ³•æ±‚è§£
         return solve(nums, 0, nums.length - 1);
     }
 
     /**
-     * µİ¹é·ÖÖÎÇó½â·½·¨
+     * é€’å½’åˆ†æ²»æ±‚è§£æ–¹æ³•
      *
-     * @param nums  ÉıĞòÅÅĞòÊı×é
-     * @param start ¿ªÊ¼Î»ÖÃ
-     * @param end   ½áÊøÎ»ÖÃ
-     * @return ¸ù½áµã
+     * @param nums  å‡åºæ’åºæ•°ç»„
+     * @param start å¼€å§‹ä½ç½®
+     * @param end   ç»“æŸä½ç½®
+     * @return æ ¹ç»“ç‚¹
      */
     public TreeNode solve(int[] nums, int start, int end) {
-        // »¹ÓĞÎ´´¦ÀíµÄÊı¾İ
+        // è¿˜æœ‰æœªå¤„ç†çš„æ•°æ®
         if (start <= end) {
-            // ÕÒ²äÎ»ÖÃ
+            // æ‰¾è¹­ä½ç½®
             int mid = start + ((end - start) >> 1);
-            // ¹¹Ôì¸ù½áµã
+            // æ„é€ æ ¹ç»“ç‚¹
             TreeNode root = new TreeNode(nums[mid]);
-            // Çó×ó×ÓÊ÷
+            // æ±‚å·¦å­æ ‘
             root.left = solve(nums, start, mid - 1);
-            // ÇóÓÒ×ÓÊ÷
+            // æ±‚å³å­æ ‘
             root.right = solve(nums, mid + 1, end);
-            // ·µ»Ø½á¹û
+            // è¿”å›ç»“æœ
             return root;
         }
 

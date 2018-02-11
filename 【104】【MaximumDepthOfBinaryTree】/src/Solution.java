@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 18:47
  * Declaration: All Rights Reserved !!!
@@ -7,18 +7,18 @@
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a binary tree, find its maximum depth.
      * The maximum depth is the number of nodes along the longest path
      * from the root node down to the farthest leaf node.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¿ÃÁ½²æÊ÷£¬ÇóËüµÄ×î´óÉî¶È¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€æ£µä¸¤å‰æ ‘ï¼Œæ±‚å®ƒçš„æœ€å¤§æ·±åº¦ã€‚
      *
-     * ½âÌâË¼Â·
-     * µİ¹éÇó½â£¬µİ¹é¹«Ê½
+     * è§£é¢˜æ€è·¯
+     * é€’å½’æ±‚è§£ï¼Œé€’å½’å…¬å¼
      * f(n) = 0; n=null,
-     * f(n) = 1+ max(f(n×ó)£¬ f(nÓÒ))
+     * f(n) = 1+ max(f(nå·¦)ï¼Œ f(nå³))
      * </pre>
      *
      * @param root

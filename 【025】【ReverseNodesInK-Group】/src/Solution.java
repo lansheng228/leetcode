@@ -1,5 +1,5 @@
 /**
- * Author: ������
+ * Author: 王俊超
  * Date: 2015-06-30
  * Time: 21:20
  * Declaration: All Rights Reserved !!!
@@ -23,18 +23,18 @@ public class Solution {
      * For k = 2, you should return: 2->1->4->3->5
      * For k = 3, you should return: 3->2->1->4->5
      *
-     * ��Ŀ���⣺
-     * ����һ������������һ��������K��ÿK�������з�ת��������Ľ��������K����
-     * ����ԭ��������˳�򲻱䡣
+     * 题目大意：
+     * 给定一个单链表，和一个分组数K，每K个结点进行反转，如果最后的结点数不足K个就
+     * 保持原来的链接顺序不变。
      *
-     * ����˼·��
+     * 解题思路：
      *
-     * ��һ��ָ���¼���Ӻõ����������һ����㣨tail����
-     * ��һ��ָ���¼��һ�����ӺõĲ��ֵ����һ����㣨head��
-     * ��δ�����Ľ����head������β�巨����k��Ԫ�أ��ٽ�head�ƶ���tail����
-     * tail���¼�¼������β��㣬ֱ�����е�Ԫ�ض������˲�����
-     * �������һ��Ԫ�ز���k������Ϊ���й�β�巨�����Ի�Ҫ���л�ԭ��
-     * ������headԪ�ؽ���β�巨�Ϳ�����
+     * 用一个指针记录链接好的链表的最后一个结点（tail），
+     * 用一个指针记录上一次链接好的部分的最后一个结点（head）
+     * 对未链表的结点在head处进行尾插法，插k个元素，再将head移动到tail处，
+     * tail重新记录链表的尾结点，直到所有的元素都进行了操作。
+     * 如果最后的一组元素不足k个，因为进行过尾插法，所以还要进行还原，
+     * 对最后的head元素进行尾插法就可以了
      *
      * </pre>
      *
@@ -49,46 +49,46 @@ public class Solution {
         }
 
         ListNode root = new ListNode(0);
-        // �����ͷһ��Ԫ�ص�ǰ��
+        // 分组的头一个元素的前驱
         ListNode groupHead = root;
-        // ��ǰҪ�����Ľ��
+        // 当前要处理的结点
         ListNode curr = head;
-        // �����õ�������β���
+        // 处理好的链表的尾结点
         ListNode groupTail = head;
-        // ��ǰҪ�����Ľ��ĺ��
+        // 当前要处理的结点的后继
         ListNode next;
 
-        // ��ÿ���飬�����˶��ٸ����
+        // 对每个组，处理了多少个结点
         int count = 0;
 
 
         while (curr != null) {
 
-            // ����Ƿ���ĵ�һ��Ԫ�ؾͼ�¼��
+            // 如果是分组的第一个元素就记录它
             if (count == 0) {
                 groupTail = curr;
             }
 
-            // ��¼������Ԫ�ظ���
+            // 记录处理的元素个数
             count++;
-            // ��¼��һ�����������
+            // 记录下一个待处理结点
             next = curr.next;
-            // ����β�巨����
+            // 进行尾插法操作
             curr.next = groupHead.next;
             groupHead.next = curr;
             curr = next;
 
-            // �Ѿ���������k����㣬����ͷ��ǰ���ƶ������һ�����ӺõĽ��
+            // 已经处理完了k个结点，分组头的前驱移动到最后一个链接好的结点
             if (count == k) {
                 groupHead = groupTail;
-                // ����������
+                // 计数器归零
                 count = 0;
             }
         }
 
 
-        // ˵������������k������������������������ĸ�Ԫ�صĽ�㣬
-        // �ٴ�ʹ��β�巨���л�ԭ
+        // 说明结点个数不是k的整数倍，将最后不是整数倍的个元素的结点，
+        // 再次使用尾插法进行还原
         if (count != 0) {
             curr = groupHead.next;
             groupHead.next = null;

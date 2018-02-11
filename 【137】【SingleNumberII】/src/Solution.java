@@ -1,5 +1,5 @@
 /**
- * Author: ������
+ * Author: 王俊超
  * Date: 2015-06-21
  * Time: 20:35
  * Declaration: All Rights Reserved !!!
@@ -14,21 +14,21 @@ public class Solution {
      * Note:
      *   - Your algorithm should have a linear runtime complexity.
      *          Could you implement it without using extra memory?
-     * ��Ŀ���⣺
-     * ��һ�����飬����ֻ��һ������һ�Σ��������ֶ�����3�Σ��ҳ��������һ�ε����֣�
-     * Ҫ��ʱ�临�Ӷ�ΪO(n)���ռ临�Ӷ�ΪO(1)����ò�������Ŀռ�
+     * 题目大意：
+     * 给一个数组，里面只有一个数字一次，其它数字都出现3次，找出这个出现一次的数字，
+     * 要求时间复杂度为O(n)，空间复杂度为O(1)。最好不傅额外的空间
      *
-     * ����˼·
-     * ����һ������ȫ���ö����Ʊ�ʾ��������ǰ� �� i th   ��λ�����������ֵĺͶ�3ȡ�࣬
-     * ��ôֻ����������� 0 �� 1 (�������⣬3��0��3��1���������Ϊ0).  ���ȡ��Ľ�
-     * �������Ǹ� ��Single Number����һ��ֱ�ӵ�ʵ�־����ô�СΪ 32����������¼����
-     * λ�ϵĺ͡�
+     * 解题思路
+     * 方法一：考虑全部用二进制表示，如果我们把 第 i th   个位置上所有数字的和对3取余，
+     * 那么只会有两个结果 0 或 1 (根据题意，3个0或3个1相加余数都为0).  因此取余的结
+     * 果就是那个 “Single Number”。一个直接的实现就是用大小为 32的数组来记录所有
+     * 位上的和。
      *
-     * ��������ʹ�����������
-     * ones    ������ithλֻ����һ�ε��������
-     * twos    ������ithλֻ�������δε��������
-     * threes  ������ithλֻ�������ε��������
-     * ����ithλ����3��ʱ�����Ǿ�ones��twos�ĵ�ithλ����Ϊ0. ���յĴ𰸾��� ones��
+     * 方法二：使用掩码变量：
+     * ones    代表第ith位只出现一次的掩码变量
+     * twos    代表第ith位只出现两次次的掩码变量
+     * threes  代表第ith位只出现三次的掩码变量
+     * 当第ith位出现3次时，我们就ones和twos的第ith位设置为0. 最终的答案就是 ones。
      * </pre>
      *
      * @param nums
@@ -41,7 +41,7 @@ public class Solution {
 
         for (int i = 0; i < 32; i++) {
             for (int n : nums) {
-                // ͳ�Ƶ�iλ��1�ĸ���
+                // 统计第i位的1的个数
                 if (((n >> i) & 1) == 1) {
                     count[i]++;
                 }
@@ -53,20 +53,20 @@ public class Solution {
         return result;
     }
 
-    // TODO δ��ȫ����
+    // TODO 未完全理解
     public int singleNumber2(int[] nums) {
-        // ֻ����һ�ε����������
+        // 只出现一次的掩码变量，
         int ones = 0;
-        // ֻ�������δε��������
+        // 只出现两次次的掩码变量
         int twos = 0;
-        // ֻ�������ε��������
+        // 只出现三次的掩码变量
         int threes;
 
         for (int n : nums) {
             twos |= ones & n;
-            // ���3�� �� ��� 1�εĽ����һ����
+            // 异或3次 和 异或 1次的结果是一样的
             ones ^= n;
-            // ����ones��twos�ѳ�����3�ε�λ������Ϊ0��ȡ��֮��1��λ��Ϊ0��
+            // 对于ones和twos把出现了3次的位置设置为0（取反之后1的位置为0）
             threes = ones & twos;
 
             ones &= ~threes;

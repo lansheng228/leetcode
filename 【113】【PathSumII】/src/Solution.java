@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 18:59
  * Declaration: All Rights Reserved !!!
@@ -15,8 +15,8 @@ public class Solution {
 
     /**
      * <pre>
-     * Ô­Ìâ
-     * Given a binary tree and a sum, find all root-to-leaf paths where each path¡¯s
+     * åŸé¢˜
+     * Given a binary tree and a sum, find all root-to-leaf paths where each pathâ€™s
      * sum equals the given sum.
      * For example:
      * Given the below binary tree and sum = 22,
@@ -36,11 +36,11 @@ public class Solution {
      *  [5,8,4,5]
      * ]
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¿Ã¶ş²æÊ÷ºÍÒ»¸öºÍ£¬ÅĞ¶Ï´ÓÊ÷µÄ¸ù½áµãµ½Ò¶×Ó½áµãµÄËùÓĞ½áµãµÄºÍÊÇ·ñµÈÓÚ¸ø¶¨µÄºÍ£¬Èç¹ûµÈÓÚ¾Í¼ÇÂ¼ÕâÌõÂ·¾¶¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€æ£µäºŒå‰æ ‘å’Œä¸€ä¸ªå’Œï¼Œåˆ¤æ–­ä»æ ‘çš„æ ¹ç»“ç‚¹åˆ°å¶å­ç»“ç‚¹çš„æ‰€æœ‰ç»“ç‚¹çš„å’Œæ˜¯å¦ç­‰äºç»™å®šçš„å’Œï¼Œå¦‚æœç­‰äºå°±è®°å½•è¿™æ¡è·¯å¾„ã€‚
      *
-     * ½âÌâË¼Â·
-     * ¶ÔÊ÷½øĞĞ±éÀú£¬²¢ÇÒÊ¹ÓÃ»ØËİ·¨½øĞĞÇó½â¡£
+     * è§£é¢˜æ€è·¯
+     * å¯¹æ ‘è¿›è¡Œéå†ï¼Œå¹¶ä¸”ä½¿ç”¨å›æº¯æ³•è¿›è¡Œæ±‚è§£ã€‚
      * </pre>
      *
      * @param root
@@ -84,7 +84,7 @@ public class Solution {
             }
 
             curSum -= root.val;
-            l.remove(l.size() - 1); // É¾³ı×îºóÒ»¸ö
+            l.remove(l.size() - 1); // åˆ é™¤æœ€åä¸€ä¸ª
         }
     }
 }

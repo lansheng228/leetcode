@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 19:09
  * Declaration: All Rights Reserved !!!
@@ -10,22 +10,22 @@ import java.util.List;
 public class Solution {
     /**
      * <pre>
-     * Ô­Ìâ
-     * Given an index k, return the kth row of the Pascal¡¯s triangle.
+     * åŸé¢˜
+     * Given an index k, return the kth row of the Pascalâ€™s triangle.
      * For example, given k = 3,
      * Return [1,3,3,1].
      * Note:
      * Could you optimize your algorithm to use only O(k) extra space?
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¸öÕıÕûÊık£¬ÇóÅÁË¹¿¨µÄµÚkĞĞ¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€ä¸ªæ­£æ•´æ•°kï¼Œæ±‚å¸•æ–¯å¡çš„ç¬¬kè¡Œã€‚
      *
-     * ½âÌâË¼Â·
-     * ¶ÔÈÎÒâµÄn>0ÓĞ
-     * f(1, n)=1£¬(n>0)
-     * f(n, n)=1£¬(n>2)
-     * f(i,j) = f(i-1, j-1)+f(i, j-1)£¬i>2,j>2£¬
-     * ÇóµÚkĞĞ¡£
+     * è§£é¢˜æ€è·¯
+     * å¯¹ä»»æ„çš„n>0æœ‰
+     * f(1, n)=1ï¼Œ(n>0)
+     * f(n, n)=1ï¼Œ(n>2)
+     * f(i,j) = f(i-1, j-1)+f(i, j-1)ï¼Œi>2,j>2ï¼Œ
+     * æ±‚ç¬¬kè¡Œã€‚
      * </pre>
      *
      * @param rowIndex
@@ -33,7 +33,7 @@ public class Solution {
      */
     public List<Integer> getRow(int rowIndex) {
 
-        rowIndex++; // µÚrowIndexµÄÊµÖÊÊı¾İÊıÄ¿
+        rowIndex++; // ç¬¬rowIndexçš„å®è´¨æ•°æ®æ•°ç›®
 
         if (rowIndex < 0) {
             return null;
@@ -49,25 +49,25 @@ public class Solution {
             result.add(1);
         }
 
-        int line = 0; // ¼ÇÂ¼µ±Ç°Ê¹ÓÃÄÄÒ»ĞĞ
-        int prev; // ÉÏÒ»ĞĞÊÇÄÄÒ»ĞĞ
+        int line = 0; // è®°å½•å½“å‰ä½¿ç”¨å“ªä¸€è¡Œ
+        int prev; // ä¸Šä¸€è¡Œæ˜¯å“ªä¸€è¡Œ
         if (rowIndex >= 3) {
 
             int[][] data = new int[2][rowIndex];
-            // ¡¾1¡¿
+            // ã€1ã€‘
             data[0][0] = 1;
             data[1][0] = 1;
             data[1][1] = 1;
 
             for (int i = 2; i < rowIndex; i++) {
-                line = i % 2; // ĞÂ¼ÆËãµÄÊı¾İ±£´æÔÚµÚ0»òÕßµÚ1ĞĞ
+                line = i % 2; // æ–°è®¡ç®—çš„æ•°æ®ä¿å­˜åœ¨ç¬¬0æˆ–è€…ç¬¬1è¡Œ
                 prev = (i - 1 + 2) % 2;
-//                data[line][0] = 1; // ÉèÖÃµÚÒ»¸öÊı×Ö£¬¿ÉÒÔ²»ÓÃ£¬¡¾1¡¿´¦ÒÑ¾­½øĞĞÁË£¬data[x][0]×ÜÎª1
+//                data[line][0] = 1; // è®¾ç½®ç¬¬ä¸€ä¸ªæ•°å­—ï¼Œå¯ä»¥ä¸ç”¨ï¼Œã€1ã€‘å¤„å·²ç»è¿›è¡Œäº†ï¼Œdata[x][0]æ€»ä¸º1
                 for (int j = 1; j < i; j++) {
                     data[line][j] = data[prev][j - 1] + data[prev][j];
                 }
 
-                data[line][i] = 1; // ÉèÖÃ×îºóÒ»¸öÊı
+                data[line][i] = 1; // è®¾ç½®æœ€åä¸€ä¸ªæ•°
             }
 
             //

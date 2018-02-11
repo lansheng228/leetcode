@@ -2,7 +2,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-20
  * Time: 06:58
  * Declaration: All Rights Reserved !!!
@@ -17,35 +17,35 @@ public class Solution {
      * ["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9
      * ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6
      *
-     * ÌâÄ¿´óÒâ£º
-     * ¼ÆËãÄæ²¨°ë±í´ïÊ½µÄÖµ£¬ÓĞĞ§µÄÔËËã·ûÊÇ£º+¡¢-¡¢*¡¢/£¬Ã¿¸ö²Ù×÷ÊıÒªÃ´ÊÇÒ»¸öÕûÊıÒªÃ´ÊÇÁíÒ»¸ö±í´ïÊ½
+     * é¢˜ç›®å¤§æ„ï¼š
+     * è®¡ç®—é€†æ³¢åŠè¡¨è¾¾å¼çš„å€¼ï¼Œæœ‰æ•ˆçš„è¿ç®—ç¬¦æ˜¯ï¼š+ã€-ã€*ã€/ï¼Œæ¯ä¸ªæ“ä½œæ•°è¦ä¹ˆæ˜¯ä¸€ä¸ªæ•´æ•°è¦ä¹ˆæ˜¯å¦ä¸€ä¸ªè¡¨è¾¾å¼
      *
-     * ½âÌâË¼Â·£º
-     * Ê¹ÓÃÕ»½øĞĞ²Ù×÷
+     * è§£é¢˜æ€è·¯ï¼š
+     * ä½¿ç”¨æ ˆè¿›è¡Œæ“ä½œ
      * </pre>
      *
      * @param tokens
      * @return
      */
     public int evalRPN(String[] tokens) {
-        // ²ÎÊıĞ£Ñé
+        // å‚æ•°æ ¡éªŒ
         if (tokens == null || tokens.length < 1) {
             throw new IllegalArgumentException();
         }
 
         int op1;
         int op2;
-        // ²Ù×÷ÊıÕ»
+        // æ“ä½œæ•°æ ˆ
         Stack<Integer> stack = new Stack<>();
 
         for (String token : tokens) {
-            // ËµÃ÷ÊÇÔËËã·û£¬ÒªÈ¡Õ»¶¥Á½¸öÔªËØ½øĞĞÔËËã
+            // è¯´æ˜æ˜¯è¿ç®—ç¬¦ï¼Œè¦å–æ ˆé¡¶ä¸¤ä¸ªå…ƒç´ è¿›è¡Œè¿ç®—
             if ("+".equals(token) || "-".equals(token) || "*".equals(token) || "/".equals(token)) {
-                // È¡Õ»¶¥ÔªËØ
+                // å–æ ˆé¡¶å…ƒç´ 
                 op2 = stack.pop();
                 op1 = stack.pop();
 
-                // ½øĞĞÔËËã
+                // è¿›è¡Œè¿ç®—
                 switch (token.charAt(0)) {
                     case '+':
                         op1 += op2;
@@ -60,16 +60,16 @@ public class Solution {
                         op1 /= op2;
                         break;
                 }
-                // ½á¹ûÈëÕ»
+                // ç»“æœå…¥æ ˆ
                 stack.push(op1);
             }
-            // ËµÃ÷ÊÇ²Ù×÷Êı£¬ÈëÕ»
+            // è¯´æ˜æ˜¯æ“ä½œæ•°ï¼Œå…¥æ ˆ
             else {
                 stack.push(Integer.parseInt(token));
             }
         }
 
-        // Õ»ÖĞ×îºóÖ»»áÊ£ÏÂÒ»¸öÔªËØ£¬ÄÇ¾ÍÊÇ×îºó¼ÆËãµÄ½á¹û
+        // æ ˆä¸­æœ€ååªä¼šå‰©ä¸‹ä¸€ä¸ªå…ƒç´ ï¼Œé‚£å°±æ˜¯æœ€åè®¡ç®—çš„ç»“æœ
         return stack.pop();
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-06-19
  * Time: 11:17
  * Declaration: All Rights Reserved !!!
@@ -7,14 +7,14 @@
 public class Solution {
     /**
      * Reverse a singly linked list.
-     * ·´×ªµ¥Á´±í
-     * Ê¹ÓÃÍ·²å·¨
+     * åè½¬å•é“¾è¡¨
+     * ä½¿ç”¨å¤´æ’æ³•
      *
      * @param head
      * @return
      */
     public ListNode reverseList(ListNode head) {
-        // Í·½áµã
+        // å¤´ç»“ç‚¹
         ListNode root = new ListNode(0);
         ListNode nextNode;
         while (head != null) {
@@ -28,7 +28,7 @@ public class Solution {
     }
 
     /**
-     * TODO Ê¹ÓÃµİ¹é½â·¨
+     * TODO ä½¿ç”¨é€’å½’è§£æ³•
      * @param head
      * @return
      */

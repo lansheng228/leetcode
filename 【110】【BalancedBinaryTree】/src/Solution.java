@@ -1,5 +1,5 @@
 /**
- * Author: Íõ¿¡³¬
+ * Author: ç‹ä¿Šè¶…
  * Date: 2015-08-21
  * Time: 18:53
  * Declaration: All Rights Reserved !!!
@@ -8,17 +8,17 @@ public class Solution {
 
     /**
      * <pre>
-     * Ô­Ìâ
+     * åŸé¢˜
      * Given a binary tree, determine if it is height-balanced.
      * For this problem, a height-balanced binary tree is defined as a binary tree
      * in which the depth of the two subtrees of every node never differ by more than 1.
      *
-     * ÌâÄ¿´óÒâ
-     * ¸ø¶¨Ò»¿ÃÆ½ºâ¶ş²æÊ÷£¬ÅĞ¶ÏËüÊÇ·ñÊÇ¸ß¶ÈÆ½ºâµÄ¡£Ò»¿Ã¸ß¶ÈÆ½ºâµÄ¶ş²æÊ÷ÊÇ×óÓÒ×ÓÊ÷µÄ¸ß¶ÈÏà²î²»³¬¹ı1£¬
-     * ¶ÔÆä×óÓÒ×ÓÊ÷Ò²ÊÇÈç´Ë¡£
+     * é¢˜ç›®å¤§æ„
+     * ç»™å®šä¸€æ£µå¹³è¡¡äºŒå‰æ ‘ï¼Œåˆ¤æ–­å®ƒæ˜¯å¦æ˜¯é«˜åº¦å¹³è¡¡çš„ã€‚ä¸€æ£µé«˜åº¦å¹³è¡¡çš„äºŒå‰æ ‘æ˜¯å·¦å³å­æ ‘çš„é«˜åº¦ç›¸å·®ä¸è¶…è¿‡1ï¼Œ
+     * å¯¹å…¶å·¦å³å­æ ‘ä¹Ÿæ˜¯å¦‚æ­¤ã€‚
      *
-     * ½âÌâË¼Â·
-     * µİ¹é·ÖÖÎ·¨Çó½â¡£
+     * è§£é¢˜æ€è·¯
+     * é€’å½’åˆ†æ²»æ³•æ±‚è§£ã€‚
      * </pre>
      *
      * @param root
@@ -40,10 +40,10 @@ public class Solution {
     }
 
     /**
-     * ÇóÊ÷µÄ¸ß¶È
+     * æ±‚æ ‘çš„é«˜åº¦
      *
-     * @param n Ê÷µÄ¸ù½áµã
-     * @return Ê÷µÄ¸ß¶È
+     * @param n æ ‘çš„æ ¹ç»“ç‚¹
+     * @return æ ‘çš„é«˜åº¦
      */
     private int depth(TreeNode n) {
         if (n == null) {
