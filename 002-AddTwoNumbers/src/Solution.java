@@ -28,7 +28,6 @@ public class Solution {
      * @return 结果
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
         if (l1 == null) {
             return l2;
         }
@@ -39,22 +38,26 @@ public class Solution {
 
         ListNode p1 = l1;
         ListNode p2 = l2;
-        ListNode root = new ListNode(0); // 头结点
+        /* 头结点 */
+        ListNode root = new ListNode(0);
         ListNode r = root;
         root.next = l1;
 
-        int carry = 0; // 初始进位
+        /* 初始进位 */
+        int carry = 0;
         int sum;
-        while (p1 != null && p2 != null) {
+        while ((p1 != null) && (p2 != null)) {
             sum = p1.val + p2.val + carry;
-            p1.val = sum % 10; // 本位的结果
-            carry = sum / 10; // 本次进位
+            /* 本位的结果 */
+            p1.val = sum % 10;
+            /* 本次进位 */
+            carry = sum / 10;
 
             r.next = p1;
-            r = p1; // 指向最后一个相加的结点
+            /* 指向最后一个相加的结点 */
+            r = p1;
             p1 = p1.next;
             p2 = p2.next;
-
         }
 
         if (p1 == null) {
@@ -80,5 +83,21 @@ public class Solution {
         }
 
         return root.next;
+    }
+
+    /**
+     * 输出链表的元素值
+     *
+     * @param head 链表的头结点
+     */
+    public void printList(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val);
+            head = head.next;
+            if(head != null) {
+                System.out.print("->");
+            }
+        }
+        System.out.println("");
     }
 }
