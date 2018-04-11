@@ -16,8 +16,8 @@ public class Solution {
      * which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
      *
      * 题目大意：
-     * 给定一个字符串，找字符中的最大非重复子串
-     *
+     * 给定一个字符串，找字符中的最大非重复子串，返回该子串的长度。例如： 字符串"abcabcbb"的最大非重复子串
+     * 为"abc"， 长度为3；字符串"bbbbb"的最大非重复子串为"b"， 长度为1。
      * 解题思路：
      * 用start记录当当处理的开始位置
      * 历遍字符串，当当前字符从开始位置start开始已经出现过的时候，子串开始位置+1，否则更新map中的hash值为当前位置。
