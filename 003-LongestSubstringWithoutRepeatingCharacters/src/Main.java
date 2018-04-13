@@ -9,6 +9,10 @@ public class Main {
         int result2 = sl.lengthOfLongestSubstring("abcabcbb");
         System.out.println("运行结果为：" + result2);
         System.out.println("期望结果为： 3");
+
+        int result3 = sl.lengthOfLongestSubstring("abba");
+        System.out.println("运行结果为：" + result3);
+        System.out.println("期望结果为： 2");
     }
 }
 
